@@ -5,6 +5,12 @@ site_url: https://researchanddesire.github.io/assembly-docs/
 repo_url: https://github.com/researchanddesire/assembly-docs
 repo_name: assembly-docs
 
+# Product assembly guides use sibling asset paths like src="assets/foo.png".
+# With directory URLs (the MkDocs default), pages served at /lockbox/bom/ resolve
+# those to /lockbox/bom/assets/ instead of /lockbox/assets/. Flat .html URLs
+# keep sibling asset/ paths working for both raw HTML and markdown images.
+use_directory_urls: false
+
 theme:
   name: material
   palette:
@@ -16,10 +22,14 @@ plugins:
   - search
   - awesome-pages
 
+extra_css:
+  - stylesheets/assembly.css
+
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - md_in_html
 
 # Navigation is driven by .pages files (mkdocs-awesome-pages-plugin).
 # Top-level order/titles live in docs/.pages. Product sections under

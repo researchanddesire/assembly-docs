@@ -1,0 +1,41 @@
+/* Assembly guide photo layout (classes used in product assembly-docs/) */
+
+.photo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.75rem 0 1.5rem;
+}
+
+.photo-frame {
+  flex: 1 1 280px;
+  max-width: 360px;
+  margin: 0;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.photo-frame figcaption {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  text-align: center;
+  margin-top: 0.35rem;
+  font-style: italic;
+}
+
+/* Keep inline-styled single photos from overflowing the content column */
+.md-typeset figure.photo-frame[style*="max-width: 720px"] {
+  max-width: min(720px, 100%);
+}
+
+/* Assembly guides nest figures inside numbered lists — tighten spacing */
+.md-typeset ol li > figure,
+.md-typeset ol li > .photo-row {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
