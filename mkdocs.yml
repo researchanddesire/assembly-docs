@@ -1,0 +1,28 @@
+site_name: Research and Desire — Assembly Docs
+# GitHub Pages for now; switch to https://ohai.researchanddesire.com/ at cutover
+# (and add a CNAME via the Pages custom-domain setting).
+site_url: https://researchanddesire.github.io/assembly-docs/
+repo_url: https://github.com/researchanddesire/assembly-docs
+repo_name: assembly-docs
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      accent: cyan
+
+plugins:
+  - search
+  - awesome-pages
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+# Navigation is driven by .pages files (mkdocs-awesome-pages-plugin).
+# Top-level order/titles live in docs/.pages. Product sections under
+# docs/dtt, docs/lockbox, docs/ossm are CI-assembled from each product
+# repo's assembly-docs/ folder (its nav.yml is translated into a .pages
+# file by scripts/assemble-docs.sh) — do not edit those paths by hand.

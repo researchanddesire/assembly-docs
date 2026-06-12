@@ -1,0 +1,4 @@
+site/
+.assemble-work/
+.venv/
+__pycache__/
