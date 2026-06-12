@@ -18,6 +18,9 @@ theme:
       primary: teal
       accent: cyan
 
+hooks:
+  - scripts/mkdocs_hooks.py
+
 plugins:
   - search
   - awesome-pages

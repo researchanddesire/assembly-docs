@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin: 0.75rem 0 1.5rem;
+  margin: 0.75rem 0 1.25rem;
 }
 
 .photo-frame {
@@ -21,11 +21,13 @@
 }
 
 .photo-frame figcaption {
-  font-size: 0.85rem;
-  color: var(--md-default-fg-color--light);
-  text-align: center;
-  margin-top: 0.35rem;
-  font-style: italic;
+  font-size: 0.875rem;
+  color: var(--md-default-fg-color);
+  opacity: 0.75;
+  text-align: left;
+  margin-top: 0.4rem;
+  font-style: normal;
+  line-height: 1.35;
 }
 
 /* Keep inline-styled single photos from overflowing the content column */
@@ -37,5 +39,10 @@
 .md-typeset ol li > figure,
 .md-typeset ol li > .photo-row {
   margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.md-typeset ol li > .photo-row,
+.md-typeset ol li > figure.photo-frame {
+  margin-left: 0;
 }

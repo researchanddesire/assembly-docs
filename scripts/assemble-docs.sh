@@ -15,6 +15,8 @@ mkdir -p "$WORK"
 copy_assembly_docs() {
   local src=$1
   local dest=$2
+  local repo=$3
+  local branch=$4
   mkdir -p "$dest"
   cp -R "$src/." "$dest/"
   # Translate the product's nav.yml (site_name + nav) into an awesome-pages
@@ -23,6 +25,9 @@ copy_assembly_docs() {
     sed 's/^site_name:/title:/' "$dest/nav.yml" > "$dest/.pages"
     rm -f "$dest/nav.yml"
   fi
+  # Repo-relative links (../hardware/...) only work inside the product repo.
+  # Rewrite them to GitHub tree/blob URLs for the unified site.
+  python3 "${ROOT}/scripts/rewrite_product_links.py" "$dest" "$repo" "$branch"
 }
 
 clone_or_copy() {
@@ -31,7 +36,7 @@ clone_or_copy() {
   local dest=$3
   if [ -n "${ASSEMBLE_LOCAL:-}" ] && [ -d "${ASSEMBLE_LOCAL}/${repo}/assembly-docs" ]; then
     echo "Using local ${ASSEMBLE_LOCAL}/${repo}/assembly-docs"
-    copy_assembly_docs "${ASSEMBLE_LOCAL}/${repo}/assembly-docs" "$dest"
+    copy_assembly_docs "${ASSEMBLE_LOCAL}/${repo}/assembly-docs" "$dest" "$repo" "$branch"
     return
   fi
   echo "Cloning researchanddesire/${repo}@${branch}"
@@ -50,7 +55,7 @@ clone_or_copy() {
     git clone --depth 1 --branch "$branch" "$clone_url" "$WORK/$repo"
   fi
   if [ -d "$WORK/$repo/assembly-docs" ]; then
-    copy_assembly_docs "$WORK/$repo/assembly-docs" "$dest"
+    copy_assembly_docs "$WORK/$repo/assembly-docs" "$dest" "$repo" "$branch"
   else
     echo "WARN: no assembly-docs/ in ${repo} — skipping"
   fi
