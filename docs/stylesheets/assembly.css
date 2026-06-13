@@ -46,3 +46,141 @@
 .md-typeset ol li > figure.photo-frame {
   margin-left: 0;
 }
+
+/* ===========================================================================
+   Bill of Materials (rendered by scripts/render_bom.py from hardware/bom.csv)
+   Structure, focus, and tooltip behaviour live here. Per-category chip COLORS
+   are emitted inline by the renderer from the single source
+   scripts/bom_categories.py — do not duplicate the colour map here.
+   =========================================================================== */
+
+.bom-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.15rem 1rem;
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+}
+.bom-meta dt { font-weight: 700; }
+.bom-meta dd { margin: 0; }
+.bom-sha-full { color: var(--md-default-fg-color--light); font-size: 0.75rem; }
+
+.bom-status {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+.bom-status-preview { background: #fff3bf; color: #5c4400; }
+.bom-status-released { background: #d3f9d8; color: #1b4332; }
+
+/* The table lives in its own scroll frame so a wide BOM never breaks the page
+   layout. On mobile this scrolls horizontally (cards are intentionally not
+   used). */
+.bom-table-frame {
+  overflow-x: auto;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  max-width: 100%;
+}
+.bom-table-frame:focus { outline: 2px solid var(--md-accent-fg-color); }
+
+/* Auto-size columns from content; dense engineering-docs look. */
+table.bom-table {
+  border-collapse: collapse;
+  width: auto;
+  min-width: 100%;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+table.bom-table th,
+table.bom-table td {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  padding: 4px 8px;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+}
+table.bom-table thead th {
+  background: var(--md-default-fg-color--lightest);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Compact numeric columns: item #, Qty, UOM. */
+.bom-num { text-align: right; white-space: nowrap; }
+.bom-col-line_item { text-align: right; }
+
+/* Text columns wrap to at most two lines (clamped) so a long value never
+   overruns the next column or gets clipped at the frame edge. The wrapper div
+   is needed because overflow / line-clamp do not reliably apply to <td>. */
+.bom-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+/* Cells with a title reveal the full value on hover (useful when clamped). */
+.bom-clamp[title] { cursor: help; }
+.bom-col-part_name { min-width: 9rem; max-width: 14rem; }
+.bom-col-description { min-width: 14rem; max-width: 24rem; }
+.bom-col-manufacturer,
+.bom-col-vendor { min-width: 7rem; max-width: 11rem; }
+.bom-col-mfg_part_number,
+.bom-col-vendor_part_number { min-width: 7rem; max-width: 12rem; }
+.bom-col-source { min-width: 12rem; max-width: 22rem; }
+.bom-col-notes { min-width: 10rem; max-width: 20rem; }
+
+/* Strong, colour-coded category chips. Background/foreground colours are set
+   inline by the renderer; this controls shape, focus, and the tooltip. */
+.bom-cat {
+  position: relative;
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  cursor: help;
+}
+.bom-cat:focus,
+.bom-cat:hover {
+  outline: 2px solid var(--md-accent-fg-color, #0c8599);
+  outline-offset: 1px;
+}
+/* Full category label shown on hover AND keyboard focus. */
+.bom-cat::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: #1b1b1b;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease-in;
+  z-index: 5;
+}
+.bom-cat:hover::after,
+.bom-cat:focus::after { opacity: 1; }
+
+.bom-footer {
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+}
+.bom-footer p { margin: 0.15rem 0; }

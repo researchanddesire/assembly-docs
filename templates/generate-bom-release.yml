@@ -1,0 +1,24 @@
+# Copy into each product repo at .github/workflows/generate-bom-release.yml.
+# Replace the inputs with the product's values.
+#
+# On a tagged release this calls the reusable workflow in assembly-docs, which
+# renders a standalone bom.html from hardware/bom.csv and publishes it as a
+# GitHub Actions artifact + GitHub Release asset — unless the repo already
+# commits its own bom.html. All rendering logic lives in assembly-docs; this
+# caller just supplies product metadata.
+name: Generate BOM release artifact
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  bom:
+    uses: researchanddesire/assembly-docs/.github/workflows/bom-release.yml@main
+    permissions:
+      contents: write
+    with:
+      product: Chastity Lockbox
+      repo_url: https://github.com/researchanddesire/Lockbox
+      license: CERN-OHL-S v2 (hardware) / MPL-2.0 (firmware)

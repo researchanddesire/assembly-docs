@@ -1,0 +1,95 @@
+name: BOM release artifact
+
+# Reusable workflow: on a tagged product release, if the product repo has no
+# committed bom.html, render a standalone bom.html from hardware/bom.csv and
+# publish it as both a GitHub Actions artifact and a GitHub Release asset.
+#
+# All BOM rendering logic lives here in assembly-docs; product repos invoke this
+# with a tiny caller workflow (see templates/generate-bom-release.yml). The
+# caller repo (the product) is the one checked out and released into.
+
+on:
+  workflow_call:
+    inputs:
+      product:
+        description: Product display name
+        type: string
+        required: true
+      repo_url:
+        description: Product GitHub repo URL
+        type: string
+        required: true
+      license:
+        description: Applicable license string
+        type: string
+        required: true
+      bom_path:
+        description: Path to the BOM CSV in the product repo
+        type: string
+        default: hardware/bom.csv
+      committed_html:
+        description: Path checked for an already-committed rendered BOM
+        type: string
+        default: hardware/bom.html
+
+jobs:
+  bom-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout product repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Skip if a bom.html is already committed
+        id: detect
+        run: |
+          if [ -f "${{ inputs.committed_html }}" ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Committed ${{ inputs.committed_html }} found; nothing to generate."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout assembly-docs BOM tooling
+        if: steps.detect.outputs.exists == 'false'
+        uses: actions/checkout@v4
+        with:
+          repository: researchanddesire/assembly-docs
+          ref: main
+          path: .assembly-docs-tooling
+          sparse-checkout: scripts
+
+      - name: Setup Python
+        if: steps.detect.outputs.exists == 'false'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Render standalone BOM
+        if: steps.detect.outputs.exists == 'false'
+        run: |
+          python3 .assembly-docs-tooling/scripts/render_bom.py \
+            --bom "${{ inputs.bom_path }}" \
+            --repo-url "${{ inputs.repo_url }}" \
+            --product "${{ inputs.product }}" \
+            --license "${{ inputs.license }}" \
+            --commit "${{ github.sha }}" \
+            --released \
+            --source-prefix hardware \
+            --standalone dist/bom.html
+
+      - name: Upload as GitHub Actions artifact
+        if: steps.detect.outputs.exists == 'false'
+        uses: actions/upload-artifact@v4
+        with:
+          name: bom-html
+          path: dist/bom.html
+
+      - name: Attach to GitHub Release
+        if: steps.detect.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/bom.html

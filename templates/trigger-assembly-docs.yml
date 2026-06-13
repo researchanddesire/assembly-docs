@@ -11,6 +11,9 @@ on:
     branches: [main]
     paths:
       - 'assembly-docs/**'
+      # The assembly-docs site renders hardware/bom.csv into the BOM page at
+      # build time, so a BOM data change must rebuild the site too.
+      - 'hardware/bom.csv'
 
 jobs:
   dispatch:
