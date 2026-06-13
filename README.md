@@ -62,6 +62,82 @@ Each product repo's `trigger-assembly-docs.yml` needs a `DOCS_DISPATCH_TOKEN`
 secret — a fine-grained PAT (or org secret) with `contents: write` on this
 repo, since the default `GITHUB_TOKEN` cannot send cross-repo dispatches.
 
+## Bill of Materials rendering
+
+Each product's `hardware/bom.csv` is rendered into a polished, colour-coded HTML
+Bill of Materials and embedded in that product's assembly-docs `bom.md` page.
+The rendered BOM belongs to the **assembly docs only** — never to developer
+docs. (Developer docs may document this workflow, as here, but must not embed
+the rendered BOM.)
+
+### Where things live
+
+| Thing | Path |
+| ----- | ---- |
+| BOM data (source of truth, per product repo) | `hardware/bom.csv` |
+| Renderer | `scripts/render_bom.py` |
+| Category code → label → colour map (single source) | `scripts/bom_categories.py` |
+| Chip / table structure + focus styles | `docs/stylesheets/assembly.css` |
+| BOM page (per product repo, carries the markers) | `assembly-docs/bom.md` |
+| Generated block markers | `<!-- BEGIN GENERATED BOM -->` … `<!-- END GENERATED BOM -->` |
+
+The renderer is **read-only** on `hardware/bom.csv` and validates its header
+against the canonical [BOM schema](https://dev.researchanddesire.com/meta/bom-standard/)
+(`dev-docs`); it never changes the schema.
+
+### How it runs
+
+Rendering happens **at assemble time**, so the embedded block is never committed
+per-product and can never go stale:
+
+- `scripts/assemble-docs.sh` clones each product repo and, for each, renders
+  `hardware/bom.csv` into the assembled `docs/{product}/bom.md` between the
+  markers. Commit SHA (used for commit-pinned source links) and release status
+  are auto-detected from the product checkout's git.
+- If a product's `bom.md` has no markers, or its `bom.csv` is a header-only
+  template, the page is left untouched.
+
+A self-contained **Lockbox BOM demo** (`demo/lockbox/`) validates the workflow
+end-to-end without depending on a cloned repo or fabricating real product data.
+Disable it with `ASSEMBLE_BOM_DEMO=0`.
+
+### Run it locally
+
+```bash
+pip install -r requirements.txt
+
+# Render the demo BOM into the assembled site and preview:
+ASSEMBLE_LOCAL="$HOME/Github" ./scripts/assemble-docs.sh
+mkdocs serve
+
+# Render a single product's BOM into a page directly (read-only on the CSV):
+python3 scripts/render_bom.py \
+  --bom path/to/hardware/bom.csv \
+  --page path/to/assembly-docs/bom.md \
+  --repo-url https://github.com/researchanddesire/Lockbox \
+  --require-markers
+```
+
+### When CI runs
+
+- The site rebuilds when a product repo's `assembly-docs/**` **or**
+  `hardware/bom.csv` changes (`templates/trigger-assembly-docs.yml` →
+  `repository_dispatch` → `deploy.yml`), and on pushes to this repo's
+  `docs/**` / `mkdocs.yml` / `scripts/**`.
+- On a tagged product release, `templates/generate-bom-release.yml` (a caller in
+  the product repo) invokes the reusable `.github/workflows/bom-release.yml`
+  here, which renders a standalone `bom.html` and publishes it as a GitHub
+  Actions artifact + Release asset — unless the repo already commits a
+  `bom.html`.
+
+### Troubleshooting
+
+- **Page didn't update:** confirm `assembly-docs/bom.md` has both markers and
+  that `hardware/bom.csv` has data rows (a header-only template is skipped).
+- **`BOM header does not match the canonical RAD BOM schema`:** the CSV header
+  drifted; fix `hardware/bom.csv` to match the 12-column schema exactly. The
+  renderer will not change the schema.
+
 ## Cutover
 
 At OSS cutover, repoint the source repos via env vars in `deploy.yml`
