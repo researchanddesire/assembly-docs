@@ -101,9 +101,13 @@ clone_or_copy() {
   local repo=$1
   local branch=${2:-main}
   local dest=$3
-  if [ -n "${ASSEMBLE_LOCAL:-}" ] && [ -d "${ASSEMBLE_LOCAL}/${repo}/assembly-docs" ]; then
-    echo "Using local ${ASSEMBLE_LOCAL}/${repo}/assembly-docs"
-    copy_assembly_docs "${ASSEMBLE_LOCAL}/${repo}/assembly-docs" "$dest" "$repo" "$branch"
+  if [ -n "${ASSEMBLE_LOCAL:-}" ] && [ -d "${ASSEMBLE_LOCAL}/${repo}" ]; then
+    if [ -d "${ASSEMBLE_LOCAL}/${repo}/assembly-docs" ]; then
+      echo "Using local ${ASSEMBLE_LOCAL}/${repo}/assembly-docs"
+      copy_assembly_docs "${ASSEMBLE_LOCAL}/${repo}/assembly-docs" "$dest" "$repo" "$branch"
+    else
+      echo "WARN: no assembly-docs/ in local ${repo} — skipping"
+    fi
     return
   fi
   echo "Cloning researchanddesire/${repo}@${branch}"
@@ -130,20 +134,23 @@ clone_or_copy() {
 
 LOCKBOX_REPO="${LOCKBOX_REPO:-Lockbox-OSS}"
 DTT_REPO="${DTT_REPO:-DT_Trainer-OSS}"
+RADR_REPO="${RADR_REPO:-RADR-OSS}"
 OSSM_REPO="${OSSM_REPO:-ossm}"
 
 # During OSS prep, assemble from the *-OSS forks. At cutover, set
 # LOCKBOX_REPO=Lockbox etc. to point at the canonical public repos.
 LOCKBOX_BRANCH="${LOCKBOX_BRANCH:-main}"
 DTT_BRANCH="${DTT_BRANCH:-main}"
+RADR_BRANCH="${RADR_BRANCH:-main}"
 OSSM_BRANCH="${OSSM_BRANCH:-main}"
 
 clone_or_copy "$DTT_REPO" "$DTT_BRANCH" "${ROOT}/docs/dtt"
 clone_or_copy "$LOCKBOX_REPO" "$LOCKBOX_BRANCH" "${ROOT}/docs/lockbox"
+clone_or_copy "$RADR_REPO" "$RADR_BRANCH" "${ROOT}/docs/radr"
 clone_or_copy "$OSSM_REPO" "$OSSM_BRANCH" "${ROOT}/docs/ossm"
 
 if [ "${ASSEMBLE_BOM_DEMO:-0}" = "1" ]; then
   assemble_demo "lockbox-demo" "${ROOT}/demo/lockbox"
 fi
 
-echo "Assembled product assembly docs into docs/{dtt,lockbox,ossm}"
+echo "Assembled product assembly docs into docs/{dtt,lockbox,radr,ossm}"

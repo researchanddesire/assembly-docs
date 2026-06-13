@@ -10,6 +10,7 @@ and assembled into this site automatically on every update.
 
 - **Deepthroat Trainer** — assembled from `DT_Trainer-OSS/assembly-docs/`
 - **Lockbox** — assembled from `Lockbox-OSS/assembly-docs/`
+- **RADR Wireless Remote** — assembled from `RADR-OSS/assembly-docs/`
 - **OSSM** — assembled from `ossm/assembly-docs/`
 
 ## Contributing

@@ -29,11 +29,13 @@ jobs:
         env:
           KEY_LOCKBOX: ${{ secrets.ASSEMBLE_SSH_KEY_LOCKBOX }}
           KEY_DTT: ${{ secrets.ASSEMBLE_SSH_KEY_DTT }}
+          KEY_RADR: ${{ secrets.ASSEMBLE_SSH_KEY_RADR }}
           KEY_OSSM: ${{ secrets.ASSEMBLE_SSH_KEY_OSSM }}
         run: |
           mkdir -p "$RUNNER_TEMP/assemble-keys"
           if [ -n "$KEY_LOCKBOX" ]; then printf '%s\n' "$KEY_LOCKBOX" > "$RUNNER_TEMP/assemble-keys/Lockbox-OSS"; fi
           if [ -n "$KEY_DTT" ];     then printf '%s\n' "$KEY_DTT"     > "$RUNNER_TEMP/assemble-keys/DT_Trainer-OSS"; fi
+          if [ -n "$KEY_RADR" ];    then printf '%s\n' "$KEY_RADR"    > "$RUNNER_TEMP/assemble-keys/RADR-OSS"; fi
           if [ -n "$KEY_OSSM" ];    then printf '%s\n' "$KEY_OSSM"    > "$RUNNER_TEMP/assemble-keys/ossm"; fi
           chmod 600 "$RUNNER_TEMP/assemble-keys/"* 2>/dev/null || true
 

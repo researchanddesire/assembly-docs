@@ -28,6 +28,7 @@ MkDocs Material site, following the same architecture as
 | --- | --- | --- |
 | Deepthroat Trainer | `DT_Trainer-OSS` | `docs/dtt/` |
 | Lockbox | `Lockbox-OSS` | `docs/lockbox/` |
+| RADR Wireless Remote | `RADR-OSS` | `docs/radr/` |
 | OSSM | `ossm` | `docs/ossm/` |
 
 Products whose repos don't yet have an `assembly-docs/` folder are skipped
@@ -56,6 +57,7 @@ private repo, stored as repository secrets:
 
 - `ASSEMBLE_SSH_KEY_DTT`
 - `ASSEMBLE_SSH_KEY_LOCKBOX`
+- `ASSEMBLE_SSH_KEY_RADR`
 - `ASSEMBLE_SSH_KEY_OSSM` (only if `ossm` is private)
 
 Each product repo's `trigger-assembly-docs.yml` needs a `DOCS_DISPATCH_TOKEN`
