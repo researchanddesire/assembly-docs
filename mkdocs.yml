@@ -28,6 +28,11 @@ plugins:
 extra_css:
   - stylesheets/assembly.css
 
+extra_javascript:
+  - path: https://kicanvas.org/kicanvas/kicanvas.js
+    type: module
+  - javascripts/kicanvas-full-window.js
+
 markdown_extensions:
   - admonition
   - pymdownx.details

@@ -28,6 +28,8 @@ copy_assembly_docs() {
   # Render the product's hardware/bom.csv into its bom.md (read-only on the CSV;
   # writes only the copied page between the BOM markers). See render_bom_into.
   render_bom_into "$src" "$dest" "$repo"
+  split_pcb_design_assets "$src" "$dest"
+  insert_kicanvas_pcb "$src" "$dest/pcb-design-assets.md" "$dest/assets/kicanvas"
   # Repo-relative links (../hardware/...) only work inside the product repo.
   # Rewrite them to GitHub tree/blob URLs for the unified site.
   python3 "${ROOT}/scripts/rewrite_product_links.py" "$dest" "$repo" "$branch"
@@ -70,6 +72,25 @@ render_bom_into() {
     --product "$product" --license "$license" \
     --source-prefix hardware \
     --require-markers
+}
+
+split_pcb_design_assets() {
+  local src=$1
+  local dest=$2
+  python3 "${ROOT}/scripts/split_pcb_design_assets.py" --dest "$dest"
+}
+
+insert_kicanvas_pcb() {
+  local src=$1
+  local page=$2
+  local asset_dir=$3
+  local pcb_dir
+  pcb_dir="$(cd "$src/.." && pwd)/hardware/pcb"
+
+  python3 "${ROOT}/scripts/insert_kicanvas_pcb.py" \
+    --page "$page" \
+    --pcb-dir "$pcb_dir" \
+    --asset-dir "$asset_dir"
 }
 
 # Self-contained synthetic BOM rendering demo. The real Lockbox BOM now renders

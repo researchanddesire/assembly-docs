@@ -17,4 +17,7 @@ and assembled into this site automatically on every update.
 
 To change a product's assembly docs, edit the `assembly-docs/` folder in that
 product's repository — the site rebuilds automatically. Cross-product pages
-(this page and anything under `meta/`) live in this repository.
+like this one live in this repository.
+
+For the full assembly pipeline, CI flow, BOM rendering rules, and contribution
+boundaries, see [How This Site Works](how-this-site-works.md).

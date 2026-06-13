@@ -1,0 +1,6 @@
+title: Deepthroat Trainer Assembly Docs
+nav:
+  - Overview: index.md
+  - Bill of Materials: bom.md
+  - PCB Design Assets: pcb-design-assets.md
+  - Assembly Guide: assembly-guide.md

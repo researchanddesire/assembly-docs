@@ -82,6 +82,7 @@ the rendered BOM.)
 | Chip / table structure + focus styles | `docs/stylesheets/assembly.css` |
 | BOM page (per product repo, carries the markers) | `assembly-docs/bom.md` |
 | Generated block markers | `<!-- BEGIN GENERATED BOM -->` … `<!-- END GENERATED BOM -->` |
+| PCB page / KiCanvas viewer assembly | `scripts/split_pcb_design_assets.py` + `scripts/insert_kicanvas_pcb.py` |
 
 The renderer is **read-only** on `hardware/bom.csv` and validates its header
 against the canonical [BOM schema](https://dev.researchanddesire.com/meta/bom-standard/)
@@ -96,6 +97,13 @@ per-product and can never go stale:
   `hardware/bom.csv` into the assembled `docs/{product}/bom.md` between the
   markers. Commit SHA (used for commit-pinned source links) and release status
   are auto-detected from the product checkout's git.
+- Assembly always creates or keeps `docs/{product}/pcb-design-assets.md` and
+  adds it to nav after Bill of Materials. If the BOM page has a
+  `## PCB design assets` section, that section is moved into the standalone
+  page; otherwise the standalone page says PCB assets are awaiting migration.
+- If `hardware/pcb/` contains a KiCad board file (`*.kicad_pcb`), assembly also
+  copies the board file into the assembled site and embeds a KiCanvas viewer.
+  Non-KiCad PCB sources get the standalone page without a KiCanvas render.
 - If a product's `bom.md` has no markers, or its `bom.csv` is a header-only
   template, the page is left untouched.
 

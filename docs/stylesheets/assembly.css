@@ -184,3 +184,130 @@ table.bom-table thead th {
   color: var(--md-default-fg-color--light);
 }
 .bom-footer p { margin: 0.15rem 0; }
+
+/* KiCanvas PCB preview inserted into assembled BOM pages. */
+body:has(.pcb-kicanvas) .md-main__inner.md-grid {
+  max-width: none;
+}
+
+body:has(.pcb-kicanvas) .md-content {
+  max-width: none;
+  min-width: 0;
+}
+
+body:has(.pcb-kicanvas) .md-content__inner {
+  max-width: none;
+  padding-right: 2rem;
+}
+
+body:has(.pcb-kicanvas) .md-sidebar--secondary {
+  display: none;
+}
+
+.pcb-kicanvas {
+  margin: 1rem 0 1.5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--md-default-bg-color);
+}
+
+.pcb-kicanvas-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  font-size: 0.82rem;
+}
+
+.pcb-kicanvas-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.pcb-kicanvas-actions a {
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.pcb-kicanvas-full-window {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.8rem;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-primary-fg-color);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pcb-kicanvas-full-window:focus,
+.pcb-kicanvas-full-window:hover {
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+}
+
+.pcb-kicanvas-viewer {
+  display: block;
+  width: 100%;
+  height: min(70vh, 680px);
+  min-height: 360px;
+  background: #111820;
+}
+
+.pcb-kicanvas.is-full-window {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+.pcb-kicanvas.is-full-window .pcb-kicanvas-head {
+  flex: 0 0 auto;
+  background: var(--md-default-bg-color);
+}
+
+.pcb-kicanvas.is-full-window .pcb-kicanvas-viewer {
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 0;
+}
+
+body.pcb-kicanvas-full-window-active {
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .pcb-kicanvas-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pcb-kicanvas-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pcb-kicanvas-actions a {
+    text-align: left;
+  }
+
+  .pcb-kicanvas-viewer {
+    height: 460px;
+    min-height: 320px;
+  }
+}
