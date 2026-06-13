@@ -137,14 +137,20 @@ clone_or_copy() {
   # anonymous HTTPS (works once repos are public at cutover).
   local key="${ASSEMBLE_SSH_DIR:-}/${repo}"
   if [ -n "${ASSEMBLE_SSH_DIR:-}" ] && [ -s "$key" ]; then
-    GIT_SSH_COMMAND="ssh -i '$key' -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new" \
-      git clone --depth 1 --branch "$branch" "git@github.com:researchanddesire/${repo}.git" "$WORK/$repo"
+    if ! GIT_SSH_COMMAND="ssh -i '$key' -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new" \
+      git clone --depth 1 --branch "$branch" "git@github.com:researchanddesire/${repo}.git" "$WORK/$repo"; then
+      echo "WARN: could not clone ${repo}@${branch} with deploy key — skipping"
+      return
+    fi
   else
     local clone_url="https://github.com/researchanddesire/${repo}.git"
     if [ -n "${ASSEMBLE_GITHUB_TOKEN:-}" ]; then
       clone_url="https://x-access-token:${ASSEMBLE_GITHUB_TOKEN}@github.com/researchanddesire/${repo}.git"
     fi
-    git clone --depth 1 --branch "$branch" "$clone_url" "$WORK/$repo"
+    if ! git clone --depth 1 --branch "$branch" "$clone_url" "$WORK/$repo"; then
+      echo "WARN: could not clone ${repo}@${branch} — skipping"
+      return
+    fi
   fi
   if [ -d "$WORK/$repo/assembly-docs" ]; then
     copy_assembly_docs "$WORK/$repo/assembly-docs" "$dest" "$repo" "$branch"
