@@ -17,6 +17,7 @@ copy_assembly_docs() {
   local dest=$2
   local repo=$3
   local branch=$4
+  rm -rf "$dest"
   mkdir -p "$dest"
   cp -R "$src/." "$dest/"
   # Translate the product's nav.yml (site_name + nav) into an awesome-pages
@@ -29,7 +30,7 @@ copy_assembly_docs() {
   # writes only the copied page between the BOM markers). See render_bom_into.
   render_bom_into "$src" "$dest" "$repo"
   split_pcb_design_assets "$src" "$dest"
-  insert_kicanvas_pcb "$src" "$dest/pcb-design-assets.md" "$dest/assets/kicanvas"
+  insert_kicanvas_pcb "$src" "$dest/pcb-overview.md" "$dest/assets/kicanvas"
   # Repo-relative links (../hardware/...) only work inside the product repo.
   # Rewrite them to GitHub tree/blob URLs for the unified site.
   python3 "${ROOT}/scripts/rewrite_product_links.py" "$dest" "$repo" "$branch"

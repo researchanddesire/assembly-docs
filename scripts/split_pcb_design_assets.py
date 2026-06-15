@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ensure a product has an assembled PCB Design Assets page."""
+"""Ensure a product has an assembled PCB Overview page."""
 
 from __future__ import annotations
 
@@ -11,8 +11,10 @@ from pathlib import Path
 PCB_HEADING_RE = re.compile(r"^## PCB design assets\s*$", re.MULTILINE | re.IGNORECASE)
 NEXT_H2_RE = re.compile(r"^## .+$", re.MULTILINE)
 NAV_BOM_LINE_RE = re.compile(r"^(\s*)-\s+Bill of Materials:\s+bom\.md\s*$", re.MULTILINE)
-NAV_PCB_LINE_RE = re.compile(r"^\s*-\s+PCB Design Assets:\s+pcb-design-assets\.md\s*$", re.MULTILINE)
-PLACEHOLDER = "# PCB Design Assets\n\nPCB assets are awaiting migration.\n"
+NAV_OVERVIEW_LINE_RE = re.compile(r"^(\s*)-\s+Overview:\s+index\.md\s*$", re.MULTILINE)
+NAV_OLD_PCB_LINE_RE = re.compile(r"^\s*-\s+PCB Design Assets:\s+pcb-design-assets\.md\s*$", re.MULTILINE)
+NAV_NEW_PCB_LINE_RE = re.compile(r"^\s*-\s+PCB Overview:\s+pcb-overview\.md\s*$", re.MULTILINE)
+PLACEHOLDER = "# PCB Overview\n\nPCB overview content is awaiting migration.\n"
 
 
 def split_pcb_section(bom_page: Path, pcb_page: Path) -> bool:
@@ -26,7 +28,7 @@ def split_pcb_section(bom_page: Path, pcb_page: Path) -> bool:
     section = content[match.start() : section_end].strip()
 
     updated_bom = f"{content[:match.start()].rstrip()}\n\n{content[section_end:].lstrip()}"
-    pcb_content = PCB_HEADING_RE.sub("# PCB Design Assets", section, count=1)
+    pcb_content = PCB_HEADING_RE.sub("# PCB Overview", section, count=1)
 
     bom_page.write_text(updated_bom, encoding="utf-8")
     pcb_page.write_text(f"{pcb_content}\n", encoding="utf-8")
@@ -50,15 +52,18 @@ def update_nav(pages_file: Path) -> None:
 
     lines = pages_file.read_text(encoding="utf-8").splitlines()
     lines = [line for line in lines if line.strip()]
-    lines = [line for line in lines if not NAV_PCB_LINE_RE.match(line)]
+    lines = [line for line in lines if not NAV_OLD_PCB_LINE_RE.match(line)]
+    if any(NAV_NEW_PCB_LINE_RE.match(line) for line in lines):
+        pages_file.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+        return
 
     updated: list[str] = []
     inserted = False
     for line in lines:
         updated.append(line)
-        match = NAV_BOM_LINE_RE.match(line)
+        match = NAV_OVERVIEW_LINE_RE.match(line) or NAV_BOM_LINE_RE.match(line)
         if match and not inserted:
-            updated.append(f"{match.group(1)}- PCB Design Assets: pcb-design-assets.md")
+            updated.append(f"{match.group(1)}- PCB Overview: pcb-overview.md")
             inserted = True
 
     pages_file.write_text("\n".join(updated).rstrip() + "\n", encoding="utf-8")
@@ -66,23 +71,23 @@ def update_nav(pages_file: Path) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Ensure an assembled PCB Design Assets page and nav item."
+        description="Ensure an assembled PCB Overview page and nav item."
     )
     parser.add_argument("--dest", required=True, type=Path, help="assembled product docs directory")
     args = parser.parse_args()
 
     dest = args.dest
     bom_page = dest / "bom.md"
-    pcb_page = dest / "pcb-design-assets.md"
+    pcb_page = dest / "pcb-overview.md"
 
     result = ensure_pcb_page(bom_page, pcb_page)
     update_nav(dest / ".pages")
     if result == "split":
-        print(f"Moved PCB design assets from {bom_page} to {pcb_page}")
+        print(f"Moved PCB design assets from {bom_page} to PCB overview page {pcb_page}")
     elif result == "existing":
-        print(f"Using existing PCB design assets page at {pcb_page}")
+        print(f"Using existing PCB overview page at {pcb_page}")
     else:
-        print(f"Created placeholder PCB design assets page at {pcb_page}")
+        print(f"Created placeholder PCB overview page at {pcb_page}")
     return 0
 
 
