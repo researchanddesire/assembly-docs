@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Insert a KiCanvas PCB preview into an assembled product PCB assets page.
+"""Insert a KiCanvas PCB preview into an assembled product PCB overview page.
 
 This runs on the assembled copy of a product's ``assembly-docs/bom.md``. The
 product repo remains the source of truth; this script only copies selected
@@ -17,7 +17,10 @@ from pathlib import Path
 
 BEGIN_MARKER = "<!-- BEGIN KICANVAS PCB -->"
 END_MARKER = "<!-- END KICANVAS PCB -->"
-PCB_HEADING_RE = re.compile(r"^#{1,2} PCB design assets\s*$", re.MULTILINE | re.IGNORECASE)
+PCB_HEADING_RE = re.compile(
+    r"^#{1,2} PCB (?:overview|design assets)\s*$",
+    re.MULTILINE | re.IGNORECASE,
+)
 
 COPY_PATTERNS = (
     "*.kicad_pcb",
@@ -63,7 +66,7 @@ def build_block(board_url: str, board_name: str) -> str:
 {BEGIN_MARKER}
 <div class="pcb-kicanvas" markdown="0">
   <div class="pcb-kicanvas-head">
-    <strong>PCB preview</strong>
+    <strong>KiCanvas PCB viewer</strong>
     <div class="pcb-kicanvas-actions">
       <a href="{board_url}" download>{board_name}</a>
       <button class="pcb-kicanvas-full-window" type="button" aria-expanded="false">Full window</button>
@@ -101,9 +104,9 @@ def replace_or_insert(content: str, block: str) -> str | None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Copy KiCad PCB files and insert a KiCanvas preview into a PCB assets page."
+        description="Copy KiCad PCB files and insert a KiCanvas preview into a PCB overview page."
     )
-    parser.add_argument("--page", required=True, type=Path, help="assembled PCB design assets page")
+    parser.add_argument("--page", required=True, type=Path, help="assembled PCB overview page")
     parser.add_argument("--pcb-dir", required=True, type=Path, help="product hardware/pcb directory")
     parser.add_argument(
         "--asset-dir",
@@ -136,7 +139,7 @@ def main() -> int:
     block = build_block(board_url, board.name)
     updated = replace_or_insert(content, block)
     if updated is None:
-        print(f"note: no PCB design assets section in {page} - skipping KiCanvas PCB preview")
+        print(f"note: no PCB overview section in {page} - skipping KiCanvas PCB preview")
         return 0
 
     page.write_text(updated, encoding="utf-8")

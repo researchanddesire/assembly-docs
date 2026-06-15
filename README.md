@@ -97,10 +97,11 @@ per-product and can never go stale:
   `hardware/bom.csv` into the assembled `docs/{product}/bom.md` between the
   markers. Commit SHA (used for commit-pinned source links) and release status
   are auto-detected from the product checkout's git.
-- Assembly always creates or keeps `docs/{product}/pcb-design-assets.md` and
-  adds it to nav after Bill of Materials. If the BOM page has a
-  `## PCB design assets` section, that section is moved into the standalone
-  page; otherwise the standalone page says PCB assets are awaiting migration.
+- Assembly always creates or keeps `docs/{product}/pcb-overview.md` and adds
+  it to nav. If a product nav already includes `PCB Overview`, that placement
+  is preserved. Legacy `## PCB design assets` sections from BOM pages are moved
+  into the standalone page; otherwise the standalone page says PCB overview
+  content is awaiting migration.
 - If `hardware/pcb/` contains a KiCad board file (`*.kicad_pcb`), assembly also
   copies the board file into the assembled site and embeds a KiCanvas viewer.
   Non-KiCad PCB sources get the standalone page without a KiCanvas render.
