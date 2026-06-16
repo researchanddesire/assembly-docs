@@ -8,28 +8,26 @@ MkDocs Material site, following the same architecture as
 
 ## How it works
 
-- Each product repo keeps its assembly package in `assembly-docs/` at the repo
-  root: markdown pages, an `assets/` folder of images, and a `nav.yml`
+- Each Ohai product repo opts in with the GitHub topic `ohai-assembly-docs` and
+  keeps its assembly package in `assembly-docs/` at the repo root: markdown
+  pages, an `assets/` folder of images, `site.yml` metadata, and a `nav.yml`
   (`site_name` + `nav`) describing page order.
-- `scripts/assemble-docs.sh` shallow-clones each product repo, copies
-  `assembly-docs/` into `docs/{product}/`, and translates its `nav.yml` into a
-  `.pages` file for `mkdocs-awesome-pages-plugin`.
+- `scripts/assemble-docs.sh` discovers eligible product repos, shallow-clones
+  them, stages each `assembly-docs/` package, and replaces `docs/{product}/`
+  only after that product assembles successfully.
 - `.github/workflows/deploy.yml` assembles, builds, and deploys to GitHub
   Pages on:
   - pushes to `main` touching `docs/**`, `mkdocs.yml`, or `scripts/**`
   - `repository_dispatch` events of type `assembly-docs-rebuild`, sent by each
     product repo's `trigger-assembly-docs.yml` workflow when its
-    `assembly-docs/**` changes
+    `assembly-docs/**`, BOM, PCB, or cable-source changes
   - manual `workflow_dispatch`
 
 ## Products
 
-| Product | Source repo | Site section |
-| --- | --- | --- |
-| Deepthroat Trainer | `DT_Trainer-OSS` | `docs/dtt/` |
-| Lockbox | `Lockbox-OSS` | `docs/lockbox/` |
-| RADR Wireless Remote | `RADR-OSS` | `docs/radr/` |
-| OSSM | `ossm` | `docs/ossm/` |
+Products are discovered from non-archived `researchanddesire/*` repositories
+with the `ohai-assembly-docs` topic and valid `assembly-docs/site.yml`
+metadata. Template repos and repos with unreplaced placeholders are skipped.
 
 Products whose repos don't yet have an `assembly-docs/` folder are skipped
 with a warning at assemble time.
@@ -45,20 +43,16 @@ ASSEMBLE_LOCAL="$HOME/Github" ./scripts/assemble-docs.sh
 mkdocs serve
 ```
 
-Without `ASSEMBLE_LOCAL`, the script clones each repo: via a per-repo
-read-only deploy key when `ASSEMBLE_SSH_DIR` contains one, via
-`ASSEMBLE_GITHUB_TOKEN` if set, otherwise over anonymous HTTPS (sufficient
-once the repos are public at cutover).
+Without `ASSEMBLE_LOCAL`, the script discovers topic-tagged repos through the
+GitHub API and clones them: via a per-repo read-only deploy key when
+`ASSEMBLE_SSH_DIR` contains one, via `ASSEMBLE_GITHUB_TOKEN` if set, otherwise
+over anonymous HTTPS (sufficient once the repos are public at cutover).
 
 ## Secrets
 
-While the `*-OSS` forks are private, CI needs one read-only deploy key per
-private repo, stored as repository secrets:
-
-- `ASSEMBLE_SSH_KEY_DTT`
-- `ASSEMBLE_SSH_KEY_LOCKBOX`
-- `ASSEMBLE_SSH_KEY_RADR`
-- `ASSEMBLE_SSH_KEY_OSSM` (only if `ossm` is private)
+While product repos are private, CI needs an `ASSEMBLE_GITHUB_TOKEN` secret with
+read access to the product repos so discovery can see topic-tagged private
+repos. Per-repo read-only deploy keys are still supported as a transition path.
 
 Each product repo's `trigger-assembly-docs.yml` needs a `DOCS_DISPATCH_TOKEN`
 secret — a fine-grained PAT (or org secret) with `contents: write` on this
@@ -83,6 +77,7 @@ the rendered BOM.)
 | BOM page (per product repo, carries the markers) | `assembly-docs/bom.md` |
 | Generated block markers | `<!-- BEGIN GENERATED BOM -->` … `<!-- END GENERATED BOM -->` |
 | PCB page / KiCanvas viewer assembly | `scripts/split_pcb_design_assets.py` + `scripts/insert_kicanvas_pcb.py` |
+| Cable harness source files | Product repo `hardware/cables/` |
 
 The renderer is **read-only** on `hardware/bom.csv` and validates its header
 against the canonical [BOM schema](https://dev.researchanddesire.com/meta/bom-standard/)
@@ -97,17 +92,18 @@ per-product and can never go stale:
   `hardware/bom.csv` into the assembled `docs/{product}/bom.md` between the
   markers. Commit SHA (used for commit-pinned source links) and release status
   are auto-detected from the product checkout's git.
-- Assembly always creates or keeps `docs/{product}/pcb-overview.md` and adds
-  it to nav. If a product nav already includes `PCB Overview`, that placement
-  is preserved. Legacy `## PCB design assets` sections from BOM pages are moved
-  into the standalone page; otherwise the standalone page says PCB overview
-  content is awaiting migration.
+- Product assembly packages carry `pcb-overview.md` and `cable-harnesses.md`.
+  Legacy `## PCB design assets` sections from BOM pages are still moved into the
+  standalone PCB page during assembly for migration safety.
 - If `hardware/pcb/` contains KiCad board files (`**/*.kicad_pcb`), assembly
   copies those board files into the assembled site, preserving their relative
   subfolders, and embeds KiCanvas viewer previews. Non-KiCad PCB sources get
   the standalone page without a KiCanvas render.
 - If a product's `bom.md` has no markers, or its `bom.csv` is a header-only
   template, the page is left untouched.
+- Cable harnesses are product-level BOM assemblies. Detailed child cable BOMs
+  belong to Wireviz-generated artifacts such as `.bom.tsv`, linked from the
+  assembly cable page.
 
 A self-contained **Lockbox BOM demo** (`demo/lockbox/`) validates the workflow
 end-to-end without depending on a cloned repo or fabricating real product data.
@@ -132,8 +128,9 @@ python3 scripts/render_bom.py \
 
 ### When CI runs
 
-- The site rebuilds when a product repo's `assembly-docs/**`, BOM CSVs, or
-  `hardware/pcb/**` changes (`templates/trigger-assembly-docs.yml` →
+- The site rebuilds when a product repo's `assembly-docs/**`, BOM CSVs,
+  `hardware/pcb/**`, or `hardware/cables/**` changes
+  (`templates/trigger-assembly-docs.yml` →
   `repository_dispatch` → `deploy.yml`), and on pushes to this repo's
   `docs/**` / `mkdocs.yml` / `scripts/**`.
 - On a tagged product release, `templates/generate-bom-release.yml` (a caller in
@@ -152,7 +149,7 @@ python3 scripts/render_bom.py \
 
 ## Cutover
 
-At OSS cutover, repoint the source repos via env vars in `deploy.yml`
-(e.g. `LOCKBOX_REPO=Lockbox`), set `site_url` in `mkdocs.yml` to
-`https://ohai.researchanddesire.com/`, and configure the custom domain in the
-Pages settings.
+At OSS cutover, add the `ohai-assembly-docs` topic to the canonical public
+product repos, remove it from superseded private forks, set `site_url` in
+`mkdocs.yml` to `https://ohai.researchanddesire.com/`, and configure the custom
+domain in the Pages settings.

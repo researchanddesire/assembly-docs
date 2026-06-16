@@ -1,10 +1,11 @@
-# Research and Desire — Assembly Docs
+# Research and Desire - Assembly Docs
 
 Unified assembly documentation for Research and Desire hardware products.
 
-Each product's assembly package (bill of materials, assembly guide, and
-supporting images) is maintained in its own repository under `assembly-docs/`
-and assembled into this site automatically on every update.
+Each product's assembly package (bill of materials, assembly guide, cable
+harness notes, PCB overview, and supporting images) is maintained in its own
+repository under `assembly-docs/` and assembled into this site automatically on
+every update.
 
 ## Products
 
@@ -16,8 +17,7 @@ and assembled into this site automatically on every update.
 ## Contributing
 
 To change a product's assembly docs, edit the `assembly-docs/` folder in that
-product's repository — the site rebuilds automatically. Cross-product pages
-like this one live in this repository.
+product's repository. Cross-product pages like this one live in this repository.
 
 For the full assembly pipeline, CI flow, BOM rendering rules, and contribution
 boundaries, see [How This Site Works](how-this-site-works.md).

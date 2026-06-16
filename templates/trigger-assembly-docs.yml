@@ -13,9 +13,13 @@ on:
       - 'assembly-docs/**'
       # The assembly-docs site renders BOM CSVs into BOM pages at build time,
       # so any BOM data change must rebuild the site too.
+      - 'hardware/bom.csv'
       - '**/bom.csv'
       # KiCad board files are copied into the site for KiCanvas previews.
       - 'hardware/pcb/**'
+      # Wireviz cable harness sources and generated release links belong on
+      # assembly docs cable pages.
+      - 'hardware/cables/**'
 
 jobs:
   dispatch:

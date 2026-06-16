@@ -36,7 +36,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from bom_categories import color_for, label_for, text_color_for
+from bom_categories import CATEGORIES, color_for, label_for, text_color_for
 
 # --- Canonical schema (display headers, in order) -----------------------------
 # Mirrors dev-docs schemas/bom.schema.json. Field names are the machine
@@ -196,7 +196,17 @@ def load_bom(bom_path: Path) -> list[dict[str, str]]:
                     f"error: row has {len(raw)} columns, expected {len(FIELDS)}:\n"
                     f"  {raw}"
                 )
-            rows.append(dict(zip(FIELDS, raw)))
+            row = dict(zip(FIELDS, raw))
+            category = row["category"].strip().upper()
+            if category not in CATEGORIES:
+                raise SystemExit(
+                    "error: BOM category does not match the canonical RAD BOM enum.\n"
+                    "This renderer must not invent fallback categories -- fix "
+                    f"hardware/bom.csv\n  line item: {row['line_item']}\n"
+                    f"  category:  {row['category']}"
+                )
+            row["category"] = category
+            rows.append(row)
     return rows
 
 

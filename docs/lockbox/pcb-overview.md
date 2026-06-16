@@ -1,10 +1,11 @@
-# PCB Design Assets
-The source PCB design files live in [`hardware/pcb/`](https://github.com/researchanddesire/Lockbox-OSS/tree/main/hardware/pcb). The detailed PCB component BOM (EBOM) is tracked there and linked from the `Lockbox PCBA` line above.
+# PCB Overview
+
+The Lockbox PCB is the control and power distribution board for the device. It carries the ESP32-S3 control electronics, motor driver interface, battery and USB power path, magnetic position sensing, rotary encoder inputs, button inputs, and TFT display connection.
 
 <!-- BEGIN KICANVAS PCB -->
 <div class="pcb-kicanvas" markdown="0">
   <div class="pcb-kicanvas-head">
-    <strong>PCB preview</strong>
+    <strong>KiCanvas PCB viewer</strong>
     <div class="pcb-kicanvas-actions">
       <a href="assets/kicanvas/LockBox.kicad_pcb" download>LockBox.kicad_pcb</a>
       <button class="pcb-kicanvas-full-window" type="button" aria-expanded="false">Full window</button>
@@ -12,7 +13,20 @@ The source PCB design files live in [`hardware/pcb/`](https://github.com/researc
   </div>
   <kicanvas-embed class="pcb-kicanvas-viewer" src="assets/kicanvas/LockBox.kicad_pcb" controls="full"></kicanvas-embed>
 </div>
+
 <!-- END KICANVAS PCB -->
+
+## Electrical architecture
+
+| Area | Role |
+| ---- | ---- |
+| `battery_and_power.kicad_sch` | Battery input, USB power detection, charging/power regulation, and current-sense support |
+| `mcu_and_ui.kicad_sch` | ESP32-S3, rotary encoder, button inputs, display interface, and user-facing controls |
+| `mag_sensors.kicad_sch` | Hall/TMR magnetic sensing used to detect the backplate and latch position |
+| `motor.kicad_sch` | DC motor output and motor connector |
+| `screen.kicad_sch` | TFT display connector and supporting display signals |
+
+## PCB source files
 
 | Asset | Link |
 | ----- | ---- |
@@ -27,3 +41,7 @@ The source PCB design files live in [`hardware/pcb/`](https://github.com/researc
 | Latest production Gerbers | [`production/v1.4/LockBox_V1.4.zip`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/pcb/production/v1.4/LockBox_V1.4.zip) |
 | Latest production PCB BOM | [`production/v1.4/bom_v1.4.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/pcb/production/v1.4/bom_v1.4.csv) |
 | Latest production positions | [`production/v1.4/positions_v1.4.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/pcb/production/v1.4/positions_v1.4.csv) |
+
+## Production package
+
+The current production output referenced by these assembly docs is v1.4. Older v1.2/v1.3 production export bundles were removed from the OSS repo so the public hardware package points at the current production assets.

@@ -6,8 +6,6 @@ hide:
 
 The Lockbox uses a custom printed PCB with additional off-board components including a display, battery, motor, encoder, buttons, and magnets.
 
-![Lockbox electronics overview](assets/electronics-overview.png)
-
 ## Parts
 
 This parts list is generated from [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) during the assembly-docs build — do not edit the table below by hand. Update the CSV instead. Parts are referenced throughout the [Assembly Guide](assembly-guide.md).
@@ -329,6 +327,7 @@ This parts list is generated from [`hardware/bom.csv`](https://github.com/resear
 </footer>
 </section>
 <!-- END GENERATED BOM -->
+
 
 ## Assembly tools and shop supplies
 

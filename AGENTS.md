@@ -3,6 +3,29 @@
 Guidance for future agents working in the `assembly-docs` aggregator repo,
 especially on BOM rendering.
 
+## Ohai product inclusion is topic-gated
+
+- The public Ohai assembly site includes product repos discovered under the
+  `researchanddesire` org with the GitHub topic `ohai-assembly-docs`.
+- Never include template repos or repos with unreplaced placeholders such as
+  `PRODUCT_NAME`, `PRODUCT_REPO`, `PRODUCT_SLUG`, or `PRODUCT_LICENSE`.
+- An Ohai-eligible product repo must have a real `assembly-docs/site.yml` with
+  `slug`, `title`, `license`, and integer `nav_order`.
+- Do not add the `ohai-assembly-docs` topic to a product repo until its
+  assembly package has real metadata and local assembly/build checks pass.
+
+## Product hardware source contract
+
+Product repos use these hardware source folders:
+
+- `hardware/cad/` for mechanical source files and release exports.
+- `hardware/pcb/` for PCB source files, fabrication notes, and production
+  exports.
+- `hardware/cables/` for Wireviz harness source files.
+
+Assembly docs should expose PCB and cable/harness source artifacts when they
+exist. Do not treat `hardware/cables/` as OSSM-only.
+
 ## BOM rendering is assembly-docs only
 
 The rendered HTML Bill of Materials belongs **only** in the product
@@ -26,6 +49,9 @@ workflow (see the README), but must not contain the rendered BOM itself.
   markers. Because the block is generated at build time and never committed
   per-product, it cannot go stale.
 - `docs/{dtt,lockbox,ossm,...}/` are **CI-assembled** — never hand-edit them.
+- Product assembly must stage output first and only replace `docs/{product}/`
+  after that product assembles successfully. If a product fails, warn and keep
+  the existing published copy rather than deleting it.
 
 ## Generated BOM blocks use stable markers
 
@@ -42,18 +68,30 @@ workflow (see the README), but must not contain the rendered BOM itself.
 - The canonical BOM schema (fixed 12-column header + closed category-code enum)
   is owned by `dev-docs` (`docs/meta/bom-standard.md` + `schemas/bom.schema.json`).
 - `scripts/render_bom.py` **validates** the header and refuses to render a
-  non-conforming BOM. Do not invent, rename, reorder, or drop fields.
+  non-conforming BOM. It must also reject unknown category codes. Do not invent,
+  rename, reorder, or drop fields.
 - The category code → label → colour map lives in **one** reusable source,
   `scripts/bom_categories.py`. Chip colours are emitted inline from there; the
   matching structure/focus CSS lives in `docs/stylesheets/assembly.css`. Do not
   duplicate the colour map in CSS.
 
+## Cable BOMs stay Wireviz-owned
+
+- Product-level `hardware/bom.csv` lists cable harnesses as top-level assembly
+  line items.
+- A harness BOM `Source` should point to the Wireviz source, for example
+  `cables/OSSM-Motor-Control-Harness.yml`, relative to `hardware/`.
+- Detailed cable BOMs belong to Wireviz-generated output such as `.bom.tsv`
+  artifacts. Link those artifacts from assembly docs; do not copy child cable
+  BOM rows into the product-level BOM or rendered assembly prose.
+
 ## CI / triggers
 
 - The site rebuilds via `.github/workflows/deploy.yml` (push to `docs/**`,
-  `mkdocs.yml`, `scripts/**`; `repository_dispatch`; manual).
-- Product repos trigger a rebuild on `assembly-docs/**` **and** `hardware/bom.csv`
-  changes via `templates/trigger-assembly-docs.yml`.
+  `mkdocs.yml`, `scripts/**`; `repository_dispatch`; manual; scheduled).
+- Product repos trigger a rebuild on `assembly-docs/**`, BOM CSVs,
+  `hardware/pcb/**`, and `hardware/cables/**` changes via
+  `templates/trigger-assembly-docs.yml`.
 - On tagged product releases, `templates/generate-bom-release.yml` (caller) +
   `.github/workflows/bom-release.yml` (reusable) produce a standalone `bom.html`
   artifact when no committed `bom.html` exists.

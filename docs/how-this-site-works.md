@@ -31,13 +31,17 @@ flowchart TD
     AssembledDocs --> Site
 ```
 
-Each product repository contributes:
+Each Ohai-eligible product repository contributes:
 
 - `assembly-docs/`: Markdown pages for the product assembly guide.
 - `assembly-docs/assets/`: Product images and other page assets.
+- `assembly-docs/site.yml`: Product slug, title, license, and nav order.
 - `assembly-docs/nav.yml`: Product-local page order and section title.
 - `hardware/bom.csv`: The human-owned bill of materials source data.
-- Optional PCB source files under `hardware/pcb/`.
+- Hardware source folders under `hardware/cad/`, `hardware/pcb/`, and
+  `hardware/cables/`.
+- GitHub topic `ohai-assembly-docs` after placeholders are replaced and local
+  assembly/build checks pass.
 
 This repository contributes:
 
@@ -60,6 +64,7 @@ flowchart TD
     Checkout["Checkout this repo"]
     Keys["Write optional read-only deploy keys"]
     Assemble["Run scripts/assemble-docs.sh"]
+    Discover["Discover local or topic-tagged product repos"]
     Clone["Clone or use local product repos"]
     Copy["Copy each assembly-docs/ folder"]
     Nav["Convert nav.yml to .pages"]
@@ -71,13 +76,14 @@ flowchart TD
     Publish["Deploy GitHub Pages"]
 
     Start --> Checkout --> Keys --> Assemble
-    Assemble --> Clone --> Copy --> Nav --> Bom --> Pcb --> Links
+    Assemble --> Discover --> Clone --> Copy --> Nav --> Bom --> Pcb --> Links
     Links --> Build --> Upload --> Publish
 ```
 
-The assembler writes into `docs/{product}/` during the build. Those product
-folders are assembled output, so avoid hand-editing them. Change product docs in
-the source product repo instead.
+The assembler stages each product first, then replaces `docs/{product}/` only
+after that product assembles successfully. Those product folders are assembled
+output, so avoid hand-editing them. Change product docs in the source product
+repo instead.
 
 Locally, you can run the same assembly process against nearby checkouts:
 
@@ -87,9 +93,11 @@ ASSEMBLE_LOCAL="$HOME/Github" ./scripts/assemble-docs.sh
 mkdocs serve
 ```
 
-Without `ASSEMBLE_LOCAL`, the assembler clones the configured repos. In CI it
-prefers per-repo read-only deploy keys when present, then token-based cloning,
-then anonymous HTTPS for public repos.
+Without `ASSEMBLE_LOCAL`, the assembler discovers non-archived
+`researchanddesire/*` repos with the `ohai-assembly-docs` topic. In CI it uses
+`ASSEMBLE_GITHUB_TOKEN` for private discovery/cloning when set, prefers per-repo
+read-only deploy keys when present, then falls back to anonymous HTTPS for
+public repos.
 
 ## CI triggers
 
@@ -98,7 +106,7 @@ The main deploy workflow lives at `.github/workflows/deploy.yml`.
 ```mermaid
 flowchart TD
     ProductPush["Product repo push to main"]
-    ProductPaths["assembly-docs/** or hardware/bom.csv changed"]
+    ProductPaths["assembly-docs/**, BOM, PCB, or cable source changed"]
     TriggerWorkflow["Product trigger-assembly-docs.yml"]
     Dispatch["repository_dispatch: assembly-docs-rebuild"]
     RepoPush["Push to this repo main"]
@@ -115,14 +123,16 @@ flowchart TD
 
 Product repos should copy `templates/trigger-assembly-docs.yml` to
 `.github/workflows/trigger-assembly-docs.yml` and replace `<PRODUCT_REPO>` with
-their repository name. That workflow needs a `DOCS_DISPATCH_TOKEN` secret with
-permission to send a repository dispatch to this repo.
+their repository name. That workflow watches `assembly-docs/**`, BOM CSVs,
+`hardware/pcb/**`, and `hardware/cables/**`. It needs a `DOCS_DISPATCH_TOKEN`
+secret with permission to send a repository dispatch to this repo.
 
 The deploy workflow:
 
 1. Checks out this repo.
 2. Writes any configured read-only deploy keys into the runner temp directory.
-3. Runs `scripts/assemble-docs.sh`.
+3. Runs `scripts/assemble-docs.sh`, which discovers topic-tagged products and
+   stages each product before replacing published output.
 4. Installs the MkDocs dependencies from `requirements.txt`.
 5. Runs `mkdocs build`.
 6. Uploads the generated `site/` directory as a Pages artifact.
@@ -167,6 +177,19 @@ the renderer skips it rather than blanking the page.
 The rendered BOM belongs only on this assembly-docs site. Developer docs may
 document the BOM workflow, but should not embed the rendered BOM table.
 
+## Cable harnesses
+
+Cable harness source files belong under product repo `hardware/cables/`.
+Wireviz-generated child BOMs belong to release/build artifacts such as
+`.bom.tsv` files.
+
+Product-level `hardware/bom.csv` lists cable harnesses as top-level assemblies.
+When a harness has Wireviz source, the product BOM `Source` should point to the
+source path relative to `hardware/`, for example
+`cables/OSSM-Motor-Control-Harness.yml`. Assembly cable pages link to generated
+diagrams and child BOM artifacts instead of copying cable child rows into the
+product-level BOM.
+
 ## Release BOM artifacts
 
 Tagged product releases can also generate a standalone `bom.html` artifact.
@@ -201,9 +224,11 @@ Use this rule of thumb: edit content where it is owned.
 
 | Change | Edit here |
 | --- | --- |
-| Product assembly steps, product images, product BOM page text | Product repo `assembly-docs/` |
+| Product assembly steps, product images, product BOM page text, PCB overview, cable pages | Product repo `assembly-docs/` |
 | Product BOM data | Product repo `hardware/bom.csv` |
 | Product assembly nav order | Product repo `assembly-docs/nav.yml` |
+| Product metadata for Ohai discovery | Product repo `assembly-docs/site.yml` |
+| CAD, PCB, cable source artifacts | Product repo `hardware/cad/`, `hardware/pcb/`, `hardware/cables/` |
 | Site homepage or cross-product site docs | This repo `docs/` outside product folders |
 | Assembly pipeline behavior | This repo `scripts/` |
 | Shared site styling | This repo `docs/stylesheets/assembly.css` |
@@ -217,6 +242,8 @@ Do:
 - Keep `hardware/bom.csv` human-owned and schema-compliant.
 - Include `<!-- BEGIN GENERATED BOM -->` and `<!-- END GENERATED BOM -->` in a
   product `assembly-docs/bom.md` when that page is ready for generated content.
+- Keep `assembly-docs/site.yml` real and placeholder-free before adding the
+  `ohai-assembly-docs` topic.
 - Test site changes locally with `ASSEMBLE_LOCAL="$HOME/Github" ./scripts/assemble-docs.sh`
   and `mkdocs serve`.
 - Treat `scripts/bom_categories.py` as the single source for BOM category labels
@@ -228,7 +255,10 @@ Do not:
 
 - Hand-edit `docs/dtt/`, `docs/lockbox/`, `docs/radr/`, `docs/ossm/`, or other assembled
   product folders.
+- Add `ohai-assembly-docs` to template repos or repos with `PRODUCT_*`
+  placeholders.
 - Commit generated BOM blocks back to product repos.
+- Copy Wireviz child cable BOM rows into the product-level BOM.
 - Change the BOM schema in this repo.
 - Duplicate the BOM category color map in CSS.
 - Add rendered assembly BOM tables to developer docs.
@@ -237,17 +267,21 @@ Do not:
 ## Adding a new product
 
 1. Add an `assembly-docs/` folder to the product repo.
-2. Add `assembly-docs/nav.yml` with the product title and page order.
-3. Put page images and supporting files under `assembly-docs/assets/`.
-4. Add a BOM page with the generated BOM markers if the product has a BOM.
-5. Add or validate `hardware/bom.csv` against the canonical BOM schema.
-6. Copy the trigger workflow template into the product repo.
-7. Add the product repo, branch, and destination path to `scripts/assemble-docs.sh`.
-8. Confirm `mkdocs build` passes after assembly.
+2. Add `assembly-docs/site.yml` with real `slug`, `title`, `license`, and
+   integer `nav_order`.
+3. Add `assembly-docs/nav.yml` with `site_name` and the standard page order.
+4. Include `index.md`, `pcb-overview.md`, `cable-harnesses.md`, `bom.md`, and
+   `assembly-guide.md`.
+5. Put page images and supporting files under `assembly-docs/assets/`.
+6. Add or validate `hardware/bom.csv` against the canonical BOM schema.
+7. Keep `hardware/cad/`, `hardware/pcb/`, and `hardware/cables/` present.
+8. Copy the trigger workflow template into the product repo.
+9. Confirm local assembly and `mkdocs build --strict` pass.
+10. Add the `ohai-assembly-docs` topic to opt into the site.
 
-For private repos, add a read-only deploy key secret to this repo and teach the
-deploy workflow to write that key for the product. Once repos are public,
-anonymous HTTPS cloning is enough.
+For private repos, configure `ASSEMBLE_GITHUB_TOKEN` with read access to the
+product repos. Per-repo read-only deploy keys remain supported during
+transition. Once repos are public, anonymous HTTPS cloning is enough.
 
 ## Troubleshooting
 
@@ -259,3 +293,4 @@ anonymous HTTPS cloning is enough.
 | Images are missing | Are assets under `assembly-docs/assets/`, and are page links relative to the product docs package? |
 | Product-relative source links are broken | Check `scripts/rewrite_product_links.py` and the product repo/branch configuration in `scripts/assemble-docs.sh`. |
 | KiCanvas did not appear | Confirm a `*.kicad_pcb` file exists under the product repo's `hardware/pcb/`. |
+| Product was skipped by discovery | Confirm `ohai-assembly-docs` topic, non-placeholder `assembly-docs/site.yml`, and required assembly/hardware paths. |
