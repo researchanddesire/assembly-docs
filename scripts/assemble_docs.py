@@ -202,6 +202,11 @@ def github_json(url: str) -> dict:
 
 
 def discover_remote() -> tuple[list[Product], list[str]]:
+    if not github_token():
+        return [], [
+            "ASSEMBLE_GITHUB_TOKEN is not set; skipped remote topic discovery "
+            "to avoid assembling only public products"
+        ]
     query = urllib.parse.quote(f"org:{ORG} topic:{TOPIC} archived:false")
     url = f"https://api.github.com/search/repositories?q={query}&per_page=100"
     try:
