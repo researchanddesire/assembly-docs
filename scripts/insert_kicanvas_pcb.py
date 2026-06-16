@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Insert a KiCanvas PCB preview into an assembled product PCB overview page.
+"""Insert KiCanvas PCB previews into an assembled product PCB overview page.
 
-This runs on the assembled copy of a product's ``assembly-docs/bom.md``. The
+This runs on the assembled copy of a product's PCB overview page. The
 product repo remains the source of truth; this script only copies selected
 ``hardware/pcb`` files into the generated site and updates the assembled page
 between stable markers.
@@ -10,6 +10,7 @@ between stable markers.
 from __future__ import annotations
 
 import argparse
+import html
 import shutil
 import re
 from pathlib import Path
@@ -21,59 +22,67 @@ PCB_HEADING_RE = re.compile(
     r"^#{1,2} PCB (?:overview|design assets)\s*$",
     re.MULTILINE | re.IGNORECASE,
 )
-
-COPY_PATTERNS = (
-    "*.kicad_pcb",
+PLACEHOLDER_TEXTS = (
+    "PCB overview content is awaiting migration.",
+    "PCB assets are awaiting migration.",
 )
-
+GENERATED_INTRO = "KiCanvas previews are generated from KiCad board files under `hardware/pcb/`."
 
 def rel_url(path: Path, start: Path) -> str:
     return path.relative_to(start).as_posix()
 
 
-def copy_kicad_assets(pcb_dir: Path, asset_dir: Path) -> list[Path]:
-    files: list[Path] = []
-    for pattern in COPY_PATTERNS:
-        files.extend(sorted(pcb_dir.glob(pattern)))
+def discover_boards(pcb_dir: Path) -> list[Path]:
+    return sorted(path for path in pcb_dir.rglob("*.kicad_pcb") if path.is_file())
 
-    if not files:
-        return []
 
-    asset_dir.mkdir(parents=True, exist_ok=True)
-    copied: list[Path] = []
-    for source in files:
-        target = asset_dir / source.name
+def copy_kicad_assets(sources: list[Path], targets: list[Path]) -> None:
+    for source, target in zip(sources, targets, strict=True):
+        target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, target)
-        copied.append(target)
-    return copied
 
 
-def choose_board(copied: list[Path], preferred_name: str | None) -> Path | None:
-    boards = sorted(path for path in copied if path.suffix == ".kicad_pcb")
+def choose_boards(boards: list[Path], preferred_name: str | None, pcb_dir: Path) -> list[Path]:
     if not boards:
-        return None
+        return []
 
     if preferred_name:
         for board in boards:
-            if board.name == preferred_name:
-                return board
+            rel = board.relative_to(pcb_dir).as_posix()
+            if board.name == preferred_name or rel == preferred_name:
+                return [board]
 
-    return boards[0]
+    return boards
 
 
-def build_block(board_url: str, board_name: str) -> str:
+def build_viewer(board_url: str, board_name: str, index: int, count: int) -> str:
+    label = "KiCanvas PCB viewer" if count == 1 else f"KiCanvas PCB viewer {index}: {board_name}"
+    escaped_label = html.escape(label)
+    escaped_name = html.escape(board_name)
+    escaped_url = html.escape(board_url, quote=True)
     return f"""\
-{BEGIN_MARKER}
 <div class="pcb-kicanvas" markdown="0">
   <div class="pcb-kicanvas-head">
-    <strong>KiCanvas PCB viewer</strong>
+    <strong>{escaped_label}</strong>
     <div class="pcb-kicanvas-actions">
-      <a href="{board_url}" download>{board_name}</a>
+      <a href="{escaped_url}" download>{escaped_name}</a>
       <button class="pcb-kicanvas-full-window" type="button" aria-expanded="false">Full window</button>
     </div>
   </div>
-  <kicanvas-embed class="pcb-kicanvas-viewer" src="{board_url}" controls="full"></kicanvas-embed>
+  <kicanvas-embed class="pcb-kicanvas-viewer" src="{escaped_url}" controls="full"></kicanvas-embed>
 </div>
+"""
+
+
+def build_block(boards: list[Path], page_dir: Path) -> str:
+    viewers = [
+        build_viewer(rel_url(board, page_dir), board.name, index, len(boards))
+        for index, board in enumerate(boards, start=1)
+    ]
+    rendered_viewers = "\n".join(viewers)
+    return f"""\
+{BEGIN_MARKER}
+{rendered_viewers}
 {END_MARKER}
 """
 
@@ -96,10 +105,20 @@ def replace_or_insert(content: str, block: str) -> str | None:
 
     paragraph_end = content.find("\n\n", paragraph_start)
     if paragraph_end == -1:
-        return None
+        paragraph_end = len(content)
 
-    insert_at = paragraph_end + 2
-    return f"{content[:insert_at].rstrip()}\n\n{block.rstrip()}\n\n{content[insert_at:].lstrip()}"
+    paragraph = content[paragraph_start:paragraph_end].strip()
+    if paragraph in PLACEHOLDER_TEXTS:
+        prefix = f"{content[:heading.end()].rstrip()}\n\n{GENERATED_INTRO}"
+        suffix = content[paragraph_end:].lstrip()
+    else:
+        insert_at = min(paragraph_end + 2, len(content))
+        prefix = content[:insert_at].rstrip()
+        suffix = content[insert_at:].lstrip()
+
+    if suffix:
+        return f"{prefix}\n\n{block.rstrip()}\n\n{suffix}"
+    return f"{prefix}\n\n{block.rstrip()}\n"
 
 
 def main() -> int:
@@ -128,22 +147,24 @@ def main() -> int:
         print(f"note: {pcb_dir} not found - skipping KiCanvas PCB preview")
         return 0
 
-    copied = copy_kicad_assets(pcb_dir, asset_dir)
-    board = choose_board(copied, args.board)
-    if board is None:
+    discovered = discover_boards(pcb_dir)
+    boards = choose_boards(discovered, args.board, pcb_dir)
+    if not boards:
         print(f"note: no .kicad_pcb files in {pcb_dir} - skipping KiCanvas PCB preview")
         return 0
 
+    target_boards = [asset_dir / board.relative_to(pcb_dir) for board in boards]
     content = page.read_text(encoding="utf-8")
-    board_url = rel_url(board, page.parent)
-    block = build_block(board_url, board.name)
+    block = build_block(target_boards, page.parent)
     updated = replace_or_insert(content, block)
     if updated is None:
         print(f"note: no PCB overview section in {page} - skipping KiCanvas PCB preview")
         return 0
 
+    copy_kicad_assets(boards, target_boards)
     page.write_text(updated, encoding="utf-8")
-    print(f"Inserted KiCanvas PCB preview for {board.name} into {page}")
+    board_names = ", ".join(board.name for board in boards)
+    print(f"Inserted KiCanvas PCB preview for {board_names} into {page}")
     return 0
 
 

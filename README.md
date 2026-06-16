@@ -102,9 +102,10 @@ per-product and can never go stale:
   is preserved. Legacy `## PCB design assets` sections from BOM pages are moved
   into the standalone page; otherwise the standalone page says PCB overview
   content is awaiting migration.
-- If `hardware/pcb/` contains a KiCad board file (`*.kicad_pcb`), assembly also
-  copies the board file into the assembled site and embeds a KiCanvas viewer.
-  Non-KiCad PCB sources get the standalone page without a KiCanvas render.
+- If `hardware/pcb/` contains KiCad board files (`**/*.kicad_pcb`), assembly
+  copies those board files into the assembled site, preserving their relative
+  subfolders, and embeds KiCanvas viewer previews. Non-KiCad PCB sources get
+  the standalone page without a KiCanvas render.
 - If a product's `bom.md` has no markers, or its `bom.csv` is a header-only
   template, the page is left untouched.
 
@@ -131,8 +132,8 @@ python3 scripts/render_bom.py \
 
 ### When CI runs
 
-- The site rebuilds when a product repo's `assembly-docs/**` **or**
-  `hardware/bom.csv` changes (`templates/trigger-assembly-docs.yml` →
+- The site rebuilds when a product repo's `assembly-docs/**`, BOM CSVs, or
+  `hardware/pcb/**` changes (`templates/trigger-assembly-docs.yml` →
   `repository_dispatch` → `deploy.yml`), and on pushes to this repo's
   `docs/**` / `mkdocs.yml` / `scripts/**`.
 - On a tagged product release, `templates/generate-bom-release.yml` (a caller in
