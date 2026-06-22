@@ -13,10 +13,22 @@ use_directory_urls: false
 
 theme:
   name: material
+  logo: assets/rad-logo.png
+  favicon: assets/favicon.png
+  font: false
   palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
     - scheme: default
-      primary: teal
-      accent: cyan
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
 
 hooks:
   - scripts/mkdocs_hooks.py
