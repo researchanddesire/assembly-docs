@@ -1,0 +1,41 @@
+---
+title: "11. First Test"
+description: "Verify homing and motion at low speed after assembly."
+---
+{/* Migrated from: https://docs.researchanddesire.com/ossm/guides/getting-started/build-guide/step-12.0_initial_test */}
+
+# Before applying power
+
+- Secure the actuator to its standard mount.
+- Leave at least 200 mm of clear travel in front of the end effector.
+- Check every fastener, belt alignment, tensioner, connector, and power terminal.
+- Keep hands, hair, clothing, tools, and cables away from moving parts.
+- Put the stop control within immediate reach.
+
+<Warning>
+  Do not test an unsecured actuator. Disconnect power immediately if motion is reversed, obstructed, unstable, or unexpectedly forceful.
+</Warning>
+
+# Test homing
+
+1. Set the controller speed to zero.
+2. Connect the official wired remote, or power on a charged RADR nearby.
+3. Connect the 24 V power supply.
+4. Stand clear and watch the complete homing movement.
+5. Disconnect power if the carriage moves toward an obstruction, binds, or moves in the wrong direction.
+
+# Test a short stroke
+
+1. After homing completes, select the simplest motion mode.
+2. Set a short depth.
+3. Increase speed only enough to confirm smooth motion.
+4. Stop and verify the stop control halts motion.
+5. Disconnect power and inspect the belt, pulley, fasteners, and wiring once more.
+
+<Check>
+  The OSSM homes in the correct direction, moves smoothly without belt skipping or rubbing, and stops immediately from the controller.
+</Check>
+
+If any check fails, use [Assembly Troubleshooting](/ossm/assembly-troubleshooting) before applying power again.
+
+[← Wiring](/ossm/build/wiring) · [Use your OSSM →](https://docs.researchanddesire.com/ossm/get-started)
