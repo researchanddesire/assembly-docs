@@ -1,0 +1,10 @@
+{
+  "title": "RADR Wireless Remote",
+  "pages": [
+    "index",
+    "assembly-guide",
+    "bill-of-materials",
+    "cable-harnesses",
+    "pcb-overview"
+  ]
+}
