@@ -1,10 +1,31 @@
 ---
 title: R+D Assembly
-description: Official build instructions for supported R+D hardware.
+description: Official build instructions for supported Research and Desire hardware.
 ---
 
 # Official assembly guides
 
-Use these instructions to build the standard [OSSM actuator](/ossm). Each stage includes the parts, procedure, checkpoint, and direct link to the next stage.
+Choose a device to open its assembly guide, bill of materials, cable information, PCB references, and supporting images.
 
-Already have a ready-to-play OSSM? Use the [OSSM User Guide](https://docs.researchanddesire.com/ossm/get-started).
+<CardGroup cols={2}>
+  <Card title="Deepthroat Trainer" href="/dtt">
+    Assembly guide, BOM, PCB overview, and cable harness notes.
+  </Card>
+  <Card title="Lockbox" href="/lockbox">
+    Mechanical build steps, electronics routing, BOM, and PCB context.
+  </Card>
+  <Card title="OSSM" href="/ossm">
+    Ordered actuator build instructions and hardware source references.
+  </Card>
+  <Card title="RADR Wireless Remote" href="/radr">
+    Remote assembly workflow with production images and source links.
+  </Card>
+</CardGroup>
+
+<Info title="Public contributions">
+  Content is mirrored through reviewed pull requests with
+  [researchanddesire/assembly-docs](https://github.com/researchanddesire/assembly-docs).
+  The application and Fumadocs components remain in rad-app.
+</Info>
+
+The [legacy MkDocs pipeline](./legacy-mkdocs-pipeline.mdx) is retained as historical migration reference.

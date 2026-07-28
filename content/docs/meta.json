@@ -1,4 +1,4 @@
 {
   "title": "R+D Assembly",
-  "pages": ["index", "ossm"]
+  "pages": ["index", "dtt", "lockbox", "ossm", "radr", "legacy-mkdocs-pipeline"]
 }

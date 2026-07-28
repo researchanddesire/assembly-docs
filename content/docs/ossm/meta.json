@@ -1,4 +1,13 @@
 {
   "title": "OSSM",
-  "pages": ["index", "build", "assembly-troubleshooting"]
+  "pages": [
+    "index",
+    "build",
+    "assembly-troubleshooting",
+    "hardware-package",
+    "release-status",
+    "product-bom",
+    "cable-harnesses",
+    "pcb-overview"
+  ]
 }
