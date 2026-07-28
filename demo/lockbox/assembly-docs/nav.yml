@@ -1,0 +1,4 @@
+site_name: Chastity Lockbox (BOM demo)
+nav:
+  - Overview: index.md
+  - Bill of Materials: bom.md
