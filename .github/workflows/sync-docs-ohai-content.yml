@@ -1,0 +1,53 @@
+name: Request RadApp Ohai Import
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+    paths:
+      - "content/**"
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Branch to synchronize
+        required: true
+        default: staging
+        type: choice
+        options:
+          - staging
+          - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: request-rad-app-ohai-import-${{ github.event_name == 'push' && github.ref_name || inputs.branch }}
+  cancel-in-progress: false
+
+jobs:
+  request-import:
+    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[docs-sync]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      SYNC_BRANCH: ${{ github.event_name == 'push' && github.ref_name || inputs.branch }}
+    steps:
+      - name: Verify sync credential
+        env:
+          DOCS_SYNC_TOKEN: ${{ secrets.DOCS_SYNC_TOKEN }}
+        run: |
+          if [ -z "$DOCS_SYNC_TOKEN" ]; then
+            echo "::error::DOCS_SYNC_TOKEN is required to request a RadApp import."
+            exit 1
+          fi
+
+      - name: Request matching RadApp import
+        env:
+          GH_TOKEN: ${{ secrets.DOCS_SYNC_TOKEN }}
+        run: |
+          gh workflow run import-docs-content.yml \
+            --repo researchanddesire/rad-app \
+            --ref "$SYNC_BRANCH" \
+            --field site=ohai \
+            --field branch="$SYNC_BRANCH"
