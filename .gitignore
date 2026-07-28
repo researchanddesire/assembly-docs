@@ -1,2 +1,7 @@
-.DS_Store
-node_modules/
+site/
+dist/
+.assemble-work/
+.venv/
+__pycache__/
+# Assembled BOM demo output (derived from demo/ at assemble time).
+docs/lockbox-demo/

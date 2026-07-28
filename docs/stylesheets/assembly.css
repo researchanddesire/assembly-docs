@@ -1,0 +1,616 @@
+/* RAD docs theme: based on the Community Mods visual system, with light mode. */
+
+:root {
+  --rad-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --rad-radius: 8px;
+  --rad-accent: #129fa7;
+  --rad-accent-strong: #21c7c7;
+  --rad-card: #ffffff;
+  --rad-card-soft: #eef6f7;
+  --rad-border: #d5e2e6;
+  --rad-fg: #1d2730;
+  --rad-muted: #5e6d78;
+  --rad-purple: #7654d6;
+  --rad-warning: #9a640c;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0f1115;
+  --md-default-fg-color: #e7e9ee;
+  --md-default-fg-color--light: #9aa3b2;
+  --md-default-fg-color--lighter: #6f7888;
+  --md-default-fg-color--lightest: #2a2f3a;
+  --md-primary-fg-color: #0f1115;
+  --md-primary-bg-color: #e7e9ee;
+  --md-accent-fg-color: #21c7c7;
+  --md-typeset-a-color: #21c7c7;
+  --md-code-bg-color: #11141a;
+  --md-code-fg-color: #e7e9ee;
+  --md-footer-bg-color: #181b22;
+  --md-footer-bg-color--dark: #0f1115;
+  --rad-accent: #21c7c7;
+  --rad-accent-strong: #35d9dd;
+  --rad-card: #181b22;
+  --rad-card-soft: #11141a;
+  --rad-border: #2a2f3a;
+  --rad-fg: #e7e9ee;
+  --rad-muted: #9aa3b2;
+  --rad-purple: #b694f5;
+  --rad-warning: #e0b25a;
+}
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #f6fafb;
+  --md-default-fg-color: #1d2730;
+  --md-default-fg-color--light: #5e6d78;
+  --md-default-fg-color--lighter: #87939d;
+  --md-default-fg-color--lightest: #d5e2e6;
+  --md-primary-fg-color: #0f1115;
+  --md-primary-bg-color: #e7e9ee;
+  --md-accent-fg-color: #129fa7;
+  --md-typeset-a-color: #0b8f98;
+  --md-code-bg-color: #eef6f7;
+  --md-code-fg-color: #1d2730;
+  --md-footer-bg-color: #ffffff;
+  --md-footer-bg-color--dark: #eef6f7;
+}
+
+body {
+  font-family: var(--rad-font-family);
+}
+
+.md-header {
+  background: var(--md-primary-fg-color);
+  border-bottom: 1px solid var(--rad-border);
+  box-shadow: none;
+}
+
+.md-header__button.md-logo {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.35rem 0 0;
+  padding: 0.25rem;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
+
+.md-header__title {
+  margin-left: 0.2rem;
+}
+
+.md-header__topic {
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .md-header__button.md-logo {
+    margin-right: 0.1rem;
+    padding: 0.25rem 0.15rem;
+  }
+
+  .md-header__button.md-logo img,
+  .md-header__button.md-logo svg {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+}
+
+.md-search__form {
+  border: 1px solid var(--rad-border);
+  border-radius: var(--rad-radius);
+  background: var(--rad-card);
+  color: var(--rad-fg);
+}
+
+.md-header .md-search__form {
+  border-color: #2a2f3a;
+  background: #181b22;
+  color: #e7e9ee;
+}
+
+.md-search__form:hover,
+.md-search__form:focus-within {
+  border-color: var(--rad-accent);
+  box-shadow: none;
+}
+
+.md-search__input {
+  color: var(--rad-fg);
+}
+
+.md-header .md-search__input {
+  color: #e7e9ee;
+}
+
+.md-header .md-search__input::placeholder,
+.md-header .md-search__icon {
+  color: #9aa3b2;
+}
+
+.md-main {
+  background: var(--md-default-bg-color);
+}
+
+.md-content__inner {
+  padding-bottom: 3rem;
+}
+
+.md-typeset {
+  color: var(--rad-fg);
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  color: var(--rad-fg);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.md-typeset h1 {
+  margin-bottom: 0.45em;
+}
+
+.md-typeset h2 {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--rad-border);
+}
+
+.md-typeset a {
+  color: var(--rad-accent);
+}
+
+.md-typeset a:hover {
+  color: var(--rad-accent-strong);
+}
+
+.md-typeset code {
+  border: 1px solid var(--rad-border);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset pre > code {
+  border-radius: var(--rad-radius);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-color: var(--rad-border);
+  border-radius: var(--rad-radius);
+  background: var(--rad-card);
+  box-shadow: none;
+}
+
+.md-typeset table:not(.bom-table) {
+  overflow: hidden;
+  border: 1px solid var(--rad-border);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--rad-radius);
+  background: var(--rad-card);
+}
+
+.md-typeset table:not(.bom-table) th {
+  background: var(--rad-card-soft);
+}
+
+.md-typeset table:not(.bom-table) th,
+.md-typeset table:not(.bom-table) td {
+  border-color: var(--rad-border);
+}
+
+.md-nav__title {
+  color: var(--rad-fg);
+  background: transparent;
+  box-shadow: none;
+}
+
+.md-nav__link {
+  border-radius: 6px;
+}
+
+.md-nav__link:hover,
+.md-nav__link--active {
+  color: var(--rad-accent);
+}
+
+.md-nav__item .md-nav__link--active {
+  font-weight: 700;
+}
+
+.md-footer {
+  border-top: 1px solid var(--rad-border);
+}
+
+.md-footer,
+.md-footer-meta {
+  background: var(--md-footer-bg-color);
+  color: var(--rad-muted);
+}
+
+.rad-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.rad-product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-height: 9.25rem;
+  padding: 1rem;
+  border: 1px solid var(--rad-border);
+  border-radius: var(--rad-radius);
+  background: var(--rad-card);
+  color: var(--rad-muted) !important;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.rad-product-card:hover,
+.rad-product-card:focus {
+  border-color: var(--rad-accent);
+  color: var(--rad-muted) !important;
+  text-decoration: none;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.rad-product-card:focus-visible {
+  outline: 2px solid var(--rad-accent);
+  outline-offset: 2px;
+}
+
+.rad-product-card strong {
+  color: var(--rad-fg);
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.rad-product-card span:last-child {
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.rad-product-kicker {
+  align-self: flex-start;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--rad-accent);
+  border-radius: 999px;
+  color: var(--rad-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* Assembly guide photo layout (classes used in product assembly-docs/) */
+
+.photo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.photo-frame {
+  flex: 1 1 280px;
+  max-width: 360px;
+  margin: 0;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.photo-frame figcaption {
+  font-size: 0.875rem;
+  color: var(--md-default-fg-color);
+  opacity: 0.75;
+  text-align: left;
+  margin-top: 0.4rem;
+  font-style: normal;
+  line-height: 1.35;
+}
+
+/* Keep inline-styled single photos from overflowing the content column */
+.md-typeset figure.photo-frame[style*="max-width: 720px"] {
+  max-width: min(720px, 100%);
+}
+
+/* Assembly guides nest figures inside numbered lists — tighten spacing */
+.md-typeset ol li > figure,
+.md-typeset ol li > .photo-row {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.md-typeset ol li > .photo-row,
+.md-typeset ol li > figure.photo-frame {
+  margin-left: 0;
+}
+
+/* ===========================================================================
+   Bill of Materials (rendered by scripts/render_bom.py from hardware/bom.csv)
+   Structure, focus, and tooltip behaviour live here. Per-category chip COLORS
+   are emitted inline by the renderer from the single source
+   scripts/bom_categories.py — do not duplicate the colour map here.
+   =========================================================================== */
+
+.bom-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.15rem 1rem;
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+}
+.bom-meta dt { font-weight: 700; }
+.bom-meta dd { margin: 0; }
+.bom-sha-full { color: var(--md-default-fg-color--light); font-size: 0.75rem; }
+
+.bom-status {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--rad-border);
+  border-radius: var(--rad-radius);
+  font-size: 0.85rem;
+}
+.bom-status-preview {
+  background: color-mix(in srgb, var(--rad-warning) 16%, transparent);
+  color: var(--rad-warning);
+}
+.bom-status-released {
+  background: color-mix(in srgb, var(--rad-accent) 14%, transparent);
+  color: var(--rad-accent);
+}
+
+/* The table lives in its own scroll frame so a wide BOM never breaks the page
+   layout. On mobile this scrolls horizontally (cards are intentionally not
+   used). */
+.bom-table-frame {
+  overflow-x: auto;
+  border: 1px solid var(--rad-border);
+  border-radius: var(--rad-radius);
+  background: var(--rad-card);
+  max-width: 100%;
+}
+.bom-table-frame:focus { outline: 2px solid var(--md-accent-fg-color); }
+
+/* Auto-size columns from content; dense engineering-docs look. */
+table.bom-table {
+  border-collapse: collapse;
+  width: auto;
+  min-width: 100%;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+table.bom-table th,
+table.bom-table td {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  padding: 4px 8px;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+}
+table.bom-table thead th {
+  background: var(--rad-card-soft);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Compact numeric columns: item #, Qty, UOM. */
+.bom-num { text-align: right; white-space: nowrap; }
+.bom-col-line_item { text-align: right; }
+
+/* Text columns wrap to at most two lines (clamped) so a long value never
+   overruns the next column or gets clipped at the frame edge. The wrapper div
+   is needed because overflow / line-clamp do not reliably apply to <td>. */
+.bom-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+/* Cells with a title reveal the full value on hover (useful when clamped). */
+.bom-clamp[title] { cursor: help; }
+.bom-col-part_name { min-width: 9rem; max-width: 14rem; }
+.bom-col-description { min-width: 14rem; max-width: 24rem; }
+.bom-col-manufacturer,
+.bom-col-vendor { min-width: 7rem; max-width: 11rem; }
+.bom-col-mfg_part_number,
+.bom-col-vendor_part_number { min-width: 7rem; max-width: 12rem; }
+.bom-col-source { min-width: 12rem; max-width: 22rem; }
+.bom-col-notes { min-width: 10rem; max-width: 20rem; }
+
+/* Strong, colour-coded category chips. Background/foreground colours are set
+   inline by the renderer; this controls shape, focus, and the tooltip. */
+.bom-cat {
+  position: relative;
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0;
+  cursor: help;
+}
+.bom-cat:focus,
+.bom-cat:hover {
+  outline: 2px solid var(--md-accent-fg-color, #0c8599);
+  outline-offset: 1px;
+}
+/* Full category label shown on hover AND keyboard focus. */
+.bom-cat::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: #1b1b1b;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease-in;
+  z-index: 5;
+}
+.bom-cat:hover::after,
+.bom-cat:focus::after { opacity: 1; }
+
+.bom-footer {
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+}
+.bom-footer p { margin: 0.15rem 0; }
+
+/* KiCanvas PCB preview inserted into assembled BOM pages. */
+body:has(.pcb-kicanvas) .md-main__inner.md-grid {
+  max-width: none;
+}
+
+body:has(.pcb-kicanvas) .md-content {
+  max-width: none;
+  min-width: 0;
+}
+
+body:has(.pcb-kicanvas) .md-content__inner {
+  max-width: none;
+  padding-right: 2rem;
+}
+
+body:has(.pcb-kicanvas) .md-sidebar--secondary {
+  display: none;
+}
+
+.pcb-kicanvas {
+  margin: 1rem 0 1.5rem;
+  border: 1px solid var(--rad-border);
+  border-radius: var(--rad-radius);
+  overflow: hidden;
+  background: var(--rad-card);
+}
+
+.pcb-kicanvas-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--rad-border);
+  font-size: 0.82rem;
+}
+
+.pcb-kicanvas-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.pcb-kicanvas-actions a {
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.pcb-kicanvas-full-window {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.8rem;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--rad-border);
+  border-radius: 4px;
+  background: var(--rad-card);
+  color: var(--rad-accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pcb-kicanvas-full-window:focus,
+.pcb-kicanvas-full-window:hover {
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+}
+
+.pcb-kicanvas-viewer {
+  display: block;
+  width: 100%;
+  height: min(70vh, 680px);
+  min-height: 360px;
+  background: #111820;
+}
+
+.pcb-kicanvas.is-full-window {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+.pcb-kicanvas.is-full-window .pcb-kicanvas-head {
+  flex: 0 0 auto;
+  background: var(--rad-card);
+}
+
+.pcb-kicanvas.is-full-window .pcb-kicanvas-viewer {
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 0;
+}
+
+body.pcb-kicanvas-full-window-active {
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .pcb-kicanvas-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pcb-kicanvas-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pcb-kicanvas-actions a {
+    text-align: left;
+  }
+
+  .pcb-kicanvas-viewer {
+    height: 460px;
+    min-height: 320px;
+  }
+}

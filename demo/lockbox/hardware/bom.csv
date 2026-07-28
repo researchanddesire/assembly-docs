@@ -1,0 +1,13 @@
+#,Part Name,Category,Description,Qty,UOM,Manufacturer,MFG PN,Vendor,Vendor PN,Source,Notes
+1,Lockbox Enclosure Base,FDM,Main printed enclosure base that houses the PCB and lock mechanism,1,each,Research and Desire,LKBX-ENC-BASE,–,–,cad/enclosure-base.step,Printed in PETG at 0.2mm layer height
+2,Lockbox Lid,FDM,Printed hinged lid with captive gasket channel,1,each,Research and Desire,LKBX-LID,–,–,cad/lid.step,–
+3,Main Controller PCBA,PCA,Lockbox controller board with charging and lock driver,1,each,Research and Desire,LKBX-PCA-01,–,–,pcb/lockbox-main,ESP32-based controller; see https://www.researchanddesire.com for revisions
+4,ESP32-WROOM-32E,IC,Wi-Fi and BLE system-on-module,1,each,Espressif,ESP32-WROOM-32E,Mouser,356-ESP32WROOM32E,https://www.espressif.com/en/products/socs/esp32,–
+5,Solenoid Lock,SWI,12V electronic latch actuator,1,each,Adafruit,1512,Adafruit,1512,https://www.adafruit.com/product/1512,Datasheet at https://www.adafruit.com/product/1512
+6,Li-Po Battery 3.7V 2000mAh,BTY,Rechargeable protected lithium-polymer cell,1,each,–,–,Adafruit,2011,https://www.adafruit.com/product/2011,Protection circuit required
+7,M3x8 Socket Head Screw,FST,Stainless steel fastener,8,each,–,–,McMaster-Carr,91290A113,https://www.mcmaster.com/91290A113,–
+8,Silicone Gasket,INS,Water-resistant perimeter seal,1,each,Research and Desire,LKBX-GASKET,–,–,cad/gasket.step,Die-cut 1mm silicone sheet
+9,USB-C Receptacle,CON,Charging and data port,1,each,GCT,USB4085-GF-A,Digi-Key,2073-USB4085-GF-A,https://www.digikey.com/en/products/detail/gct/USB4085-GF-A/9859392,–
+10,Internal Wiring Harness,CHA,Lock and battery interconnect harness,1,each,Research and Desire,LKBX-HARNESS,–,–,cables/main-harness.yml,Rendered from Wireviz source on release
+11,RGB Status LED,IC,Addressable indicator LED,1,each,Worldsemi,WS2812B,–,–,pcb/lockbox-main,–
+12,Assembly Lubricant,LUB,Hinge and latch lubricant,1,ml,Super Lube,21030,Amazon,B000XBH9GW,https://www.amazon.com/dp/B000XBH9GW,Apply sparingly to hinge pin
