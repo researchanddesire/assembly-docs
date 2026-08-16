@@ -1,5 +1,6 @@
 {
   "title": "OSSM",
+  "root": true,
   "pages": [
     "index",
     "build",

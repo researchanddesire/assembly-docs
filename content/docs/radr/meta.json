@@ -1,5 +1,6 @@
 {
   "title": "RADR Wireless Remote",
+  "root": true,
   "pages": [
     "index",
     "assembly-guide",
