@@ -1,5 +1,6 @@
 {
   "title": "Lockbox",
+  "root": true,
   "pages": [
     "index",
     "assembly-guide",
