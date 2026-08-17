@@ -20,7 +20,7 @@ function fail(file, message) {
   failures.push(`${path.relative(process.cwd(), file)}: ${message}`);
 }
 
-function candidateExists(fromFile, rawTarget, allowExtensionless = false) {
+function candidateExists(fromFile, rawTarget) {
   const withoutSuffix = rawTarget.split(/[?#]/, 1)[0];
   if (!withoutSuffix) return true;
   let decoded;
@@ -29,10 +29,6 @@ function candidateExists(fromFile, rawTarget, allowExtensionless = false) {
   } catch {
     return false;
   }
-
-  // Extensionless links are application routes in Fumadocs and cannot be
-  // resolved reliably without the private renderer's route manifest.
-  if (!path.extname(decoded) && !allowExtensionless) return true;
 
   const target = path.resolve(path.dirname(fromFile), decoded);
   const targetRelative = path.relative(contentRoot, target);
@@ -90,7 +86,37 @@ function validateLinks(file, source) {
     ) {
       continue;
     }
+    if (/\.mdx?(?:[?#].*)?$/i.test(target)) {
+      fail(file, `use an extensionless Fumadocs route for "${target}"`);
+      continue;
+    }
     if (!candidateExists(file, target)) fail(file, `missing local target "${target}"`);
+  }
+}
+
+function validateHeadingStructure(file, source) {
+  const searchable = source.replace(/```[\s\S]*?```/g, "");
+  if (/^#\s+\S/m.test(searchable)) {
+    fail(file, "body content must start at heading level 2; frontmatter renders the page title");
+  }
+}
+
+function validateBomCategoryStyles(file, source) {
+  for (const match of source.matchAll(/<span\s+className="bom-cat"[\s\S]*?>/g)) {
+    if (!/style=\{\{\s*backgroundColor:\s*"#[0-9a-f]{6}"/i.test(match[0])) {
+      fail(file, "BOM category chips must retain their generated inline colour");
+    }
+  }
+
+  if (/<p\s+className="bom-status/.test(source)) {
+    fail(file, "BOM status containers must use div elements to avoid nested MDX paragraphs");
+  }
+
+  const footer = source.match(
+    /<footer\s+className="bom-footer">([\s\S]*?)<\/footer>/,
+  );
+  if (footer?.[1].includes("<p")) {
+    fail(file, "BOM footer containers must use div elements to avoid nested MDX paragraphs");
   }
 }
 
@@ -111,7 +137,7 @@ function validateMeta(file, source) {
     ) {
       continue;
     }
-    if (!candidateExists(file, page, true)) fail(file, `missing page entry "${page}"`);
+    if (!candidateExists(file, page)) fail(file, `missing page entry "${page}"`);
   }
 }
 
@@ -125,6 +151,8 @@ for (const file of await walk(contentRoot)) {
   if (/\.mdx?$/.test(file)) {
     validateFrontmatter(file, source);
     validateLinks(file, source);
+    validateHeadingStructure(file, source);
+    validateBomCategoryStyles(file, source);
   } else if (path.basename(file) === "meta.json") {
     validateMeta(file, source);
   }
