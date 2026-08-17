@@ -1,6 +1,8 @@
 # assembly-docs
 
-RAD unified assembly docs — GitHub Pages now, `ohai.researchanddesire.com` at cutover.
+This repository is the public, editable content mirror for [R+D Assembly](https://ohai.researchanddesire.com). Rendered page titles and section headings link to their exact source lines under `content/docs/`.
+
+Public contributions should target `main`. The dedicated synchronization app mirrors approved content into the private Fumadocs renderer; legacy MkDocs assembly tooling remains below for migration and product-source workflows.
 
 Aggregates each hardware product's `assembly-docs/` folder into a single
 MkDocs Material site, following the same architecture as
@@ -68,16 +70,16 @@ the rendered BOM.)
 
 ### Where things live
 
-| Thing | Path |
-| ----- | ---- |
-| BOM data (source of truth, per product repo) | `hardware/bom.csv` |
-| Renderer | `scripts/render_bom.py` |
-| Category code → label → colour map (single source) | `scripts/bom_categories.py` |
-| Chip / table structure + focus styles | `docs/stylesheets/assembly.css` |
-| BOM page (per product repo, carries the markers) | `assembly-docs/bom.md` |
-| Generated block markers | `<!-- BEGIN GENERATED BOM -->` … `<!-- END GENERATED BOM -->` |
-| PCB page / KiCanvas viewer assembly | `scripts/split_pcb_design_assets.py` + `scripts/insert_kicanvas_pcb.py` |
-| Cable harness source files | Product repo `hardware/cables/` |
+| Thing                                              | Path                                                                    |
+| -------------------------------------------------- | ----------------------------------------------------------------------- |
+| BOM data (source of truth, per product repo)       | `hardware/bom.csv`                                                      |
+| Renderer                                           | `scripts/render_bom.py`                                                 |
+| Category code → label → colour map (single source) | `scripts/bom_categories.py`                                             |
+| Chip / table structure + focus styles              | `docs/stylesheets/assembly.css`                                         |
+| BOM page (per product repo, carries the markers)   | `assembly-docs/bom.md`                                                  |
+| Generated block markers                            | `<!-- BEGIN GENERATED BOM -->` … `<!-- END GENERATED BOM -->`           |
+| PCB page / KiCanvas viewer assembly                | `scripts/split_pcb_design_assets.py` + `scripts/insert_kicanvas_pcb.py` |
+| Cable harness source files                         | Product repo `hardware/cables/`                                         |
 
 The renderer is **read-only** on `hardware/bom.csv` and validates its header
 against the canonical [BOM schema](https://dev.researchanddesire.com/meta/bom-standard/)
