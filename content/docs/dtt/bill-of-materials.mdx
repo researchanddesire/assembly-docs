@@ -39,10 +39,10 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
       </span>
     </dd>
   </dl>
-  <p className="bom-status bom-status-released">
+  <div className="bom-status bom-status-released">
     <strong>Released for production.</strong> This BOM corresponds to a tagged
     hardware release.
-  </p>
+  </div>
   <div
     className="bom-table-frame"
     role="region"
@@ -53,7 +53,7 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
       <thead>
         <tr>
           <th className="bom-col-line_item" scope="col">
-            #
+            {"#"}
           </th>
           <th className="bom-col-part_name" scope="col">
             Part Name
@@ -101,6 +101,7 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
           <td className="bom-col-category">
             <span
               className="bom-cat"
+              style={{ backgroundColor: "#1864ab", color: "#ffffff" }}
               tabIndex="0"
               role="img"
               title="Printed Circuit Board Assembly"
@@ -165,6 +166,7 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
           <td className="bom-col-category">
             <span
               className="bom-cat"
+              style={{ backgroundColor: "#a8703a", color: "#ffffff" }}
               tabIndex="0"
               role="img"
               title="Fabricated, Other"
@@ -215,6 +217,7 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
           <td className="bom-col-category">
             <span
               className="bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
               tabIndex="0"
               role="img"
               title="FDM Printed Part"
@@ -273,6 +276,7 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
           <td className="bom-col-category">
             <span
               className="bom-cat"
+              style={{ backgroundColor: "#a61e4d", color: "#ffffff" }}
               tabIndex="0"
               role="img"
               title="Assembly"
@@ -320,6 +324,7 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
           <td className="bom-col-category">
             <span
               className="bom-cat"
+              style={{ backgroundColor: "#3b5bdb", color: "#ffffff" }}
               tabIndex="0"
               role="img"
               title="Integrated Circuit"
@@ -367,6 +372,7 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
           <td className="bom-col-category">
             <span
               className="bom-cat"
+              style={{ backgroundColor: "#2b8a3e", color: "#ffffff" }}
               tabIndex="0"
               role="img"
               title="Battery"
@@ -414,6 +420,7 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
           <td className="bom-col-category">
             <span
               className="bom-cat"
+              style={{ backgroundColor: "#0b7285", color: "#ffffff" }}
               tabIndex="0"
               role="img"
               title="Cable Harness Assembly"
@@ -467,6 +474,7 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
           <td className="bom-col-category">
             <span
               className="bom-cat"
+              style={{ backgroundColor: "#c92a2a", color: "#ffffff" }}
               tabIndex="0"
               role="img"
               title="Fastener"
@@ -519,6 +527,7 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
           <td className="bom-col-category">
             <span
               className="bom-cat"
+              style={{ backgroundColor: "#5c5f00", color: "#ffffff" }}
               tabIndex="0"
               role="img"
               title="Adhesive"
@@ -563,12 +572,12 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
     </table>
   </div>
   <footer className="bom-footer">
-    <p>
+    <div>
       Bill of Materials generated from <code>hardware/bom.csv</code> by Research
       and Desire BOM tooling.
-    </p>
-    <p>License: CERN-OHL-S v2 (hardware) / MPL-2.0 (firmware).</p>
-    <p>
+    </div>
+    <div>License: CERN-OHL-S v2 (hardware) / MPL-2.0 (firmware).</div>
+    <div>
       Source:{" "}
       <a
         href="https://github.com/researchanddesire/DT_Trainer-OSS"
@@ -578,8 +587,8 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
         DT_Trainer-OSS on GitHub
       </a>
       .
-    </p>
-    <p>&copy; Research and Desire.</p>
+    </div>
+    <div>&copy; Research and Desire.</div>
   </footer>
 </section>
 {/* END GENERATED BOM */}
@@ -597,6 +606,6 @@ This table is generated from [hardware/bom.csv](https://github.com/researchandde
 
 | Asset              | Location                                                                                                                  | Notes                                                                                    |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| PCB overview       | [assembly-docs/pcb-overview.md](pcb-overview.mdx)                                                                         | Board source, production export, and PCB BOM boundary.                                   |
+| PCB overview       | [assembly-docs/pcb-overview.md](pcb-overview)                                                                             | Board source, production export, and PCB BOM boundary.                                   |
 | PCB source         | [hardware/pcb/README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/README.md)            | Editable board design sources.                                                           |
 | Production exports | [hardware/production-exports/](https://github.com/researchanddesire/DT_Trainer-OSS/tree/main/hardware/production-exports) | Files sent to manufacturers, including gerbers, pick-and-place, and production PCB BOMs. |
