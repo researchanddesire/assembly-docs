@@ -1,0 +1,26 @@
+---
+title: "Kabelbomen"
+description: "Kabelbomen voor OSSM."
+---
+
+{/* Ported from MkDocs: cable-harnesses.md */}
+
+OSSM-kabelboombronnen staan ​​onder [`hardware/cables/`](https://github.com/researchanddesire/ossm/tree/main/hardware/cables).
+Wireviz geeft elke harnasbron weer in diagramartefacten en een gedetailleerd kind
+BOM. De [Bill of Materials](product-bom.mdx) op productniveau moet elk harnas vermelden als een
+montage op het hoogste niveau en link naar de Wireviz-bron.
+
+## Motorcontroleharnas
+
+| Activa                        | Locatie                                                                                                                                |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Wireviz-bron                  | [`OSSM-Motor-Control-Harness.yml`](https://github.com/researchanddesire/ossm/blob/main/hardware/cables/OSSM-Motor-Control-Harness.yml) |
+| Bronnotities                  | [`hardware/cables/README.md`](https://github.com/researchanddesire/ossm/blob/main/hardware/cables/README.md)                           |
+| Gegenereerde vrijgavemiddelen | [Nieuwste OSSM-release](https://github.com/researchanddesire/ossm/releases/latest)                                                     |
+
+De kabelexportworkflow publiceert gegenereerde assets van `cable-export/`,
+inclusief:
+
+- `OSSM-Motor-Control-Harness.pdf`
+- `OSSM-Motor-Control-Harness.png`
+- `OSSM-Motor-Control-Harness.bom.tsv`

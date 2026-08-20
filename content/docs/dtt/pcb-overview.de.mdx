@@ -1,0 +1,60 @@
+---
+title: "PCB-Übersicht"
+description: "PCB-Übersicht für Deepthroat Trainer."
+---
+
+{/* Ported from MkDocs: pcb-overview.md */}
+
+Die Leiterplatte des DT Trainer rev4 ist die Gerätesteuerungsbaugruppe für den All-in-One-Traineraufbau. Es verfügt über die ESP32-Firmware, Dashboard-Konnektivität, Strom- und Ladeschnittstellen, Sensoreingang, Display und LED-Feedback sowie den während des Trainings verwendeten Vibrationsausgang.
+
+<Card
+  title="KiCad-Board-Datei"
+  href="./assets/kicanvas/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_pcb"
+>
+Laden Sie die Board-Datei für KiCanvas oder KiCad herunter.
+</Card>
+
+Die ursprüngliche bearbeitbare Board-Quelle ist DipTrace rev4. Eine KiCad rev4-Konvertierung ist
+ebenfalls veröffentlicht und soll mit dem ursprünglichen DipTrace gleichbleiben
+Quelle bis zur endgültigen Konvertierungsüberprüfung.
+
+## Elektrische Architektur
+
+| Bereich                       | Rolle                                                                                                                                                               |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ESP32-Steuerung               | Führt Firmware, WLAN-Kommunikation, OTA-Update-Prüfungen, Gerätestatus und Sitzungslogik aus.                                                                       |
+| Stromversorgung und Aufladen  | Verwaltet den USB-C-Eingang, den Batterieanschluss, die Ladeunterstützung und die geregelte Stromversorgung des Boards.                                             |
+| Sensorschnittstelle           | Verbindet den Positionssensor des Trainers, der für die Kalibrierung und das Trainingsfeedback verwendet wird.                                                      |
+| Benutzeroberfläche            | Steuert den OLED-Bildschirm, die Tasteneingabe und die RGB-Status-LEDs, die vom Assembly- und Firmware-Flow verwendet werden.                                       |
+| Haptik und Ausgänge           | Treibt den Vibrationsmotor und die lokalen Feedback-Ausgänge während des Trainings an.                                                                              |
+| Programmierung und Produktion | Stellt die Platinenquelle, die Produktionsstückliste, die Gerber und das Pick-and-Place-Paket bereit, die für die Platinenherstellung und -montage benötigt werden. |
+
+## PCB-Quelldateien
+
+| Vermögenswert               | Standort                                                                                                                                                                 | Notizen                                                                                                                    |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| DipTrace-Schema             | [217A_dttrainer_rev4.dch](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/217A_dttrainer_rev4.dch)                              | Bearbeitbare Rev4-Schaltplanquelle.                                                                                        |
+| DipTrace-Board-Layout       | [217A_dttrainer_rev4.dip](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/217A_dttrainer_rev4.dip)                              | Bearbeitbare Rev4-PCB-Layout-Quelle.                                                                                       |
+| KiCad-Projekt               | [217A_dttrainer_rev4.kicad_pro](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_pro) | Konvertiertes rev4-KiCad-Projekt.                                                                                          |
+| KiCad-Schaltplan            | [217A_dttrainer_rev4.kicad_sch](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_sch) | Konvertierter Rev4-KiCad-Schaltplan.                                                                                       |
+| KiCad-Board-Layout          | [217A_dttrainer_rev4.kicad_pcb](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_pcb) | Konvertiertes rev4-KiCad-PCB-Layout.                                                                                       |
+| KiCanvas-Vorschau           | [Rev4-KiCad-Projekt öffnen](https://kicanvas.org/?github=https://github.com/researchanddesire/DT_Trainer-OSS/tree/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4)      | Browservorschau des konvertierten KiCad-Projekts.                                                                          |
+| Detaillierte PCB-Stückliste | [pcb-bom-full.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/pcb-bom-full.csv)                                            | Umfangreiche Stückliste auf Board-Ebene, wobei die Beschaffungs- und Montagespalten aus der Quelltabelle erhalten bleiben. |
+| Hinweise zur PCB-Quelle     | [README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/README.md)                                                                        | Herkunft, Ordnergrenze und DipTrace/KiCad-Paritätsnotizen.                                                                 |
+
+## Produktionspaket
+
+Der aktuelle Produktionsexport ist das als funktionierend bekannte rev4-Bestellpaket vom Mai 2025.
+
+| Vermögenswert              | Standort                                                                                                                                                                                              | Notizen                                                                          |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Gerber-Archiv              | [Trainer_gerber_Y35.zip](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/Trainer_gerber_Y35.zip)                             | Fertigungsarchiv aus dem zweifelsfrei funktionierenden Auftrag.                  |
+| Produktions-PCB-Stückliste | [Trainer BoM 15. Mai.xls](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/Trainer%20BoM%20May%2015.xls)                      | Stückliste der Platinenbaugruppe, die mit dem Produktionsauftrag verwendet wird. |
+| Pick-and-Place             | [pickplace_dttrainer_rev4 (1).xlsx](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/pickplace_dttrainer_rev4%20%281%29.xlsx) | Komponentenplatzierungsdaten für die Montage.                                    |
+| Produktionsexporthinweise  | [README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/README.md)                                                       | Provenienzhinweise für den nachweislich guten Herstellungsexport.                |
+
+## Stücklistengrenze
+
+Die kanonische RAD-Stückliste ist [hardware/bom.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/bom.csv). Es listet die bestückte Leiterplatte als eine Baugruppenzeile auf Geräteebene auf, sodass sich die Baugruppendokumentation weiterhin auf den Trainer-Build konzentriert.
+
+Die untergeordneten Teile auf Platinenebene werden in [hardware/pcb/diptrace-rev4/pcb-bom-full.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/pcb-bom-full.csv) verwaltet, um den Verlust von Hersteller-, Anbieter-, Footprint- und Baugruppendaten aus dem PCB-Quellexport zu vermeiden.

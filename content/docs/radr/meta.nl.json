@@ -1,0 +1,11 @@
+{
+  "title": "RADR draadloze afstandsbediening",
+  "root": true,
+  "pages": [
+    "index",
+    "assembly-guide",
+    "bill-of-materials",
+    "cable-harnesses",
+    "pcb-overview"
+  ]
+}

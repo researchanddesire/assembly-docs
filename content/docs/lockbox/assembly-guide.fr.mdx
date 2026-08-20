@@ -1,0 +1,371 @@
+---
+title: "Guide d'assemblage du coffre-fort"
+description: "Guide d'assemblage du Lockbox pour Lockbox."
+---
+
+{/* Ported from MkDocs: assembly-guide.md */}
+
+## But
+
+Cette instruction de travail documente le processus d'assemblage actuel de Lockbox, depuis les pièces imprimées jusqu'à l'assemblage mécanique final.
+
+Utilisez ces instructions avec la version active du PCB et de la CAO pour la construction.
+
+## Pièces et consommables requis
+
+1. Rassemblez les pièces requises avant de commencer l'assemblage.
+
+![Pièces d'assemblage du coffre-fort requises](assets/assembly-required-parts.webp)
+
+_Pièces d'assemblage du Lockbox requises._
+
+2. Confirmez que l'ensemble d'assemblage comprend :
+   - `top-housing`
+   - `bottom-housing`
+   - `pcb-backing`
+   - `locking-latch`
+   - `enter-button`
+   - `back-button`
+   - `encoder-wheel`
+   - `encoder`
+   - `motor`
+   - `screen`
+   - `battery`
+   - 7x `torx-screw`
+   - 4x `4mm-magnet`
+   - 4x `rubber-foot`
+   - `VHB-double-sided-tape`
+   - `hot-glue`
+   - `SA-glue`
+
+3. Si toutes les pièces requises sont présentes, continuez.
+
+## Outils
+
+- Tournevis électrique ou tournevis manuel avec embout Torx T7
+- `flat-jaw-pliers`
+- `tweezers`
+- `paperclip`
+- `isopropyl-alcohol`
+- `microfibre-cloth`
+
+## Préparer les composants en plastique
+
+1. Travaillez sur un chiffon doux. La face avant se raye facilement.
+
+2. Vérifiez chaque pièce imprimée sous un bon éclairage avant l'assemblage. Recherchez les coins recourbés, les couches écrasées, les grosses gouttes de plastique, les inserts magnétiques bloqués et les trous de vis bloqués.
+
+3. Utilisez un lit d'impression PEI lisse pour les pièces cosmétiques orientées vers l'avant et un lit d'impression PEI texturé pour les pièces internes.
+
+4. Inspectez chaque pièce imprimée avant d'installer l'électronique.
+5. Vérifiez que les composants en plastique sont propres, correctement imprimés et exempts d'obstructions avant de continuer.
+
+### Photos de référence de pièce
+
+Utilisez ces photos lors de l'inspection des pièces imprimées.
+
+#### `top-housing`
+
+![Boîtier supérieur](assets/part-top-housing-main.webp)
+
+_Boîtier supérieur._
+![Vue latérale du boîtier supérieur](assets/part-top-housing-side.webp)
+
+_Vue latérale supérieure du boîtier._
+
+#### `bottom-housing`
+
+![Boîtier inférieur](assets/part-bottom-housing-main.webp)
+
+_Boîtier inférieur._
+![Vue latérale du bas du boîtier](assets/part-bottom-housing-side.webp)
+
+_Vue latérale du bas du boîtier._
+
+#### `motor-clamp`
+
+![Pince moteur](assets/part-motor-clamp-main.webp)
+
+_Pince moteur._
+![Vue latérale de la pince moteur](assets/part-motor-clamp-side.webp)
+
+_Vue latérale de la pince moteur._
+
+#### `pcb-cover`
+
+![Couvercle du PCB](assets/part-pcb-cover-main.webp)
+
+_Couvercle du PCB._
+![Vue latérale du couvercle du PCB](assets/part-pcb-cover-side.webp)
+
+_Vue latérale du couvercle du PCB._
+
+#### `encoder-wheel`
+
+![Roue codeuse](assets/part-encoder-wheel-main.webp)
+
+_Roue codeuse._
+![Vue latérale de la roue codeuse](assets/part-encoder-wheel-side.webp)
+
+_Vue latérale de la roue codeuse._
+
+#### `locking-latch`
+
+![Loquet de verrouillage](assets/part-locking-latch-main.webp)
+
+_Loquet de verrouillage._
+![Vue latérale du loquet de verrouillage](assets/part-locking-latch-side.webp)
+
+_Vue latérale du loquet de verrouillage._
+
+#### `enter-button`
+
+![Bouton Entrée](assets/part-enter-button-main.webp)
+
+_Bouton Entrée._
+![Entrer la vue latérale du bouton](assets/part-enter-button-side.webp)
+
+_Entrez dans la vue latérale du bouton._
+
+#### `back-button`
+
+![Bouton Retour](assets/part-back-button-main.webp)
+
+_Bouton Retour._
+![Vue latérale du bouton Retour](assets/part-back-button-side.webp)
+
+_Vue latérale du bouton Retour._
+
+## Installer des aimants
+
+1. Installez quatre aimants : un dans le `locking-latch`, un dans le `top-housing`et deux dans le `bottom-housing`.
+
+2. Utilisez un `paperclip` pour enduire légèrement l'intérieur de chaque insert magnétique avec `SA-glue`.
+
+![Appliquer de la superglue sur l'insert magnétique avec un trombone](assets/build-magnet-glue-paperclip.webp)
+
+_Appliquez une légère couche de colle à l'intérieur de l'insert magnétique._
+
+3. Vérifiez la polarité de l'aimant avant d'appuyer sur chaque aimant pour le mettre en place :
+   - `locking-latch`: pôle nord en haut
+   - Aimant frontal `top-housing` : côté sud vers le haut
+   - Aimant frontal `bottom-housing` : côté nord vers le haut
+   - Aimant arrière `bottom-housing` : côté sud vers le haut
+
+![Vérification de la polarité de l'aimant du boîtier avant](assets/build-top-housing-magnet-polarity.webp)
+
+_Polarité de l'aimant avant du boîtier supérieur._
+![Vérification de la polarité de l'aimant avant du boîtier inférieur](assets/build-bottom-housing-front-magnet-polarity.webp)
+
+_Polarité de l'aimant avant du boîtier inférieur._
+![Vérification de la polarité de l'aimant arrière du boîtier inférieur](assets/build-bottom-housing-back-magnet-polarity.webp)
+
+_Polarité de l'aimant arrière du boîtier inférieur._
+
+4. Utilisez `flat-jaw-pliers` pour enfoncer les aimants dans leurs inserts. Placez un `microfibre-cloth` plié entre la pince et le corps du Lockbox pour protéger la surface imprimée.
+
+![Protéger le boîtier en appuyant sur les aimants](assets/build-magnet-press-protection.webp)
+
+_Protégez le boîtier tout en appuyant sur les aimants._
+![Appuyer sur l'aimant du bras de verrouillage avec une pince à mâchoires plates](assets/build-locking-latch-magnet-press.webp)
+
+_Appuyez sur l'aimant du bras de verrouillage pour le mettre en place._
+
+5. Vérifiez que chaque aimant est bien en place ou suffisamment profond pour son insertion.
+
+![Aimant installé dans le boîtier supérieur](assets/build-top-housing-magnet-installed.webp)
+
+_Aimant supérieur du boîtier installé._
+![Aimant arrière installé dans le boîtier inférieur](assets/build-bottom-housing-back-magnet-installed.webp)
+
+_Aimant arrière du boîtier inférieur installé._
+![Aimant installé dans le loquet de verrouillage](assets/step-01-magnet-locking-latch.webp)
+
+_Aimant de verrouillage installé._
+
+6. Vérifiez que les aimants sont bien en place et collés avant de continuer.
+
+## Installer l'écran et la batterie
+
+1. Retirez le film protecteur du `screen`.
+
+2. Alignez le `screen` avec les rebords supérieur et droit du `top-housing`.
+
+3. Maintenez l'écran en place et placez-le avec `hot-glue` dans les coins et les bords restants.
+
+4. Essuyez l'arrière du `screen` et le côté du `battery` en écrivant à l'aide de `isopropyl-alcohol`.
+
+5. Appliquez un morceau carré de 3/4 de pouce de `VHB-double-sided-tape` sur le côté d'écriture du `battery`.
+
+![Ruban VHB appliqué à la batterie](assets/build-battery-vhb-tape.webp)
+
+_Ruban VHB appliqué sur la batterie._
+
+6. Placez le `battery` face vers le bas à l'arrière du `screen` avec les câbles sortant vers le bas à droite. Réglez avec `hot-glue` selon vos besoins.
+
+![Écran et batterie installés dans le boîtier supérieur](assets/build-screen-battery-layout.webp)
+
+_Écran et batterie installés dans le boîtier supérieur._
+![Référence de configuration de l'écran, de la batterie et du moteur](assets/build-screen-motor-layout.webp)
+
+_Référence de disposition de l'écran, de la batterie et du moteur._
+
+7. Confirmez que l'écran et la batterie sont sécurisés et que les fils restent accessibles.
+
+## Installer l'encodeur
+
+1. Testez le `encoder-wheel` avant de le souder ou de le coller.
+
+2. Appliquez `SA-glue` sur la face plate de l'arbre du codeur.
+
+3. Alignez le plat de l'arbre de l'encodeur avec la face plate à l'intérieur du `encoder-wheel`, puis installez la roue.
+
+4. Soudez le `encoder` sur le PCB. Assurez-vous que l'encodeur est bien en place afin que la roue reste droite.
+
+![Encodeur installé sur PCB](assets/step-03-encoder-on-pcb.webp)
+
+_Encodeur installé sur PCB._
+![Roue d'encodeur installée](assets/step-03-encoder-wheel-installed.webp)
+
+_Roue d'encodeur installée._
+
+5. Vérifiez que la roue codeuse tourne librement avant de continuer.
+
+## Installer le moteur
+
+1. Vérifiez la polarité du moteur avant d'installer l'ensemble moteur.
+
+2. Si vous soudez le fil du moteur pendant cette construction, coupez la longueur du fil du connecteur du moteur à 7 cm avant l'acheminement final.
+
+3. Placez le `locking-latch` sur le `motor`. Ne collez pas le loquet sur le moteur.
+
+![Loquet de verrouillage placé sur le moteur](assets/step-04-latch-on-motor.webp)
+
+_Loquet de verrouillage placé sur le moteur._
+
+4. Faites glisser le loquet sur l'ensemble moteur à mi-chemin, puis placez le `motor` dans le `top-housing`.
+
+![Loquet de verrouillage installé à mi-course sur le moteur](assets/build-motor-latch-halfway.webp)
+
+_Loquet installé à mi-chemin sur le moteur._
+![Moteur placé dans le boîtier](assets/step-04-motor-in-housing.webp)
+
+_Moteur placé dans le boîtier._
+
+5. Placez le `motor-clamp` sur le moteur et fixez-le avec 2x `torx-screw`.
+
+![Pince moteur installée](assets/build-motor-clamp-installed.webp)
+
+_Pince moteur installée._
+
+6. Vérifiez que le moteur est bien en place et que le loquet peut bouger sans obstruction.
+
+## Installer les boutons et le PCB
+
+1. Placez les `enter-button` et `back-button` dans les boutonnières.
+
+![Boutons placés dans le boîtier](assets/step-05-buttons-in-housing.webp)
+
+_Boutons placés dans le boîtier._
+
+2. Placez le `back-button` à gauche et le bouton de verrouillage/entrée à droite.
+
+3. Si les boutons ne sont pas déjà remplis, soudez les boutons sur le bas du PCB, le côté sans autres composants.
+
+4. Placez le PCB sur les boutons de manière à ce que le `encoder-wheel` passe par le trou avant.
+
+![Placement du PCB sur les boutons](assets/step-05-pcb-placement.webp)
+
+_Placement du PCB sur les boutons._
+
+5. Ne couvrez pas le `screen-ribbon-wire`, le `battery-wire`ou le `motor-wire`.
+
+![PCB installé dans le boîtier](assets/step-05-pcb-seated.webp)
+
+_PCB installé dans le boîtier._
+
+6. Vérifiez que les boutons fonctionnent correctement et que la roue codeuse est centrée dans l'ouverture.
+
+## Connecter les câbles
+
+1. Ouvrez le loquet du connecteur du ruban d'écran.
+
+2. Insérez le `screen-ribbon-wire`, puis fermez le loquet. La barre blanche inférieure ne doit pas être visible une fois le loquet fermé.
+
+3. Branchez le `battery-wire` et le `motor-wire` dans le PCB.
+
+4. Acheminez les fils du moteur vers la gauche et par-dessus le PCB.
+
+5. Éloignez le câble de la batterie du trou de montage situé en dessous afin qu'il ne soit pas pincé par le couvercle.
+
+![Câbles d'écran, de batterie et de moteur connectés](assets/step-06-cables-connected.webp)
+
+_Câbles écran, batterie et moteur connectés._
+![Référence d'acheminement des câbles PCB](assets/build-pcb-cable-routing.webp)
+
+_Référence de routage des câbles PCB._
+
+6. Vérifiez que chaque câble est bien inséré avant de continuer.
+
+## Installer le couvercle du PCB
+
+1. Placez le `pcb-cover` sur le PCB.
+
+![Placement du couvercle du PCB](assets/step-07-pcb-cover-placement.webp)
+
+_Placement du couvercle du PCB._
+
+2. Fixez le couvercle avec 5x `torx-screw`.
+
+![Couvercle du PCB installé](assets/build-pcb-cover-installed.webp)
+
+_Couvercle PCB installé._
+
+3. Vérifiez qu'aucun fil n'est coincé sous le couvercle.
+
+## Installez les pieds en caoutchouc
+
+1. Collez 4x `rubber-foot` sur la plaque arrière.
+
+![Pieds en caoutchouc en gros plan](assets/step-08-rubber-feet-closeup.webp)
+
+_Gros plan sur un pied en caoutchouc._
+![Pieds en caoutchouc installés sur la plaque arrière](assets/build-backplate-rubber-feet-installed.webp)
+
+_Pieds en caoutchouc installés sur la plaque arrière._
+
+2. Confirmez que les quatre pieds sont présents et sécurisés.
+
+## Assemblage final
+
+1. Faites glisser la plaque arrière sur le boîtier principal.
+
+![Plaque arrière coulissant sur le boîtier](assets/step-09-backplate-slide.webp)
+
+_Plaque arrière coulissant sur le boîtier._
+![Assemblage final du coffre-fort](assets/step-09-final-assembly.webp)
+
+_Assemblage final du Lockbox._
+
+2. L'assemblage est terminé. Continuez avec les tests fonctionnels.
+
+## Liste de contrôle CQ
+
+- Confirmez que toutes les pièces requises étaient présentes avant l'assemblage.
+- Vérifiez que les pièces imprimées sont exemptes de coins recourbés, de couches écrasées, de grosses taches, d'inserts magnétiques bloqués et de trous de vis bloqués.
+- Confirmez que les aimants sont installés dans les `top-housing`, `bottom-housing`et `locking-latch`.
+- Confirmez que les 4 aimants sont installés avec la polarité documentée.
+- Confirmez que les `screen` et `battery` sont sécurisés avec `hot-glue`.
+- Vérifiez que le `screen-ribbon-wire` est verrouillé et que la barre blanche inférieure n'est pas visible.
+- Vérifiez que le `encoder` est soudé et que le `encoder-wheel` tourne librement.
+- Confirmez que le `locking-latch` est placé sur le `motor` sans colle.
+- Confirmez la polarité du moteur et, s'il est construit à la main, la longueur du câble du connecteur du moteur de 7 cm.
+- Confirmez que le `motor-clamp` est sécurisé avec 2x `torx-screw`.
+- Vérifiez que la pince du moteur est droite.
+- Vérifiez que le PCB est bien en place sans recouvrir le `screen-ribbon-wire`, le `battery-wire`ou le `motor-wire`.
+- Confirmez que les `screen-ribbon-wire`, `battery-wire`et `motor-wire` sont connectés.
+- Confirmez que les boutons cliquent proprement.
+- Vérifiez que la roue codeuse est alignée dans la découpe avant et tourne librement.
+- Confirmez que le `pcb-cover` est sécurisé avec 5x `torx-screw`.
+- Confirmez que 4x `rubber-foot` sont installés sur la plaque arrière.
+- Vérifiez que la plaque arrière glisse sur le boîtier principal.

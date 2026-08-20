@@ -1,0 +1,19 @@
+---
+title: "Faisceaux de câbles"
+description: "Faisceaux de câbles pour Lockbox."
+---
+
+{/* Ported from MkDocs: cable-harnesses.md */}
+
+Lockbox comprend un moteur, une batterie, un port USB-C, un écran et un autre petit câble
+connexions dans le flux d’assemblage. La [Nomenclature](bill-of-materials.mdx) au niveau du produit
+les suit en tant qu'éléments de campagne au niveau de l'appareil.
+
+Aucune source de faisceau Wireviz n'a encore été migrée vers `hardware/cables/` . Quand un
+La source Wireviz est ajoutée, liez son diagramme généré et les artefacts de nomenclature enfants
+à partir de cette page au lieu de dupliquer les lignes de nomenclature de câbles enfants dans `hardware/bom.csv`.
+
+| Actif                             | Localisation                                                                                      | Remarques                                                                                    |
+| --------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Dossier source du câble           | [`hardware/cables/`](https://github.com/researchanddesire/Lockbox-OSS/tree/main/hardware/cables)  | Les sources Wireviz YAML appartiennent ici.                                                  |
+| Nomenclature au niveau du produit | [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) | Répertorie les assemblages de câbles et les éléments de câbles disponibles dans le commerce. |

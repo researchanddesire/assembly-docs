@@ -1,0 +1,259 @@
+---
+title: "Montagehandleiding voor RADR draadloze afstandsbediening"
+description: "Montagehandleiding voor RADR draadloze afstandsbediening voor RADR draadloze afstandsbediening."
+---
+
+{/* Ported from MkDocs: assembly-guide.md */}
+
+## Doel
+
+Deze werkinstructie documenteert het huidige draadloze RADR-assemblageproces op afstand, van voorbereide PCB's en gedrukte onderdelen tot en met de uiteindelijke apparaattest.
+
+Gebruik deze instructies met de actieve PCB, afgedrukte onderdelen en stuklijstversie voor de build.
+
+## Benodigde onderdelen en verbruiksartikelen
+
+1. Verzamel de benodigde onderdelen voordat u met de montage begint.
+
+2. Controleer of de montageset het volgende bevat:
+   - `RADR-PCB-assembly`
+   - `screen`
+   - `battery`
+   - `front-housing`
+   - `back-housing`
+   - `battery-flap`
+   - 2x `side-button`
+   - `middle-button`
+   - `power-slider-button`
+   - `knob`
+   - `weather-stripping`
+   - 5x `BC-0408LTFB` drielobbige schroeven
+   - `hot-glue`
+
+3. Als alle benodigde onderdelen aanwezig zijn, gaat u verder.
+
+## Hulpmiddelen
+
+- Rasp
+- T8-bit voor drielobbige schroeven
+- Elektrische schroevendraaier of handschroevendraaier
+- Isopropylalcohol
+- Microvezeldoek
+- Scheermesje
+- Heet lijmpistool
+- Kleine schroevendraaier
+
+## Bereid de PCBA voor
+
+1. Ontbraam de randen van de `RADR-PCB-assembly` met een rasp totdat de plaatrand glad is.
+
+![RADR-PCB-montage met randgebieden gemarkeerd voor ontbramen](assets/pcba-deburr-edges.webp)
+
+_Ontbraam de PCBA-randen tot ze glad zijn._
+
+2. Veeg het gemarkeerde gebied van de tochtstrip op de PCBA schoon met `isopropyl-alcohol` en een `microfiber-cloth`.
+
+![Gemarkeerd tochtstripgebied op de RADR-PCB-assemblage](assets/pcba-clean-weather-strip-area.webp)
+
+_Reinig het gemarkeerde gebied van de tochtstrip._
+
+3. Bevestig een stuk `weather-stripping` van 2,5 cm in het midden van het gereinigde gebied.
+
+![Weerstrippen geïnstalleerd op de RADR-PCB-assemblage](assets/weather-strip-installed.webp)
+
+_Weerstrippen geïnstalleerd op de PCBA._
+
+4. Plaats de bedrukte `power-slider-button` over de PCBA aan/uit-schakelaar.
+
+![Bedrukte aan/uit-schakelaarafdekking geïnstalleerd over de PCBA-aan-uitschakelaar](assets/power-switch-cover-installed.webp)
+
+_Deksel van de stroomschakelaar geïnstalleerd._
+
+5. Sluit de 800 mAh LiPo `battery` aan op de PCBA.
+
+Houd de PCBA uitgeschakeld nadat u de batterij hebt aangesloten. De PCBA produceert een groen licht wanneer deze is ingeschakeld en produceert dat licht niet wanneer deze is uitgeschakeld.
+
+![LiPo-batterij aangesloten op de RADR-PCB-assemblage](assets/battery-connected-to-pcba.webp)
+
+_Batterij aangesloten op de PCBA._
+
+6. Zorg ervoor dat de PCBA is ontbraamd, opgevuld, voorzien van het deksel van de aan/uit-schakelaar, is aangesloten op de accu en is uitgeschakeld voordat u verdergaat.
+
+## Bereid de voorbehuizing voor
+
+1. Gebruik een `razor-blade` om een ​​kleine driehoek van beide bumpers op de `front-housing`af te snijden.
+
+Deze insnijdingen voorkomen dat de bumpers tijdens de installatie op de PCBA blijven haken.
+
+![Kenmerken van de bumper aan de voorzijde gemarkeerd voor trimmen](assets/front-housing-bumper-cut-lines.webp)
+
+_Trim beide bumperkenmerken._
+![Bumper voorkant behuizing na trimmen](assets/front-housing-bumper-trimmed.webp)
+
+_Referentie bijgesneden binnenbumper._
+
+2. Verwijder de beschermfolie van de `screen`.
+
+![Beschermfolie wordt verwijderd van het RADR-scherm](assets/screen-protective-film-removal.webp)
+
+_Verwijder de displayfilm._
+
+3. Installeer de `screen` in de `front-housing`.
+
+Plaats het scherm eerst in de onderste lip van de binnenste voorbehuizing. Buig de behuizing voorzichtig naar buiten terwijl u het scherm in de bovenste schermlip drukt. Controleer of het scherm vlak tegen de behuizing ligt.
+
+![Display wordt in de onderste lip van de RADR-voorbehuizing geplaatst](assets/screen-bottom-lip-insertion.webp)
+
+_Plaats het scherm eerst in de onderlip._
+![Display vlak in de RADR-voorbehuizing geplaatst](assets/screen-seated-flush.webp)
+
+_Beeldscherm vlak in de behuizing._
+
+4. Breng een dunne, onopvallende rups `hot-glue` langs de schermranden aan.
+
+Houd de lijmrups in contact met zowel de schermrand als de kunststof behuizing. Het plastic van de behuizing moet lichtjes in de lijm smelten.
+
+![Hete lijmrups rond de rand van het RADR-scherm](assets/screen-hot-glue-bead.webp)
+
+_Low-profile lijmrups rond de schermrand._
+
+5. Laat de afgedrukte knoppen in de `front-housing`vallen.
+
+![Geprinte RADR-knoppen geïnstalleerd in de voorkant van de behuizing](assets/buttons-installed-in-front-housing.webp)
+
+_Knoppen geïnstalleerd in de voorkant van de behuizing._
+
+6. Controleer of de bumpers zijn bijgesneden, het scherm op zijn plaats is gelijmd en de knoppen vrij kunnen bewegen voordat u verdergaat.
+
+## Installeer de PCBA
+
+1. Voer het zeeflint door de uitsparing in de PCBA en druk vervolgens de PCBA vlak in de `front-housing`.
+
+![RADR PCB-assemblage zit in de voorste behuizing met schermlint door de PCB-uitsparing](assets/pcba-seated-in-front-housing.webp)
+
+_PCBA zit in de voorste behuizing._
+
+2. Open de schermlintconnector op de PCBA met een kleine schroevendraaier.
+
+![Open schermlintconnector op de RADR-PCB-assemblage](assets/screen-connector-open.webp)
+
+_Open de schermconnector._
+
+3. Steek het schermlint in de connector en sluit de connector.
+
+![Schermlint in de RADR-PCB-connector gestoken](assets/screen-ribbon-connected.webp)
+
+_Schermlint aangesloten._
+
+4. Steek het schermlint in de behuizing.
+
+![Schermlint weggestopt in de RADR-behuizing](assets/screen-ribbon-tucked.webp)
+
+_Schermlint weggestopt in de behuizing._
+
+5. Zorg ervoor dat de PCBA vlak ligt, dat de lintconnector gesloten is en dat het lint weggestopt is van de knelpunten voordat u verdergaat.
+
+## Sluit de behuizing
+
+1. Plaats de `back-housing` over de `front-housing` door de aan/uit-schakelaar in de uitsparing te steken.
+
+![RADR-achterbehuizing uitgelijnd over de voorbehuizing met de aan/uit-schakelaar in de uitsparing](assets/bottom-housing-power-switch-alignment.webp)
+
+_Lijn de aan/uit-schakelaar uit met de uitsparing in de achterkant van de behuizing._
+
+2. Trek de `battery` door de open ruimte in de achterbehuizing die het batterijcompartiment zal worden.
+
+![Batterij door de opening van het batterijcompartiment aan de achterkant van de RADR getrokken](assets/battery-pulled-through-bottom-housing.webp)
+
+_Trek de batterij door de opening van het batterijcompartiment._
+![Referentie batterijroutering met RADR-behuizingen aan de voor- en achterkant gedeeltelijk gesloten](assets/battery-routing-reference.webp)
+
+_Referentie batterijroutering._
+
+3. Bevestig de voor- en achterkant van de behuizing met een gemiddeld aanhaalmoment met drielobbige schroeven.
+
+De schroef is diep genoeg als de schroevendraaier ratelt.
+
+![locaties van de schroeven van de RADR-achterbehuizing bevestigd met drielobbige schroeven](assets/rear-screws-fastened.webp)
+
+_Zet de schroeven van de achterste behuizing vast._
+
+4. Bevestig de schroefgaten in de voorkant van de behuizing met dezelfde drielobbige schroeven.
+
+![locaties van de schroeven van de RADR-voorbehuizing bevestigd met drielobbige schroeven](assets/front-screws-fastened.webp)
+
+_Zet de schroeven van de voorste behuizing vast._
+
+5. Plaats de `battery` in het batterijcompartiment.
+
+![RADR-batterij in het batterijcompartiment geplaatst](assets/battery-in-compartment.webp)
+
+_Batterij in het compartiment geplaatst._
+
+6. Plaats de `battery-flap` over de accu en schroef deze vast met drielobbige schroeven.
+
+![RADR-batterijklep geïnstalleerd over het batterijcompartiment](assets/battery-cover-installed.webp)
+
+_Batterijdeksel geïnstalleerd._
+
+7. Controleer of de behuizing volledig gesloten is, alle schroeven goed vastzitten en het batterijdeksel goed vastzit voordat u verdergaat.
+
+## Installeer de knop en test
+
+1. Gebruik een kleine schroevendraaier om overtollig filament van de binnenknopcirkel te verwijderen.
+
+![Binnenkant van de RADR-knop na het verwijderen van overtollig filament](assets/knob-interior-cleaned.webp)
+
+_Reinig de knopboring vóór installatie._
+
+2. Lijn de vorm van de encoder uit met de cirkelvorm van de binnenknop en druk de `knob` op de encoder totdat deze zacht klikt.
+
+![RADR-knop wordt op de roterende encoder gedrukt](assets/knob-installed-on-encoder.webp)
+
+_Druk de knop op de encoder._
+
+3. Schakel het apparaat in en test het volgens het protocol.
+
+![RADR draadloze afstandsbediening ingeschakeld voor laatste test](assets/device-test-on.webp)
+
+_Apparaat ingeschakeld voor laatste test._
+
+## Eindmontage
+
+1. Controleer of de PCBA-randen glad zijn en niet blijven haken aan de behuizing.
+2. Controleer of de tochtstrip gecentreerd is en vastzit aan de PCBA.
+3. Controleer of het deksel van de aan/uit-schakelaar de aan/uit-schakelaar netjes beweegt.
+4. Controleer of de bumpers van de voorkant van de behuizing zijn bijgesneden.
+5. Zorg ervoor dat het scherm vlak ligt en vastgelijmd is met een laagprofielrups.
+6. Controleer of de knoppen zijn geïnstalleerd en vrij kunnen bewegen.
+7. Controleer of de PCBA vlak in de voorbehuizing zit.
+8. Controleer of het schermlint volledig is ingestoken en de connector is gesloten.
+9. Zorg ervoor dat het schermlint en de batterijdraden uit de buurt van knelpunten zijn geleid.
+10. Controleer of de behuizingen en het batterijdeksel zijn bevestigd met drielobbige schroeven.
+11. Controleer of de knop op de encoder zit.
+12. Bevestig dat het apparaat wordt ingeschakeld en het huidige functionele testprotocol doorstaat.
+
+## Kwaliteitscontrolechecklist
+
+- [ ] PCBA-randen werden ontbraamd tot ze glad waren.
+- [ ] Het gebied rond de tochtstrip is schoongemaakt met isopropylalcohol.
+- [ ] Er werd een stuk tochtstrip van 2,5 cm op de PCBA geïnstalleerd.
+- [ ] Het afgedrukte kapje voor de aan/uit-schakelaar is geïnstalleerd.
+- [ ] Batterij was aangesloten terwijl de PCBA uitgeschakeld was.
+- [ ] De bumpers aan de voorkant van de behuizing zijn ingekort.
+- [ ] Schermfilm is verwijderd.
+- [ ] Het scherm is vlak in de voorbehuizing gemonteerd.
+- [ ] Het scherm werd vastgezet met een dunne, onopvallende hete lijmrups.
+- [ ] Knoppen zijn in de voorkant van de behuizing gevallen.
+- [ ] Schermlint werd door de PCBA-uitsparing gevoerd.
+- [ ] PCBA werd vlak in de behuizing gedrukt.
+- [ ] Schermlintconnector is geopend, geplaatst en gesloten.
+- [ ] Schermlint zat in de behuizing gestopt.
+- [ ] Achterbehuizing was uitgelijnd rond de aan/uit-schakelaar.
+- [ ] De batterij is door de opening van het batterijcompartiment getrokken.
+- [ ] De voor- en achterbehuizingen werden vastgezet met drielobbige schroeven.
+- [ ] De batterij is in het batterijcompartiment geplaatst.
+- [ ] Batterijdeksel is geplaatst en dichtgeschroefd.
+- [ ] De knopboring is ontdaan van overtollig filament.
+- [ ] De knop werd op de encoder gedrukt totdat deze klikte.
+- [ ] Apparaat is ingeschakeld en getest volgens het protocol.

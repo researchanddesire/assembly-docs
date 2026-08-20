@@ -1,0 +1,156 @@
+---
+title: "10. Verkabelung"
+description: "Schließen Sie Spannungseingangs- und Datenkabel zwischen der OSSM-Steuerplatine und dem Motor an"
+---
+
+Die Verkabelung verbindet die OSSM-Steuerplatine mit dem Motor und stellt sowohl Strom- als auch Steuersignale bereit. Dieser Schritt stellt die elektrische Verbindung her, die es dem Motor ermöglicht, Befehle zu empfangen und ordnungsgemäß zu funktionieren.
+
+## Erforderliche Komponenten und Werkzeuge
+
+### Komponenten
+
+| Komponente | Zählen | Spezifikation / Hinweise |
+|-----------|-------|----------------------|
+| Kleine Drahtlänge | 1 Satz | Rote und schwarze Adern für Spannungseingang |
+| Vierpoliges Datenkabel | 1 | Kabel für PU- und Richtungsklemmen |
+| OSSM-Steuerplatine | 1 | Im vorherigen Schritt zusammengebaut |
+| Motor | 1 | In den vorherigen Schritten zusammengebaut |
+
+### Werkzeuge
+
+| Werkzeug | Zählen | Spezifikation / Hinweise |
+|------|-------|----------------------|
+| Kleiner Schlitzschraubendreher | 1 | Für Verdrahtungsklemmen |
+| Abisolierzangen | 1 | Wenn die Drähte nicht vorisoliert sind |
+
+<Info>
+Die Spannungseingangskabel sollten lang genug sein, um ohne übermäßigen Durchhang oder Spannung von den Motorklemmen bis zu den Steuerplatinenklemmen zu reichen. Normalerweise reichen 15–30 cm (6–12 Zoll) aus.
+</Info>
+
+## Schritt-für-Schritt-Montage: Verkabelung
+
+<Steps>
+<Step title="Bereiten Sie Spannungsleitungen vor">
+Nehmen Sie das kleine Stück roten und schwarzen Draht. Wenn die Enden nicht abisoliert sind, legen Sie mit einer Abisolierzange etwa 3–5 mm des Kabels frei.
+
+Drehen Sie die freiliegenden Stränge leicht zusammen, um ein Ausfransen zu verhindern und eine saubere Verbindung zu gewährleisten.
+
+<Tip>
+Wenn Sie sich über die richtige Abisolierlänge nicht sicher sind, entscheiden Sie sich für einen etwas längeren freiliegenden Draht. Überschüssiges Kabel können Sie jederzeit abschneiden, aber zu wenig freiliegender Draht stellt möglicherweise keinen ordnungsgemäßen Kontakt in der Klemme her.
+</Tip>
+</Step>
+
+<Step title="Schließen Sie die Spannungskabel an den Motor an">
+Identifizieren Sie auf dem Motorschild die Klemme „Voltage Plus“ (rechts) und die Klemme „Ground“.
+
+Lösen Sie die Schrauben an diesen Anschlüssen mit dem kleinen Schlitzschraubendreher.
+
+Stecken Sie das rote Kabel in den Spannungs-Plus-Anschluss.
+
+Stecken Sie das schwarze Kabel in die Erdungsklemme.
+
+Ziehen Sie die Schrauben fest, um den Metalldraht festzuklemmen.
+
+<Warning>
+Stellen Sie vor dem Festziehen sicher, dass die Drahtlitzen vollständig in die Klemme eingeführt sind. Lose Verbindungen können Lichtbogenbildung, Überhitzung oder Aussetzer verursachen.
+</Warning>
+
+Ziehen Sie leicht an den Drähten, um sicherzustellen, dass sie fest sitzen, und prüfen Sie, ob lose Drahtlitzen vorhanden sind, die einen Kurzschluss verursachen könnten.
+
+<Check>
+Beide Drähte sind fest mit den Motorklemmen verbunden. Das rote Kabel befindet sich in der Plus-Spannungsklemme und das schwarze Kabel in der Erdungsklemme. Es sind keine verirrten Drahtlitzen sichtbar.
+</Check>
+</Step>
+
+<Step title="Schließen Sie die Spannungskabel an die Steuerplatine an">
+Identifizieren Sie die entsprechenden „Plus“- und „Minus“-Klemmen für den Spannungseingang auf der Steuerplatine.
+
+Stecken Sie das andere Ende des roten Kabels in den Plus-Anschluss auf der Platine.
+
+Stecken Sie das andere Ende des schwarzen Kabels in den Minus-Anschluss auf der Platine.
+
+Ziehen Sie die Schrauben mit dem kleinen Schlitzschraubendreher fest.
+
+<Warning>
+Überprüfen Sie vor dem Anziehen noch einmal die Polarität. Eine Verpolung der Spannung kann zu Schäden am Motor und der Steuerplatine führen. Rot sollte immer an Plus-/Plusklemmen angeschlossen werden und Schwarz sollte immer an Minus-/Minus-/Masseklemmen angeschlossen werden.
+</Warning>
+
+Führen Sie einen abschließenden Zugtest durch, um sicherzustellen, dass beide Verbindungen sicher sind.
+
+<Check>
+Beide Spannungsleitungen sind fest mit der Steuerplatine verbunden. Das rote Kabel befindet sich im Plus-Anschluss und das schwarze Kabel im Minus-Anschluss. Alle Verbindungen bestehen den Schlepptest.
+</Check>
+</Step>
+
+<Step title="Datenkabel an Platine anschließen">
+Nehmen Sie das vierpolige Datenkabel und suchen Sie den entsprechenden Anschluss auf der OSSM-Steuerplatine.
+
+Stecken Sie den vierpoligen Datenkabelstecker in den entsprechenden Anschluss auf der OSSM-Steuerplatine, bis Sie ein angenehmes Klicken hören.
+
+<Info>
+Das Datenkabel überträgt Impuls- (PU) und Richtungssignale von der Steuerplatine zum Motor. Diese Signale steuern die Bewegung und Richtung des Motors.
+</Info>
+
+<Check>
+Der Stecker des Datenkabels sitzt vollständig im Anschluss der Steuerplatine. Sie sollten ein Klicken hören oder fühlen, wenn es richtig angeschlossen ist.
+</Check>
+</Step>
+
+<Step title="Datenkabel an Motor anschließen">
+Ordnen Sie die Drähte des Datenkabels den beschrifteten Klemmen am Motor zu, die (von rechts nach links) lauten: PU Plus, PU Minus, Richtung Plus und Richtung Minus.
+
+Verbinden Sie den PU+ entsprechenden Leiter des Kabels mit der PU-Plus-Klemme des Motors.
+
+Verbinden Sie den PU- entsprechenden Draht des Kabels mit der PU-Minusklemme des Motors.
+
+Verbinden Sie den Draht, der Richtung+ am Kabel entspricht, mit der Richtungs-Plus-Klemme am Motor.
+
+Verbinden Sie den Draht, der Richtung- am Kabel entspricht, mit der Richtungs-Minusklemme am Motor.
+
+<Tip>
+Wenn Sie nicht sicher sind, welches Kabel welchem Signal entspricht, schauen Sie in der Kabeldokumentation nach oder verwenden Sie ein Multimeter, um den Durchgang zu überprüfen. Das Kabel sollte entsprechend der Klemmenbeschriftung beschriftet oder farblich gekennzeichnet sein.
+</Tip>
+
+<Warning>
+Ein falscher Anschluss der Datenleitungen kann dazu führen, dass der Motor in die falsche Richtung läuft oder nicht auf Befehle reagiert. Überprüfen Sie jeden Anschluss vor dem Festziehen anhand der Motorklemmenetiketten.
+</Warning>
+</Step>
+
+<Step title="Datenverbindungen sichern und testen">
+Ziehen Sie die Anschlussschrauben aller vier Datenkabel mit dem kleinen Schlitzschraubendreher fest.
+
+Führen Sie einen abschließenden leichten Zugtest an allen vier Verbindungen durch, um sicherzustellen, dass sie sicher sind.
+
+Überprüfen Sie alle Verbindungen auf verirrte Litzen oder lose Verbindungen.
+
+<Check>
+Alle vier Datenkabeladern sind fest mit den entsprechenden Motorklemmen verbunden:
+- Klemme PU+ auf PU plus
+- PU-zu-PU-Minusklemme
+- Richtung+ zum Richtungsplus-Anschluss
+- Richtung – zum Richtungs-Minus-Anschluss
+
+Alle Verbindungen bestehen den Zugtest und es sind keine verirrten Drahtlitzen sichtbar.
+</Check>
+</Step>
+</Steps>
+
+## Verifizierung
+
+Bevor Sie fortfahren, überprüfen Sie, ob alle Verbindungen korrekt sind:
+
+- **Spannungseingang**: Rotes Kabel verbindet Plus mit Plus, schwarzes Kabel verbindet Masse mit Minus
+- **Datenkabel**: Der vierpolige Stecker sitzt vollständig in der Steuerplatine
+- **Motorklemmen**: Alle vier Datenkabel sind an die richtigen Klemmen angeschlossen (PU+, PU-, Richtung+, Richtung-)
+- **Sicherheit**: Alle Klemmschrauben sind festgezogen und alle Verbindungen bestehen den Zugtest
+
+<Warning>
+Schalten Sie das System erst dann ein, wenn Sie überprüft haben, dass alle Verbindungen korrekt und sicher sind. Eine falsche Verkabelung kann zu dauerhaften Schäden am Motor und der Steuerplatine führen.
+</Warning>
+
+## Nächste Schritte
+
+Nachdem die gesamte Verkabelung abgeschlossen und überprüft ist, können Sie mit dem ersten Testabschnitt fortfahren, um zu überprüfen, ob der Motor korrekt auf Steuersignale reagiert.
+
+
+[← Elektronik](/ossm/build/electronics) · [Weiter: Erster Test →](/ossm/build/first-test)
