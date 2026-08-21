@@ -5,11 +5,11 @@ description: "Stückliste für Deepthroat Trainer."
 
 {/* Ported from MkDocs: bom.md */}
 
-Der DT-Trainer-Aufbau verwendet eine bestückte Leiterplattenbaugruppe mit externem Display, Sensor, Batterie, Kabelbaum, Klettverschluss, 3D-gedrucktem Gehäuse, Schrauben und Montagekleber, die für den All-in-One-Gehäuseaufbau erforderlich sind.
+Der Deepthroat Trainer verwendet eine bestückte Leiterplattenbaugruppe mit externem Bildschirm, Sensor, Akku, Kabelbaum, Schlaufenklettband, 3D-gedrucktem Gehäuse, Schrauben und Montagekleber, die für den All-in-One-Gehäuseaufbau erforderlich sind.
 
 ## Teile
 
-Diese Tabelle wird während des Assembly-Docs-Builds aus [hardware/bom.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/bom.csv) generiert. Aktualisieren Sie die CSV-Datei, anstatt die generierte Tabelle manuell zu bearbeiten.
+Diese Tabelle wird während des `assembly-docs`-Builds aus [hardware/bom.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/bom.csv) generiert. Aktualisieren Sie die CSV-Datei, anstatt die generierte Tabelle manuell zu bearbeiten.
 
 {/* BEGIN GENERATED BOM */}
 
@@ -39,10 +39,10 @@ bc9861f
 </span>
 </dd>
 </dl>
-<p className="bom-status bom-status-released">
-<strong>Für die Produktion freigegeben.</strong>Diese Stückliste entspricht einem Tag
-    Hardware-Release.
-</p>
+<div className="bom-status bom-status-released">
+<strong>Für die Produktion freigegeben.</strong> Diese Stückliste entspricht einer getaggten
+    Hardware-Version.
+</div>
   <div
     className="bom-table-frame"
     role="region"
@@ -94,8 +94,8 @@ bc9861f
 <tr>
 <td className="bom-col-line_item bom-num">1</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="DTT Leiterplattenbestückung">
-              DTT-Leiterplattenbestückung
+<div className="bom-clamp" title="DTT-Platinenbaugruppe">
+              DTT-Platinenbaugruppe
 </div>
 </td>
 <td className="bom-col-category">
@@ -103,9 +103,10 @@ bc9861f
               className="bom-cat"
               tabIndex="0"
               role="img"
-              title="Montage von Leiterplatten"
+              style={{ backgroundColor: "#1864ab", color: "#ffffff" }}
+              title="Leiterplattenbestückung"
               aria-label="Kategorie: Leiterplattenbestückung"
-              data-label="Montage von Leiterplatten"
+              data-label="Leiterplattenbestückung"
             >
 PCA
 </span>
@@ -113,13 +114,13 @@ PCA
 <td className="bom-col-description">
             <div
               className="bom-clamp"
-              title="Rev4-Leiterplattenbaugruppe"
+              title="Rev4-Platinenbaugruppe"
             >
-Rev4-Leiterplattenbaugruppe
+Rev4-Platinenbaugruppe
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">each</td>
+<td className="bom-col-unit_of_measure bom-num">Stück</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -158,8 +159,8 @@ Die untergeordnete PCB-Stückliste wird separat verwaltet
 <tr>
 <td className="bom-col-line_item bom-num">2</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="DTT Schlaufenklettverschluss">
-              DTT-Schlaufenklettverschluss
+<div className="bom-clamp" title="DTT-Schlaufenklettband">
+              DTT-Schlaufenklettband
 </div>
 </td>
 <td className="bom-col-category">
@@ -167,9 +168,10 @@ Die untergeordnete PCB-Stückliste wird separat verwaltet
               className="bom-cat"
               tabIndex="0"
               role="img"
-              title="Hergestellt, Sonstiges"
-              aria-label="Kategorie: Hergestellt, Andere"
-              data-label="Hergestellt, Sonstiges"
+              style={{ backgroundColor: "#a8703a", color: "#ffffff" }}
+              title="Gefertigt, Sonstiges"
+              aria-label="Kategorie: Gefertigt, Sonstiges"
+              data-label="Gefertigt, Sonstiges"
             >
 FBO
 </span>
@@ -177,13 +179,13 @@ FBO
 <td className="bom-col-description">
             <div
               className="bom-clamp"
-              title="Schlaufenseitiger Klettverschlussstreifen, der auf der Leiterplatte verwendet wird"
+              title="Schlaufenseitiger Klettbandstreifen für die Platine"
             >
-Schlaufenseitiger Klettverschlussstreifen, der auf der Leiterplatte verwendet wird
+Schlaufenseitiger Klettbandstreifen für die Platine
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">each</td>
+<td className="bom-col-unit_of_measure bom-num">Stück</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -217,6 +219,7 @@ Schlaufenseitiger Klettverschlussstreifen, der auf der Leiterplatte verwendet wi
               className="bom-cat"
               tabIndex="0"
               role="img"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
               title="FDM-gedrucktes Teil"
               aria-label="Kategorie: FDM-gedrucktes Teil"
               data-label="FDM-gedrucktes Teil"
@@ -225,12 +228,12 @@ FDM
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="Bedrucktes Trainergehäuse">
-              Bedrucktes Trainergehäuse
+<div className="bom-clamp" title="3D-gedrucktes Trainergehäuse">
+              3D-gedrucktes Trainergehäuse
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">each</td>
+<td className="bom-col-unit_of_measure bom-num">Stück</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -275,8 +278,9 @@ Reinigen Sie die inneren Filamentstränge vor dem Zusammenbau
               className="bom-cat"
               tabIndex="0"
               role="img"
+              style={{ backgroundColor: "#a61e4d", color: "#ffffff" }}
               title="Montage"
-              aria-label="Kategorie: Versammlung"
+              aria-label="Kategorie: Montage"
               data-label="Montage"
             >
 ASM
@@ -288,7 +292,7 @@ ASM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">each</td>
+<td className="bom-col-unit_of_measure bom-num">Stück</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -322,6 +326,7 @@ ASM
               className="bom-cat"
               tabIndex="0"
               role="img"
+              style={{ backgroundColor: "#3b5bdb", color: "#ffffff" }}
               title="Integrierter Schaltkreis"
               aria-label="Kategorie: Integrierter Schaltkreis"
               data-label="Integrierter Schaltkreis"
@@ -335,7 +340,7 @@ IC
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">each</td>
+<td className="bom-col-unit_of_measure bom-num">Stück</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -360,8 +365,8 @@ IC
 <tr>
 <td className="bom-col-line_item bom-num">6</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="Batterie">
-              Batterie
+<div className="bom-clamp" title="Akku">
+              Akku
 </div>
 </td>
 <td className="bom-col-category">
@@ -369,6 +374,7 @@ IC
               className="bom-cat"
               tabIndex="0"
               role="img"
+              style={{ backgroundColor: "#2b8a3e", color: "#ffffff" }}
               title="Batterie"
               aria-label="Kategorie: Batterie"
               data-label="Batterie"
@@ -377,12 +383,12 @@ BTY
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="Lithiumbatterie">
-              Lithiumbatterie
+<div className="bom-clamp" title="Lithium-Akku">
+              Lithium-Akku
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">each</td>
+<td className="bom-col-unit_of_measure bom-num">Stück</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -399,8 +405,8 @@ BTY
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-notes">
-<div className="bom-clamp" title="Mit der Schreibseite nach unten installieren">
-              Mit der Schreibseite nach unten installieren
+<div className="bom-clamp" title="Mit der beschrifteten Seite nach unten installieren">
+              Mit der beschrifteten Seite nach unten installieren
 </div>
 </td>
 </tr>
@@ -416,6 +422,7 @@ BTY
               className="bom-cat"
               tabIndex="0"
               role="img"
+              style={{ backgroundColor: "#0b7285", color: "#ffffff" }}
               title="Kabelbaumbaugruppe"
               aria-label="Kategorie: Kabelbaumbaugruppe"
               data-label="Kabelbaumbaugruppe"
@@ -426,13 +433,13 @@ CHA
 <td className="bom-col-description">
             <div
               className="bom-clamp"
-              title="Bildschirmsensorbatterie und PCB-Kabelbaum"
+              title="Kabelbaum für Bildschirm, Sensor, Akku und PCB"
             >
-Bildschirmsensorbatterie und PCB-Kabelbaum
+Kabelbaum für Bildschirm, Sensor, Akku und PCB
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">each</td>
+<td className="bom-col-unit_of_measure bom-num">Stück</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -451,9 +458,9 @@ Bildschirmsensorbatterie und PCB-Kabelbaum
 <td className="bom-col-notes">
             <div
               className="bom-clamp"
-              title="Verbindet die Batterie des Bildschirmsensors und die Platine"
+              title="Verbindet Bildschirm, Sensor, Akku und PCB"
             >
-Verbindet die Batterie des Bildschirmsensors und die Platine
+Verbindet Bildschirm, Sensor, Akku und PCB
 </div>
 </td>
 </tr>
@@ -469,9 +476,10 @@ Verbindet die Batterie des Bildschirmsensors und die Platine
               className="bom-cat"
               tabIndex="0"
               role="img"
-              title="Verschluss"
-              aria-label="Kategorie: Verbindungselement"
-              data-label="Verschluss"
+              style={{ backgroundColor: "#c92a2a", color: "#ffffff" }}
+              title="Befestigungselement"
+              aria-label="Kategorie: Befestigungselement"
+              data-label="Befestigungselement"
             >
 FST
 </span>
@@ -482,7 +490,7 @@ FST
 </div>
 </td>
 <td className="bom-col-qty bom-num">4</td>
-<td className="bom-col-unit_of_measure bom-num">each</td>
+<td className="bom-col-unit_of_measure bom-num">Stück</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -503,9 +511,9 @@ FST
 <td className="bom-col-notes">
             <div
               className="bom-clamp"
-              title="Wird zur Befestigung der Platine am Trainergehäuse verwendet"
+              title="Zur Befestigung der Platine am Trainergehäuse"
             >
-Wird zur Befestigung der Platine am Trainergehäuse verwendet
+Zur Befestigung der Platine am Trainergehäuse
 </div>
 </td>
 </tr>
@@ -521,6 +529,7 @@ Wird zur Befestigung der Platine am Trainergehäuse verwendet
               className="bom-cat"
               tabIndex="0"
               role="img"
+              style={{ backgroundColor: "#5c5f00", color: "#ffffff" }}
               title="Klebstoff"
               aria-label="Kategorie: Klebstoff"
               data-label="Klebstoff"
@@ -534,7 +543,7 @@ ADH
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">application</td>
+<td className="bom-col-unit_of_measure bom-num">Anwendung</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -553,9 +562,9 @@ ADH
 <td className="bom-col-notes">
             <div
               className="bom-clamp"
-              title="Wird zur Sicherung des Bildschirmsensors und der Batterie verwendet"
+              title="Zur Befestigung von Bildschirm, Sensor und Akku"
             >
-Wird zur Sicherung des Bildschirmsensors und der Batterie verwendet
+Zur Befestigung von Bildschirm, Sensor und Akku
 </div>
 </td>
 </tr>
@@ -563,12 +572,12 @@ Wird zur Sicherung des Bildschirmsensors und der Batterie verwendet
 </table>
 </div>
 <footer className="bom-footer">
-<p>
-      Stückliste erstellt aus<code>hardware/bom.csv</code>von Research
-      und Desire-Stücklistenwerkzeuge.
-</p>
-<p>Lizenz: CERN-OHL-S v2 (Hardware) / MPL-2.0 (Firmware).</p>
-<p>
+<div>
+      Stückliste generiert aus <code>hardware/bom.csv</code> mit den BOM-Tools von
+      Research and Desire.
+</div>
+<div>Lizenz: CERN-OHL-S v2 (Hardware) / MPL-2.0 (Firmware).</div>
+<div>
       Quelle:{" "}
       <a
         href="https://github.com/researchanddesire/DT_Trainer-OSS"
@@ -578,25 +587,25 @@ Wird zur Sicherung des Bildschirmsensors und der Batterie verwendet
 DT_Trainer-OSS auf GitHub
 </a>
       .
-</p>
-<p>© Forschung und Begehren.</p>
+</div>
+<div>© Research and Desire.</div>
 </footer>
 </section>
 {/* END GENERATED BOM */}
 
 ## Montagewerkzeuge
 
-| Werkzeug              | Verwenden Sie                                                                   |
+| Werkzeug              | Verwendung                                                                      |
 | --------------------- | ------------------------------------------------------------------------------- |
-| Heißklebepistole      | Kleben Sie Bildschirm, Sensor und Batterie fest.                                |
+| Heißklebepistole      | Kleben Sie Bildschirm, Sensor und Akku fest.                                    |
 | T8-Schraubendreherbit | Platinenschrauben festziehen.                                                   |
-| Elektroschrauber o.ä. | Antriebsschrauben.                                                              |
-| Taschenlampe          | Entfernen Sie vorsichtig Filamentstränge im Inneren des 3D-gedruckten Gehäuses. |
+| Elektroschrauber oder ähnliches Werkzeug | Schrauben eindrehen.                                                              |
+| Brenner                                | Filamentfäden im Inneren des 3D-gedruckten Gehäuses vorsichtig entfernen. |
 
-## Design- und Fertigungsanlagen
+## Design- und Fertigungsressourcen
 
-| Vermögenswert      | Standort                                                                                                                  | Notizen                                                                                                   |
+| Ressource          | Standort                                                                                                                  | Hinweise                                                                                                  |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| PCB-Übersicht      | [assembly-docs/pcb-overview.md](pcb-overview.mdx)                                                                         | Platinenquelle, Produktionsexport und PCB-Stücklistengrenze.                                              |
-| PCB-Quelle         | [hardware/pcb/README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/README.md)            | Bearbeitbare Board-Design-Quellen.                                                                        |
-| Produktionsexporte | [hardware/produktion-exporte/](https://github.com/researchanddesire/DT_Trainer-OSS/tree/main/hardware/production-exports) | An Hersteller gesendete Dateien, einschließlich Gerber-, Pick-and-Place- und Produktions-PCB-Stücklisten. |
+| PCB-Übersicht       | [assembly-docs/pcb-overview.md](pcb-overview)                                                                              | Quelle der Platine, Produktions-Export und PCB-BOM-Grenze.                                              |
+| PCB-Quelle          | [hardware/pcb/README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/README.md)            | Bearbeitbare Quellen für Platinenentwürfe.                                                                        |
+| Produktions-Exporte | [hardware/production-exports/](https://github.com/researchanddesire/DT_Trainer-OSS/tree/main/hardware/production-exports) | An Hersteller gesendete Dateien, einschließlich Gerber-Dateien, Pick-and-Place-Dateien und Produktions-PCB-Stücklisten. |
