@@ -5,11 +5,11 @@ description: "Nomenclature pour Deepthroat Trainer."
 
 {/* Ported from MkDocs: bom.md */}
 
-La construction du DT Trainer utilise un assemblage de circuits imprimés équipé d'un écran externe, d'un capteur, d'une batterie, d'un faisceau de câbles, d'une boucle Velcro, d'un boîtier imprimé en 3D, de vis et d'un adhésif d'assemblage nécessaire à la construction du boîtier tout-en-un.
+La construction du Deepthroat Trainer utilise un assemblage de circuits imprimés équipé d'un écran externe, d'un capteur, d'une batterie, d'un faisceau de câbles, de bandes auto-agrippantes côté boucle, d'un boîtier DTT imprimé en 3D, de vis et d'un adhésif d'assemblage, tous nécessaires à la construction du boîtier tout-en-un.
 
 ## Pièces
 
-Cette table est générée à partir de [hardware/bom.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/bom.csv) lors de la construction de assembly-docs. Mettez à jour le CSV au lieu de modifier manuellement le tableau généré.
+Ce tableau est généré à partir de [hardware/bom.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/bom.csv) lors du build `assembly-docs`. Mettez à jour le CSV au lieu de modifier manuellement le tableau généré.
 
 {/* BEGIN GENERATED BOM */}
 
@@ -39,10 +39,10 @@ bc9861f
 </span>
 </dd>
 </dl>
-<p className="bom-status bom-status-released">
-<strong>Valorisé pour la production.</strong>Cette nomenclature correspond à un
-    version matérielle.
-</p>
+<div className="bom-status bom-status-released">
+<strong>Validée pour la production.</strong> Cette nomenclature correspond à une
+    version matérielle taguée.
+</div>
   <div
     className="bom-table-frame"
     role="region"
@@ -95,7 +95,7 @@ bc9861f
 <td className="bom-col-line_item bom-num">1</td>
 <td className="bom-col-part_name">
 <div className="bom-clamp" title="Assemblage de circuits imprimés DTT">
-              Assemblage de circuits imprimés TNT
+              Assemblage de circuits imprimés DTT
 </div>
 </td>
 <td className="bom-col-category">
@@ -103,11 +103,12 @@ bc9861f
               className = "bom-cat"
               tabIndex="0"
               role="img"
+              style={{ backgroundColor: "#1864ab", color: "#ffffff" }}
               title="Assemblage de circuits imprimés"
               aria-label="Catégorie : Assemblage de circuits imprimés"
               data-label="Assemblage de circuits imprimés"
             >
-APC
+PCA
 </span>
 </td>
 <td className="bom-col-description">
@@ -119,7 +120,7 @@ Assemblage de circuits imprimés Rev4
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">unité</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -158,8 +159,8 @@ La nomenclature enfant du PCB est gérée séparément
 <tr>
 <td className="bom-col-line_item bom-num">2</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="DTT boucle velcro">
-              Velcro à boucle DTT
+<div className="bom-clamp" title="Bande auto-agrippante côté boucle DTT">
+              Bande auto-agrippante côté boucle DTT
 </div>
 </td>
 <td className="bom-col-category">
@@ -167,9 +168,10 @@ La nomenclature enfant du PCB est gérée séparément
               className = "bom-cat"
               tabIndex="0"
               role="img"
-              title="Fabriqué, Autre"
-              aria-label="Catégorie : Fabriqué, Autre"
-              data-label="Fabriqué, Autre"
+              style={{ backgroundColor: "#a8703a", color: "#ffffff" }}
+              title="Fabriqué, autre"
+              aria-label="Catégorie : Fabriqué, autre"
+              data-label="Fabriqué, autre"
             >
 FBO
 </span>
@@ -183,7 +185,7 @@ Bande auto-agrippante côté boucle utilisée sur le PCB
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">unité</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -200,8 +202,8 @@ Bande auto-agrippante côté boucle utilisée sur le PCB
             <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-notes">
-<div className="bom-clamp" title="Utilisé sur le PCB lors de l'assemblage">
-              Utilisé sur le PCB lors de l'assemblage
+<div className="bom-clamp" title="Utilisée sur le PCB lors de l'assemblage">
+              Utilisée sur le PCB lors de l'assemblage
 </div>
 </td>
 </tr>
@@ -209,7 +211,7 @@ Bande auto-agrippante côté boucle utilisée sur le PCB
 <td className="bom-col-line_item bom-num">3</td>
 <td className="bom-col-part_name">
 <div className="bom-clamp" title="Boîtier DTT imprimé en 3D">
-              Boîtier TNT imprimé en 3D
+              Boîtier DTT imprimé en 3D
 </div>
 </td>
 <td className="bom-col-category">
@@ -217,20 +219,21 @@ Bande auto-agrippante côté boucle utilisée sur le PCB
               className = "bom-cat"
               tabIndex="0"
               role="img"
-              title="Pièce imprimée FDM"
-              aria-label="Catégorie : Pièce imprimée FDM"
-              data-label="Pièce imprimée FDM"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+              title="Pièce imprimée en FDM"
+              aria-label="Catégorie : Pièce imprimée en FDM"
+              data-label="Pièce imprimée en FDM"
             >
 FDM
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="Boîtier d'entraînement imprimé">
-              Boîtier d'entraînement imprimé
+<div className="bom-clamp" title="Boîtier du Deepthroat Trainer imprimé en 3D">
+              Boîtier du Deepthroat Trainer imprimé en 3D
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">unité</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -275,9 +278,10 @@ Nettoyer les brins de filament intérieurs avant l'assemblage
               className = "bom-cat"
               tabIndex="0"
               role="img"
-              title="Assemblée"
+              style={{ backgroundColor: "#a61e4d", color: "#ffffff" }}
+              title="Assemblage"
               aria-label="Catégorie : Assemblage"
-              data-label="Assemblée"
+              data-label="Assemblage"
             >
 ASM
 </span>
@@ -288,7 +292,7 @@ ASM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">unité</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -322,11 +326,12 @@ ASM
               className = "bom-cat"
               tabIndex="0"
               role="img"
+              style={{ backgroundColor: "#3b5bdb", color: "#ffffff" }}
               title="Circuit intégré"
               aria-label="Catégorie : Circuit intégré"
               data-label="Circuit intégré"
             >
-CI
+IC
 </span>
 </td>
 <td className="bom-col-description">
@@ -335,7 +340,7 @@ CI
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">unité</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -369,6 +374,7 @@ CI
               className = "bom-cat"
               tabIndex="0"
               role="img"
+              style={{ backgroundColor: "#2b8a3e", color: "#ffffff" }}
               title="Batterie"
               aria-label="Catégorie : Batterie"
               data-label="Batterie"
@@ -382,7 +388,7 @@ BTY
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">unité</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -416,9 +422,10 @@ BTY
               className = "bom-cat"
               tabIndex="0"
               role="img"
-              title="Ensemble de faisceau de câbles"
+              style={{ backgroundColor: "#0b7285", color: "#ffffff" }}
+              title="Assemblage de faisceau de câbles"
               aria-label="Catégorie : Assemblage de faisceau de câbles"
-              data-label="Ensemble de faisceau de câbles"
+              data-label="Assemblage de faisceau de câbles"
             >
 CHA
 </span>
@@ -426,13 +433,13 @@ CHA
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Batterie du capteur d'écran et faisceau de câbles PCB"
+              title="Faisceau de câbles pour l’écran, le capteur, la batterie et le PCB"
             >
-Batterie du capteur d'écran et faisceau de câbles PCB
+Faisceau de câbles pour l’écran, le capteur, la batterie et le PCB
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">unité</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -451,9 +458,9 @@ Batterie du capteur d'écran et faisceau de câbles PCB
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Connecte la batterie du capteur d'écran et le PCB"
+              title="Relie l’écran, le capteur, la batterie et le PCB"
             >
-Connecte la batterie du capteur d'écran et le PCB
+Relie l’écran, le capteur, la batterie et le PCB
 </div>
 </td>
 </tr>
@@ -469,11 +476,12 @@ Connecte la batterie du capteur d'écran et le PCB
               className = "bom-cat"
               tabIndex="0"
               role="img"
-              title="Attache"
-              aria-label="Catégorie : Fixation"
-              data-label="Attache"
+              style={{ backgroundColor: "#c92a2a", color: "#ffffff" }}
+              title="Élément de fixation"
+              aria-label="Catégorie : Élément de fixation"
+              data-label="Élément de fixation"
             >
-TVF
+FST
 </span>
 </td>
 <td className="bom-col-description">
@@ -482,7 +490,7 @@ TVF
 </div>
 </td>
 <td className="bom-col-qty bom-num">4</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">unité</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -503,9 +511,9 @@ TVF
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Utilisé pour fixer le PCB au boîtier du formateur"
+              title="Utilisées pour fixer le PCB au boîtier du Deepthroat Trainer"
             >
-Utilisé pour fixer le PCB au boîtier du formateur
+Utilisées pour fixer le PCB au boîtier du Deepthroat Trainer
 </div>
 </td>
 </tr>
@@ -521,6 +529,7 @@ Utilisé pour fixer le PCB au boîtier du formateur
               className = "bom-cat"
               tabIndex="0"
               role="img"
+              style={{ backgroundColor: "#5c5f00", color: "#ffffff" }}
               title="Adhésif"
               aria-label="Catégorie : Adhésif"
               data-label="Adhésif"
@@ -553,9 +562,9 @@ ADH
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Utilisé pour sécuriser le capteur d'écran et la batterie"
+              title="Utilisée pour fixer l’écran, le capteur et la batterie"
             >
-Utilisé pour sécuriser le capteur d'écran et la batterie
+Utilisée pour fixer l’écran, le capteur et la batterie
 </div>
 </td>
 </tr>
@@ -563,12 +572,12 @@ Utilisé pour sécuriser le capteur d'écran et la batterie
 </table>
 </div>
 <footer className="bom-footer">
-<p>
-      Nomenclature générée à partir de<code>hardware/bom.csv</code>par Research
-      et les outils de nomenclature Desire.
-</p>
-<p>Licence : CERN-OHL-S v2 (matériel) / MPL-2.0 (firmware).</p>
-<p>
+<div>
+      Nomenclature générée à partir de <code>hardware/bom.csv</code> avec les outils
+      de nomenclature de Research and Desire.
+</div>
+<div>Licence : CERN-OHL-S v2 (matériel) / MPL-2.0 (firmware).</div>
+<div>
       Source :{" "}
       <a
         href="https://github.com/researchanddesire/DT_Trainer-OSS"
@@ -578,25 +587,25 @@ Utilisé pour sécuriser le capteur d'écran et la batterie
 DT_Trainer-OSS sur GitHub
 </a>
       .
-</p>
-<p>© Recherche et Désir.</p>
+</div>
+<div>© Research and Desire.</div>
 </footer>
 </section>
 {/* END GENERATED BOM */}
 
 ## Outils d'assemblage
 
-| Outil                             | Utiliser                                                                           |
+| Outil                             | Utilisation                                                                        |
 | --------------------------------- | ---------------------------------------------------------------------------------- |
-| Pistolet à colle chaude           | Collez l'écran, le capteur et la batterie en place.                                |
+| Pistolet à colle chaude           | Collez l’écran, le capteur et la batterie en place.                                |
 | Embout de tournevis T8            | Fixez les vis du PCB.                                                              |
-| Tournevis électrique ou similaire | Conduisez les vis.                                                                 |
-| Torche                            | Retirez délicatement les brins de filament à l’intérieur du boîtier imprimé en 3D. |
+| Tournevis électrique ou similaire | Vissez les vis.                                                                     |
+| Chalumeau                        | Retirez délicatement les brins de filament à l’intérieur du boîtier imprimé en 3D. |
 
-## Actifs de conception et de fabrication
+## Ressources de conception et de fabrication
 
-| Actif                       | Localisation                                                                                                                   | Remarques                                                                                                                      |
+| Ressource                   | Emplacement                                                                                                                    | Remarques                                                                                                                      |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| Aperçu des PCB              | [assembly-docs/pcb-overview.md](pcb-overview.mdx)                                                                              | Source de la carte, exportation de la production et limite de la nomenclature des PCB.                                         |
-| Source de PCB               | [matériel/pcb/README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/README.md)                 | Sources de conception de cartes modifiables.                                                                                   |
-| Exportations de productions | [matériel/production-exportations/](https://github.com/researchanddesire/DT_Trainer-OSS/tree/main/hardware/production-exports) | Fichiers envoyés aux fabricants, y compris les nomenclatures de gerbers, de sélection et de placement et de production de PCB. |
+| Aperçu des PCB              | [assembly-docs/pcb-overview.md](pcb-overview)                                                                               | Source du PCB, export de production et limite de la nomenclature du PCB.                                         |
+| Source de PCB               | [hardware/pcb/README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/README.md)                 | Sources de conception de PCB modifiables.                                                                                   |
+| Exportations de production | [hardware/production-exports/](https://github.com/researchanddesire/DT_Trainer-OSS/tree/main/hardware/production-exports) | Fichiers envoyés aux fabricants, notamment les fichiers Gerber, les fichiers pick-and-place et les nomenclatures de production des PCB. |

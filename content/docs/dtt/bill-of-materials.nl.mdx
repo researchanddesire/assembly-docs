@@ -1,15 +1,15 @@
 ---
 title: "Stuklijst"
-description: "Stuklijst voor deepthroattrainer."
+description: "Stuklijst voor Deepthroat Trainer."
 ---
 
 {/* Ported from MkDocs: bom.md */}
 
-De DT Trainer-build maakt gebruik van een gevulde PCB-assemblage met het externe display, sensor, batterij, kabelboom, lus-klittenband, 3D-geprinte behuizing, schroeven en montagelijm die nodig zijn voor de alles-in-één behuizing.
+De opbouw van de Deepthroat Trainer gebruikt een bestukte PCB-assemblage met het externe scherm, de sensor, de batterij, de kabelboom, lusklittenband, een 3D-geprinte behuizing, schroeven en montagelijm die nodig zijn voor de alles-in-één-behuizing.
 
 ## Onderdelen
 
-Deze tabel wordt gegenereerd op basis van [hardware/bom.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/bom.csv) tijdens de build van de assembly-docs. Werk de CSV bij in plaats van de gegenereerde tabel handmatig te bewerken.
+Deze tabel wordt gegenereerd op basis van [hardware/bom.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/bom.csv) tijdens de `assembly-docs`-build. Werk de CSV bij in plaats van de gegenereerde tabel handmatig te bewerken.
 
 {/* BEGIN GENERATED BOM */}
 
@@ -39,14 +39,14 @@ bc9861f
 </span>
 </dd>
 </dl>
-<p className="bom-status bom-status-released">
-<strong>Vrijgegeven voor productie.</strong>Deze stuklijst komt overeen met een getagde
-    hardware-uitgave.
-</p>
+<div className="bom-status bom-status-released">
+<strong>Vrijgegeven voor productie.</strong> Deze stuklijst komt overeen met een getagde
+    hardwareversie.
+</div>
   <div
-    className = "bom-tabel-frame"
+    className = "bom-table-frame"
     role="region"
-    aria-label="Lijst met materialen"
+    aria-label="Stuklijsttabel"
     tabIndex = "0"
   >
 <table className="bom-table">
@@ -94,8 +94,8 @@ bc9861f
 <tr>
 <td className="bom-col-line_item bom-num">1</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="DTT PCB-assemblage">
-              DTT-printplaatmontage
+<div className="bom-clamp" title="DTT-printplaatassemblage">
+              DTT-printplaatassemblage
 </div>
 </td>
 <td className="bom-col-category">
@@ -103,9 +103,10 @@ bc9861f
               className = "bom-cat"
               tabIndex = "0"
               role="img"
-              title="Assemblage van printplaten"
-              aria-label="Categorie: Assemblage van printplaten"
-              data-label="Assemblage van printplaten"
+              style={{ backgroundColor: "#1864ab", color: "#ffffff" }}
+              title="Printplaatassemblage"
+              aria-label="Categorie: Printplaatassemblage"
+              data-label="Printplaatassemblage"
             >
 PCA
 </span>
@@ -113,13 +114,13 @@ PCA
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Rev4-printplaatmontage"
+              title="Rev4-printplaatassemblage"
             >
-Rev4-printplaatmontage
+Rev4-printplaatassemblage
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">stuk</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -149,17 +150,17 @@ pcb/diptrace-rev4/pcb-bom-full.csv
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="De onderliggende stuklijst van PCB's wordt afzonderlijk bijgehouden"
+              title="De onderliggende PCB-stuklijst wordt afzonderlijk bijgehouden"
             >
-De onderliggende stuklijst van PCB's wordt afzonderlijk bijgehouden
+De onderliggende PCB-stuklijst wordt afzonderlijk bijgehouden
 </div>
 </td>
 </tr>
 <tr>
 <td className="bom-col-line_item bom-num">2</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="DTT lus-klittenband">
-              DTT-lus klittenband
+<div className="bom-clamp" title="DTT-lusklittenband">
+              DTT-lusklittenband
 </div>
 </td>
 <td className="bom-col-category">
@@ -167,9 +168,10 @@ De onderliggende stuklijst van PCB's wordt afzonderlijk bijgehouden
               className = "bom-cat"
               tabIndex = "0"
               role="img"
-              title="Gefabriceerd, anders"
-              aria-label="Categorie: Gefabriceerd, Anders"
-              data-label="Gefabriceerd, anders"
+              style={{ backgroundColor: "#a8703a", color: "#ffffff" }}
+              title="Gefabriceerd, overige"
+              aria-label="Categorie: Gefabriceerd, overige"
+              data-label="Gefabriceerd, overige"
             >
 FBO
 </span>
@@ -177,13 +179,13 @@ FBO
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Klittenbandstrip aan de luszijde gebruikt op de printplaat"
+              title="Klittenbandstrip aan de luszijde voor gebruik op de printplaat"
             >
-Klittenbandstrip aan de luszijde gebruikt op de printplaat
+Klittenbandstrip aan de luszijde voor gebruik op de printplaat
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">stuk</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -217,20 +219,21 @@ Klittenbandstrip aan de luszijde gebruikt op de printplaat
               className = "bom-cat"
               tabIndex = "0"
               role="img"
-              title="FDM-gedrukt onderdeel"
-              aria-label="Categorie: FDM gedrukt onderdeel"
-              data-label="FDM-gedrukt onderdeel"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+              title="FDM-geprint onderdeel"
+              aria-label="Categorie: FDM-geprint onderdeel"
+              data-label="FDM-geprint onderdeel"
             >
 FDM
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="Bedrukte trainerbehuizing">
-              Bedrukte trainerbehuizing
+<div className="bom-clamp" title="3D-geprinte trainerbehuizing">
+              3D-geprinte trainerbehuizing
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">stuk</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -275,8 +278,9 @@ Reinig de interne filamentstrengen vóór montage
               className = "bom-cat"
               tabIndex = "0"
               role="img"
-              title="Montage"
-              aria-label="Categorie: Montage"
+              style={{ backgroundColor: "#a61e4d", color: "#ffffff" }}
+              title="Assemblage"
+              aria-label="Categorie: Assemblage"
               data-label = "Assemblage"
             >
 ASM
@@ -288,7 +292,7 @@ ASM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">stuk</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -322,9 +326,10 @@ ASM
               className = "bom-cat"
               tabIndex = "0"
               role="img"
+              style={{ backgroundColor: "#3b5bdb", color: "#ffffff" }}
               title="Geïntegreerde schakeling"
               aria-label="Categorie: Geïntegreerde schakeling"
-              data-label = "Geïntegreerd circuit"
+              data-label = "Geïntegreerde schakeling"
             >
 IC
 </span>
@@ -335,7 +340,7 @@ IC
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">stuk</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -369,6 +374,7 @@ IC
               className = "bom-cat"
               tabIndex = "0"
               role="img"
+              style={{ backgroundColor: "#2b8a3e", color: "#ffffff" }}
               title="Batterij"
               aria-label="Categorie: Batterij"
               data-label = "Batterij"
@@ -382,7 +388,7 @@ BTY
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">stuk</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -416,9 +422,10 @@ BTY
               className = "bom-cat"
               tabIndex = "0"
               role="img"
-              title="Montage van kabelboom"
-              aria-label="Categorie: Kabelboommontage"
-              data-label="Montage van kabelboom"
+              style={{ backgroundColor: "#0b7285", color: "#ffffff" }}
+              title="Assemblage van kabelboom"
+              aria-label="Categorie: Assemblage van kabelboom"
+              data-label="Assemblage van kabelboom"
             >
 CHA
 </span>
@@ -426,13 +433,13 @@ CHA
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Schermsensorbatterij en PCB-kabelboom"
+              title="Kabelboom voor scherm, sensor, batterij en PCB"
             >
-Schermsensorbatterij en PCB-kabelboom
+Kabelboom voor scherm, sensor, batterij en PCB
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">stuk</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -451,9 +458,9 @@ Schermsensorbatterij en PCB-kabelboom
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Verbindt de batterij van de schermsensor en de printplaat"
+              title="Verbindt scherm, sensor, batterij en PCB"
             >
-Verbindt de batterij van de schermsensor en de printplaat
+Verbindt scherm, sensor, batterij en PCB
 </div>
 </td>
 </tr>
@@ -469,6 +476,7 @@ Verbindt de batterij van de schermsensor en de printplaat
               className = "bom-cat"
               tabIndex = "0"
               role="img"
+              style={{ backgroundColor: "#c92a2a", color: "#ffffff" }}
               title="Bevestigingsmiddel"
               aria-label="Categorie: Bevestigingsmiddel"
               data-label = "Bevestigingsmiddel"
@@ -482,7 +490,7 @@ FST
 </div>
 </td>
 <td className="bom-col-qty bom-num">4</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">stuk</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -503,9 +511,9 @@ FST
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Wordt gebruikt om de printplaat aan de trainerbehuizing te bevestigen"
+              title="Om de printplaat aan de trainerbehuizing te bevestigen"
             >
-Wordt gebruikt om de printplaat aan de trainerbehuizing te bevestigen
+Om de printplaat aan de trainerbehuizing te bevestigen
 </div>
 </td>
 </tr>
@@ -521,7 +529,8 @@ Wordt gebruikt om de printplaat aan de trainerbehuizing te bevestigen
               className = "bom-cat"
               tabIndex = "0"
               role="img"
-              title="Kleefmiddel"
+              style={{ backgroundColor: "#5c5f00", color: "#ffffff" }}
+              title="Kleefstof"
               aria-label="Categorie: Kleefstof"
               data-label = "Kleefstof"
             >
@@ -529,8 +538,8 @@ ADH
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="Montage lijm">
-              Montage lijm
+<div className="bom-clamp" title="Montagelijm">
+              Montagelijm
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
@@ -553,9 +562,9 @@ ADH
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Wordt gebruikt om de schermsensor en batterij vast te zetten"
+              title="Om scherm, sensor en batterij vast te zetten"
             >
-Wordt gebruikt om de schermsensor en batterij vast te zetten
+Om scherm, sensor en batterij vast te zetten
 </div>
 </td>
 </tr>
@@ -563,12 +572,12 @@ Wordt gebruikt om de schermsensor en batterij vast te zetten
 </table>
 </div>
 <footer className="bom-footer">
-<p>
-      Stuklijst gegenereerd uit<code>hardware/bom.csv</code>door Research
-      en Desire BOM-tooling.
-</p>
-<p>Licentie: CERN-OHL-S v2 (hardware) / MPL-2.0 (firmware).</p>
-<p>
+<div>
+      Stuklijst gegenereerd uit <code>hardware/bom.csv</code> met de BOM-tools van
+      Research and Desire.
+</div>
+<div>Licentie: CERN-OHL-S v2 (hardware) / MPL-2.0 (firmware).</div>
+<div>
       Bron:{" "}
       <a
         href="https://github.com/researchanddesire/DT_Trainer-OSS"
@@ -578,8 +587,8 @@ Wordt gebruikt om de schermsensor en batterij vast te zetten
 DT_Trainer-OSS op GitHub
 </a>
       .
-</p>
-<p>© Onderzoek en verlangen.</p>
+</div>
+<div>© Research and Desire.</div>
 </footer>
 </section>
 {/* END GENERATED BOM */}
@@ -588,15 +597,15 @@ DT_Trainer-OSS op GitHub
 
 | Gereedschap                                     | Gebruik                                                                |
 | ----------------------------------------------- | ---------------------------------------------------------------------- |
-| Heet lijmpistool                                | Lijmscherm, sensor en batterij op hun plaats.                          |
+| Heetlijmpistool                                | Lijm het scherm, de sensor en de batterij op hun plaats.                |
 | T8 schroevendraaierbit                          | Draai de PCB-schroeven vast.                                           |
-| Elektrische schroevendraaier of iets dergelijks | Aandrijfschroeven.                                                     |
-| Fakkel                                          | Verwijder voorzichtig de filamentstrengen in de 3D-geprinte behuizing. |
+| Elektrische schroevendraaier of vergelijkbaar gereedschap | Schroeven indraaien.                                                     |
+| Brander                                          | Filamentdraden in de 3D-geprinte behuizing voorzichtig verwijderen. |
 
 ## Ontwerp- en productiemiddelen
 
-| Activa           | Locatie                                                                                                                 | Opmerkingen                                                                                                      |
+| Middel           | Locatie                                                                                                                 | Opmerkingen                                                                                                      |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| PCB-overzicht    | [assemblage-docs/pcb-overzicht.md](pcb-overview.mdx)                                                                    | Bordbron, productie-export en PCB-stuklijstgrens.                                                                |
-| PCB-bron         | [hardware/pcb/README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/README.md)          | Bewerkbare bordontwerpbronnen.                                                                                   |
-| Productie-export | [hardware/productie-export/](https://github.com/researchanddesire/DT_Trainer-OSS/tree/main/hardware/production-exports) | Bestanden die naar fabrikanten worden verzonden, waaronder gerbers, pick-and-place en productie-PCB-stuklijsten. |
+| PCB-overzicht    | [assembly-docs/pcb-overview.md](pcb-overview)                                                                         | Bron van de printplaat, productie-export en PCB-stuklijstgrens.                                                                |
+| PCB-bron         | [hardware/pcb/README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/README.md)          | Bewerkbare bronnen voor printplaatontwerpen.                                                                                   |
+| Productie-exports | [hardware/production-exports/](https://github.com/researchanddesire/DT_Trainer-OSS/tree/main/hardware/production-exports) | Bestanden die naar fabrikanten worden verzonden, waaronder Gerber-bestanden, pick-and-placebestanden en productie-PCB-stuklijsten. |

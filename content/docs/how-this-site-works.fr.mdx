@@ -1,0 +1,51 @@
+---
+title: "Comment fonctionne ce site"
+description: "Comment le contenu public d'assemblage arrive sur le site Fumadocs de R+D Assembly."
+---
+
+R+D Assembly conserve la documentation publique et l'application qui l'affiche
+dans des dépôts distincts. Les contributeurs peuvent ainsi participer aux
+instructions sans exposer le code privé de l'application ni sa configuration de
+déploiement.
+
+## Flux de publication
+
+```mermaid
+flowchart LR
+    Content["Contenu public d'assembly-docs"]
+    Review["Pull request examinée"]
+    Sync["Synchronisation de la documentation"]
+    App["Application Fumadocs de rad-app"]
+    Site["ohai.researchanddesire.com"]
+
+    Content --> Review --> Sync --> App --> Site
+```
+
+Markdown, MDX, la navigation des produits et les images d'assemblage se trouvent
+dans `content/docs/` de ce dépôt. Une modification validée déclenche le workflow
+d'importation de la documentation dans `rad-app`, qui synchronise l'arborescence
+du contenu public avec l'application OHAI et la publie avec Fumadocs.
+
+## Limites de responsabilité
+
+- Les instructions d'assemblage des produits, les images et les liens vers les
+  sources liées à l'assemblage se trouvent dans ce dépôt.
+- Les données de BOM des produits, gérées manuellement, restent dans le dépôt de
+  chaque produit, sous `hardware/bom.csv`.
+- Le shell Fumadocs, les composants partagés, la recherche, les liens
+  d'authentification et la configuration de déploiement se trouvent dans
+  `rad-app`.
+- Les tableaux de BOM rendus appartiennent uniquement à R+D Assembly, et non aux
+  Developer Docs.
+
+## Contribuer
+
+Modifiez le fichier concerné sous `content/docs/`, exécutez
+`node scripts/validate-content.mjs content` et ajoutez des captures d'écran
+lorsqu'une modification affecte la mise en page ou les images. Consultez le
+[guide de contribution](https://github.com/researchanddesire/assembly-docs/blob/main/CONTRIBUTING.md)
+pour connaître le processus de revue.
+
+L'agrégateur MkDocs retiré reste disponible comme
+[référence de migration historique](./legacy-mkdocs-pipeline), mais il ne publie
+plus le site de production.
