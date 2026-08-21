@@ -1,0 +1,19 @@
+---
+title: "Kabelbäume"
+description: "Kabelbäume für Lockbox."
+---
+
+{/* Ported from MkDocs: cable-harnesses.md */}
+
+Das Lockbox umfasst Motor, Akku, USB-C, Bildschirm und andere kleine Kabel
+Verbindungen im Montageablauf. Die Produktebene [Stückliste](bill-of-materials.mdx)
+verfolgt diese als Werbebuchungen auf Geräteebene.
+
+Es wurde noch keine Wireviz-Kabelbaumquelle auf `hardware/cables/` migriert. Wenn ein
+Wireviz-Quelle hinzugefügt wird, verknüpfen Sie das generierte Diagramm und die untergeordneten Stücklistenartefakte
+von dieser Seite aus, anstatt untergeordnete Kabelstücklistenzeilen in `hardware/bom.csv`zu duplizieren.
+
+| Vermögenswert               | Standort                                                                                          | Notizen                                                     |
+| --------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Kabelquellenordner          | [`hardware/cables/`](https://github.com/researchanddesire/Lockbox-OSS/tree/main/hardware/cables)  | Wireviz YAML-Quellen gehören hierher.                       |
+| Stückliste auf Produktebene | [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) | Listet Kabelbaugruppen und handelsübliche Kabelartikel auf. |

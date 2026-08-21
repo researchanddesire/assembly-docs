@@ -1,0 +1,156 @@
+---
+title: "10. Câblage"
+description: "Connectez les câbles d'entrée de tension et de données entre la carte de commande OSSM et le moteur."
+---
+
+Le câblage connecte la carte de commande OSSM au moteur, fournissant à la fois des signaux d'alimentation et de commande. Cette étape établit la connexion électrique qui permet au moteur de recevoir les commandes et de fonctionner correctement.
+
+## Composants et outils requis
+
+### Composants
+
+| Composant | Comte | Spécifications/Remarques |
+|-----------|-------|----------------------|
+| Petite longueur de fil | 1 ensemble | Fils rouge et noir pour entrée de tension |
+| Câble de données à quatre broches | 1 | Câble pour bornes PU et Direction |
+| Tableau de contrôle OSSM | 1 | Assemblé à l'étape précédente |
+| Moteur | 1 | Assemblé lors des étapes précédentes |
+
+### Outils
+
+| Outil | Comte | Spécifications/Remarques |
+|------|-------|----------------------|
+| Petit tournevis à tête plate | 1 | Pour bornes de câblage |
+| Pinces à dénuder | 1 | Si les fils ne sont pas pré-dénudés |
+
+<Info>
+Les fils d'entrée de tension doivent être suffisamment longs pour atteindre les bornes du moteur jusqu'aux bornes de la carte de commande sans jeu ni tension excessive. En règle générale, 6 à 12 pouces (15 à 30 cm) suffisent.
+</Info>
+
+## Assemblage étape par étape : câblage
+
+<Steps>
+<Step title="Préparer les fils de tension">
+Prenez la petite longueur de fil rouge et noir. Si les extrémités ne sont pas dénudées, utilisez une pince à dénuder pour exposer environ 3 à 5 mm de fil.
+
+Torsadez légèrement les brins exposés ensemble pour éviter l’effilochage et assurer une connexion propre.
+
+<Tip>
+Si vous n'êtes pas sûr de la longueur de dénudage appropriée, optez pour un fil exposé légèrement plus long. Vous pouvez toujours couper l'excédent, mais trop peu de fil exposé risque de ne pas établir un bon contact dans la borne.
+</Tip>
+</Step>
+
+<Step title="Connectez les fils de tension au moteur">
+Sur l'étiquette du moteur, identifiez la borne "Voltage Plus" (à droite) et la borne "Ground".
+
+Utilisez le petit tournevis à tête plate pour desserrer les vis de ces bornes.
+
+Insérez le fil rouge dans la borne Tension Plus.
+
+Insérez le fil noir dans la borne de terre.
+
+Serrez les vis pour serrer le fil métallique.
+
+<Warning>
+Assurez-vous que les brins de fil sont complètement insérés dans la borne avant de serrer. Des connexions desserrées peuvent provoquer des arcs électriques, une surchauffe ou un fonctionnement intermittent.
+</Warning>
+
+Tirez légèrement sur les fils pour vous assurer qu'ils sont bien fixés et inspectez tout brin de fil parasite qui pourrait provoquer un court-circuit.
+
+<Check>
+Les deux fils sont solidement connectés aux bornes du moteur. Le fil rouge se trouve dans la borne Tension Plus et le fil noir dans la borne Terre. Aucun brin de fil parasite n’est visible.
+</Check>
+</Step>
+
+<Step title="Connectez les fils de tension à la carte de commande">
+Identifiez les bornes « Plus » et « Moins » correspondantes pour l'entrée de tension sur la carte de commande.
+
+Insérez l'autre extrémité du fil rouge dans la borne Plus de la carte.
+
+Insérez l'autre extrémité du fil noir dans la borne moins de la carte.
+
+Serrez les vis à l'aide du petit tournevis à tête plate.
+
+<Warning>
+Vérifiez à nouveau la polarité avant de serrer. Inverser la polarité de la tension peut endommager le moteur et la carte de commande. Le rouge doit toujours se connecter aux bornes Plus/Positive, et le noir doit toujours se connecter aux bornes Moins/Négative/Terre.
+</Warning>
+
+Effectuez un dernier test de remorquage pour vous assurer que les deux connexions sont sécurisées.
+
+<Check>
+Les deux fils de tension sont solidement connectés au tableau de commande. Le fil rouge est dans la borne Plus et le fil noir est dans la borne Moins. Toutes les connexions réussissent le test du remorqueur.
+</Check>
+</Step>
+
+<Step title="Connectez le câble de données à la carte">
+Prenez le câble de données à quatre broches et localisez le port correspondant sur la carte de contrôle OSSM.
+
+Connectez la fiche du câble de données à quatre broches au port correspondant de la carte de contrôle OSSM jusqu'à ce que vous entendiez un joli clic.
+
+<Info>
+Le câble de données transporte les signaux d'impulsion (PU) et de direction de la carte de commande au moteur. Ces signaux contrôlent le mouvement et la direction du moteur.
+</Info>
+
+<Check>
+La fiche du câble de données est entièrement insérée dans le port de la carte de commande. Vous devriez entendre ou ressentir un clic lorsqu'il est correctement connecté.
+</Check>
+</Step>
+
+<Step title="Connectez le câble de données au moteur">
+Faites correspondre les fils du câble de données aux bornes étiquetées sur le moteur, qui sont (de droite à gauche) : PU plus, PU moins, Direction plus et Direction moins.
+
+Connectez le fil correspondant à PU+ du câble à la borne PU plus du moteur.
+
+Connectez le fil correspondant à PU- sur le câble à la borne PU moins du moteur.
+
+Connectez le fil correspondant à Direction+ sur le câble à la borne Direction plus sur le moteur.
+
+Connectez le fil correspondant à Direction- sur le câble à la borne Direction moins sur le moteur.
+
+<Tip>
+Si vous ne savez pas quel fil correspond à quel signal, consultez la documentation du câble ou utilisez un multimètre pour vérifier la continuité. Le câble doit être étiqueté ou codé par couleur pour correspondre aux étiquettes des bornes.
+</Tip>
+
+<Warning>
+Une connexion incorrecte des fils de données peut entraîner un fonctionnement du moteur dans le mauvais sens ou une non-réponse aux commandes. Vérifiez à nouveau chaque connexion par rapport aux étiquettes des bornes du moteur avant de serrer.
+</Warning>
+</Step>
+
+<Step title="Connexions de données sécurisées et de test">
+Serrez les vis des bornes des quatre fils de données à l'aide du petit tournevis à tête plate.
+
+Effectuez un dernier test de remorqueur léger sur les quatre connexions pour vous assurer qu’elles sont sécurisées.
+
+Inspectez toutes les connexions pour déceler tout brin de fil parasite ou toute connexion desserrée.
+
+<Check>
+Les quatre fils du câble de données sont solidement connectés à leurs bornes moteur correspondantes :
+- Borne PU+ à PU plus
+- PU- à la borne PU moins
+- Direction+ vers la borne Direction plus
+- Direction vers Direction moins terminal
+
+Toutes les connexions réussissent le test de remorquage et aucun brin de fil parasite n'est visible.
+</Check>
+</Step>
+</Steps>
+
+## Vérification
+
+Avant de continuer, vérifiez que toutes les connexions sont correctes :
+
+- **Entrée de tension** : le fil rouge connecte le Plus au Plus, le fil noir connecte la Terre au Moins
+- **Câble de données** : la fiche à quatre broches est entièrement insérée dans la carte de commande
+- **Bornes du moteur** : les quatre fils de données sont connectés aux bornes appropriées (PU+, PU-, Direction+, Direction-).
+- **Sécurité** : toutes les vis des bornes sont serrées et toutes les connexions réussissent le test du remorqueur
+
+<Warning>
+Ne mettez pas le système sous tension avant d'avoir vérifié que toutes les connexions sont correctes et sécurisées. Un câblage incorrect peut causer des dommages permanents au moteur et à la carte de commande.
+</Warning>
+
+## Prochaines étapes
+
+Une fois tout le câblage terminé et vérifié, vous êtes prêt à passer à la section de test initiale pour vérifier que le moteur répond correctement aux signaux de commande.
+
+
+[← Électronique](/ossm/build/electronics) · [Suivant : Premier test →](/ossm/build/first-test)

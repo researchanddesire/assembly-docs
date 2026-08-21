@@ -1,0 +1,156 @@
+---
+title: "10. Bedrading"
+description: "Sluit de spanningsingang en datakabels aan tussen de OSSM-besturingskaart en de motor"
+---
+
+Bedrading verbindt de OSSM-besturingskaart met de motor en levert zowel stroom- als besturingssignalen. Met deze stap wordt de elektrische verbinding tot stand gebracht waardoor de motor opdrachten kan ontvangen en goed kan werken.
+
+## Vereiste componenten en gereedschappen
+
+### Componenten
+
+| Onderdeel | Tel | Specificatie / Opmerkingen |
+|-----------|-------|----------------------|
+| Kleine draadlengte | 1 Set | Rode en zwarte draden voor spanningsingang |
+| Vier-pins datakabel | 1 | Kabel voor PU- en Direction-klemmen |
+| OSSM-besturingskaart | 1 | Geassembleerd in de vorige stap |
+| Motor | 1 | Samengesteld in voorgaande stappen |
+
+### Hulpmiddelen
+
+| Gereedschap | Tel | Specificatie / Opmerkingen |
+|------|-------|----------------------|
+| Kleine platte schroevendraaier | 1 | Voor bedradingsterminals |
+| Draadstrippers | 1 | Als de draden niet vooraf zijn gestript |
+
+<Info>
+De spanningsingangsdraden moeten lang genoeg zijn om zonder overmatige speling of spanning van de motorklemmen naar de klemmen van de besturingskaart te reiken. Meestal is 15-30 cm (6-12 inch) voldoende.
+</Info>
+
+## Stapsgewijze montage: bedrading
+
+<Steps>
+<Step title="Bereid spanningsdraden voor">
+Neem het kleine stuk rode en zwarte draad. Als de uiteinden niet zijn gestript, gebruik dan draadstrippers om ongeveer 3-5 mm draad bloot te leggen.
+
+Draai de blootliggende strengen lichtjes in elkaar om rafelen te voorkomen en een schone verbinding te garanderen.
+
+<Tip>
+Als u niet zeker weet wat de juiste striplengte is, kies dan voor een iets langere, blootliggende draad. U kunt overtollige draad altijd afknippen, maar te weinig blootliggende draad maakt mogelijk geen goed contact in de aansluiting.
+</Tip>
+</Step>
+
+<Step title="Sluit spanningsdraden aan op de motor">
+Identificeer op het motorlabel de aansluiting "Voltage Plus" (aan de rechterkant) en de aansluiting "Ground".
+
+Gebruik de kleine platte schroevendraaier om de schroeven op deze aansluitingen los te draaien.
+
+Steek de rode draad in de Voltage Plus-aansluiting.
+
+Steek de zwarte draad in de aardaansluiting.
+
+Draai de schroeven vast om de metaaldraad vast te klemmen.
+
+<Warning>
+Zorg ervoor dat de draadstrengen volledig in de aansluiting zijn gestoken voordat u ze vastdraait. Losse verbindingen kunnen vonkoverslag, oververhitting of onderbroken werking veroorzaken.
+</Warning>
+
+Geef de draden een lichte ruk om er zeker van te zijn dat ze goed vastzitten, en inspecteer op losse draadstrengen die kortsluiting kunnen veroorzaken.
+
+<Check>
+Beide draden zijn stevig aangesloten op de motorklemmen. De rode draad bevindt zich in de Voltage Plus-aansluiting en de zwarte draad bevindt zich in de aardaansluiting. Er zijn geen losse draadstrengen zichtbaar.
+</Check>
+</Step>
+
+<Step title="Sluit spanningsdraden aan op de besturingskaart">
+Identificeer de overeenkomstige "Plus"- en "Minus"-klemmen voor de spanningsingang op de besturingskaart.
+
+Steek het andere uiteinde van de rode draad in de Plus-aansluiting op het bord.
+
+Steek het andere uiteinde van de zwarte draad in de min-aansluiting op de printplaat.
+
+Draai de schroeven vast met de kleine platte schroevendraaier.
+
+<Warning>
+Controleer nogmaals de polariteit voordat u deze vastdraait. Het omkeren van de spanningspolariteit kan de motor en de besturingskaart beschadigen. Rood moet altijd worden aangesloten op plus/positieve aansluitingen, en zwart moet altijd worden aangesloten op min/negatieve/aarde-aansluitingen.
+</Warning>
+
+Voer een laatste sleepboottest uit om er zeker van te zijn dat beide verbindingen veilig zijn.
+
+<Check>
+Beide spanningsdraden zijn stevig aangesloten op de besturingskaart. De rode draad bevindt zich in de Plus-aansluiting en de zwarte draad bevindt zich in de Min-aansluiting. Alle verbindingen doorstaan ​​de sleepboottest.
+</Check>
+</Step>
+
+<Step title="Sluit de datakabel aan op de kaart">
+Neem de vier-pins datakabel en zoek de overeenkomstige poort op de OSSM-besturingskaart.
+
+Sluit de vierpolige datakabelstekker aan op de overeenkomstige poort op het OSSM-besturingsbord totdat u een mooie klik hoort.
+
+<Info>
+De datakabel transporteert puls- (PU)- en richtingssignalen van de besturingskaart naar de motor. Deze signalen regelen de beweging en richting van de motor.
+</Info>
+
+<Check>
+De datakabelstekker zit volledig in de poort van de besturingskaart. Als het goed is aangesloten, moet u een klik horen of voelen.
+</Check>
+</Step>
+
+<Step title="Sluit de datakabel aan op de motor">
+Zorg ervoor dat de draden van de datakabel overeenkomen met de gelabelde klemmen op de motor, namelijk (van rechts naar links): PU plus, PU min, Direction plus en Direction minus.
+
+Sluit de draad die overeenkomt met PU+ op de kabel aan op de PU plus-aansluiting op de motor.
+
+Sluit de draad die overeenkomt met PU- op de kabel aan op de PU-minklem op de motor.
+
+Sluit de draad die overeenkomt met Direction+ op de kabel aan op de Direction plus-aansluiting op de motor.
+
+Sluit de draad die overeenkomt met Direction- op de kabel aan op de Direction-minklem op de motor.
+
+<Tip>
+Als u niet zeker weet welke draad overeenkomt met welk signaal, raadpleeg dan de kabeldocumentatie of gebruik een multimeter om de continuïteit te verifiëren. De kabel moet van een label of een kleurcode zijn voorzien, zodat deze overeenkomt met de terminallabels.
+</Tip>
+
+<Warning>
+Het verkeerd aansluiten van de datadraden kan ertoe leiden dat de motor in de verkeerde richting draait of niet op commando's reageert. Controleer elke aansluiting nogmaals aan de hand van de motoraansluitingslabels voordat u deze vastdraait.
+</Warning>
+</Step>
+
+<Step title="Beveilig en test gegevensverbindingen">
+Draai de klemschroeven voor alle vier de datadraden vast met behulp van de kleine platte schroevendraaier.
+
+Voer een laatste lichte sleepproef uit op alle vier de verbindingen om er zeker van te zijn dat ze goed vastzitten.
+
+Inspecteer alle verbindingen op losse draadstrengen of losse verbindingen.
+
+<Check>
+Alle vier de datakabeldraden zijn veilig aangesloten op de bijbehorende motoraansluitingen:
+- PU+ naar PU plus aansluiting
+- PU- naar PU-minpool
+- Direction+ naar Direction plus terminal
+- Richting-naar-richting min-terminal
+
+Alle verbindingen doorstaan ​​de sleepboottest en er zijn geen losse draadstrengen zichtbaar.
+</Check>
+</Step>
+</Steps>
+
+## Verificatie
+
+Controleer voordat u verdergaat of alle aansluitingen correct zijn:
+
+- **Spanningsingang**: Rode draad verbindt Plus met Plus, zwarte draad verbindt Aarde met Min
+- **Datakabel**: De vierpolige stekker zit volledig in de besturingskaart
+- **Motorklemmen**: Alle vier datadraden zijn aangesloten op de juiste klemmen (PU+, PU-, Direction+, Direction-)
+- **Beveiliging**: alle klemschroeven zijn vastgedraaid en alle verbindingen hebben de sleepboottest doorstaan
+
+<Warning>
+Schakel het systeem pas in nadat u hebt gecontroleerd of alle aansluitingen correct en veilig zijn. Onjuiste bedrading kan permanente schade aan de motor en de besturingskaart veroorzaken.
+</Warning>
+
+## Volgende stappen
+
+Nadat alle bedrading is voltooid en geverifieerd, kunt u doorgaan naar het eerste testgedeelte om te controleren of de motor correct reageert op besturingssignalen.
+
+
+[← Elektronica](/ossm/build/electronics) · [Volgende: Eerste test →](/ossm/build/first-test)

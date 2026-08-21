@@ -1,0 +1,19 @@
+---
+title: "PCB-overzicht"
+description: "PCB-overzicht voor OSSM."
+---
+
+{/* Ported from MkDocs: pcb-overview.md */}
+
+De OSSM PCB-bronmigratie is aan de gang. De lokale PCB-map bevat momenteel
+de publicatiegrens en verwijst naar de stroomopwaartse referentiebron tot de
+release PCB-bestanden worden gemigreerd.
+
+| Activa                        | Locatie                                                                                                  | Opmerkingen                                |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| PCB-bronmap                   | [`hardware/pcb/`](https://github.com/researchanddesire/ossm/tree/main/hardware/pcb)                      | Lokale OSSM PCB-brongrens.                 |
+| Opmerkingen over PCB-migratie | [`hardware/pcb/README.md`](https://github.com/researchanddesire/ossm/blob/main/hardware/pcb/README.md)   | Huidige status en upstream-referentie.     |
+| Upstream PCB-bestanden        | [KinkyMakers/OSSM-hardware](https://github.com/KinkyMakers/OSSM-hardware/tree/main/Hardware/PCB%20Files) | Referentie totdat de migratie is voltooid. |
+
+Er is nog geen KiCad-bordbestand aanwezig in `hardware/pcb/` , dus Ohai rendert geen
+KiCanvas-preview voor OSSM.

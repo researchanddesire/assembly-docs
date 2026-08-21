@@ -1,0 +1,11 @@
+{
+  "title": "Lockbox",
+  "root": true,
+  "pages": [
+    "index",
+    "assembly-guide",
+    "bill-of-materials",
+    "cable-harnesses",
+    "pcb-overview"
+  ]
+}

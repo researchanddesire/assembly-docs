@@ -1,0 +1,20 @@
+{
+  "title": "Séquence de construction",
+  "pages": [
+    "introduction",
+    "tools-and-parts",
+    "bill-of-materials",
+    "printed-parts",
+    "rear-tensioner",
+    "end-effector",
+    "front-tensioner",
+    "motorhead",
+    "pulley",
+    "motorhead-middle",
+    "motor-cover",
+    "belt-tension",
+    "electronics",
+    "wiring",
+    "first-test"
+  ]
+}

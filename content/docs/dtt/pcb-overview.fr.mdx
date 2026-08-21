@@ -1,0 +1,60 @@
+---
+title: "Aperçu des PCB"
+description: "Présentation du PCB pour Deepthroat Trainer."
+---
+
+{/* Ported from MkDocs: pcb-overview.md */}
+
+Le PCB DT Trainer rev4 est l'ensemble de contrôle de périphérique pour la construction du home trainer tout-en-un. Il contient le micrologiciel ESP32, la connectivité du tableau de bord, les interfaces d'alimentation et de charge, l'entrée du capteur, l'affichage et le retour LED, ainsi que la sortie de vibration utilisée pendant l'entraînement.
+
+<Card
+  title="Fichier de carte KiCad"
+  href="./assets/kicanvas/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_pcb"
+>
+Téléchargez le fichier du tableau pour KiCanvas ou KiCad.
+</Card>
+
+La source originale de la carte modifiable est DipTrace rev4. Une conversion KiCad rev4 est
+également publié et destiné à rester à parité avec le DipTrace original
+source en attendant la vérification finale de la conversion.
+
+## Architecture électrique
+
+| Zone                         | Rôle                                                                                                                                                                            |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Contrôle ESP32               | Exécute le micrologiciel, la communication WiFi, les vérifications de mise à jour OTA, l'état de l'appareil et la logique de session.                                           |
+| Alimentation et chargement   | Gère l’entrée USB-C, la connexion de la batterie, la prise en charge de la charge et l’alimentation régulée de la carte.                                                        |
+| Interface du capteur         | Permet de connecter le capteur de position de l'entraîneur utilisé pour l'étalonnage et le retour d'information sur l'entraînement.                                             |
+| Interface utilisateur        | Pilote l’écran OLED, l’entrée des boutons et les LED d’état RVB utilisés par le flux d’assemblage et de micrologiciel.                                                          |
+| Haptique et sorties          | Pilote le moteur de vibration et les sorties de rétroaction locales pendant l'entraînement.                                                                                     |
+| Programmation et réalisation | Fournit la source de la carte, la nomenclature de production, les gerbers et le package de sélection et de placement nécessaires à la fabrication et à l'assemblage des cartes. |
+
+## Fichiers sources PCB
+
+| Actif                           | Localisation                                                                                                                                                             | Remarques                                                                                                                               |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Schéma DipTrace                 | [217A_dttrainer_rev4.dch](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/217A_dttrainer_rev4.dch)                              | Source schématique rev4 modifiable.                                                                                                     |
+| Disposition du tableau DipTrace | [217A_dttrainer_rev4.dip](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/217A_dttrainer_rev4.dip)                              | Source de disposition PCB rev4 modifiable.                                                                                              |
+| Projet KiCad                    | [217A_dttrainer_rev4.kicad_pro](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_pro) | Projet KiCad rev4 converti.                                                                                                             |
+| Schéma KiCad                    | [217A_dttrainer_rev4.kicad_sch](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_sch) | Schéma KiCad rev4 converti.                                                                                                             |
+| Disposition du tableau KiCad    | [217A_dttrainer_rev4.kicad_pcb](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_pcb) | Disposition PCB KiCad rev4 convertie.                                                                                                   |
+| Aperçu de KiCanvas              | [Ouvrir le projet KiCad rev4](https://kicanvas.org/?github=https://github.com/researchanddesire/DT_Trainer-OSS/tree/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4)    | Aperçu du navigateur du projet KiCad converti.                                                                                          |
+| Nomenclature détaillée des PCB  | [pcb-bom-full.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/pcb-bom-full.csv)                                            | Une nomenclature riche au niveau du tableau préservant les colonnes d'approvisionnement et d'assemblage de la feuille de calcul source. |
+| Notes sur les sources de PCB    | [LISEZMOI.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/README.md)                                                                      | Provenance, limite du dossier et notes de parité DipTrace/KiCad.                                                                        |
+
+## Package de production
+
+L’exportation de production actuelle correspond au paquet de commandes rev4 en bon état connu de mai 2025.
+
+| Actif                                | Localisation                                                                                                                                                                                          | Remarques                                                                 |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Archives Gerber                      | [Trainer_gerber_Y35.zip](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/Trainer_gerber_Y35.zip)                             | Archives de fabrication de la commande connue.                            |
+| Nomenclature de PCB de production    | [Formateur BoM 15 mai.xls](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/Trainer%20BoM%20May%2015.xls)                     | Nomenclature d'assemblage de cartes utilisée avec l'ordre de fabrication. |
+| Choisir et placer                    | [pickplace_dttrainer_rev4 (1).xlsx](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/pickplace_dttrainer_rev4%20%281%29.xlsx) | Données de placement des composants pour l'assemblage.                    |
+| Notes d'exportation de la production | [LISEZMOI.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/README.md)                                                     | Notes de provenance pour l'exportation de fabrication connue en bon état. |
+
+## Limite de la nomenclature
+
+La nomenclature RAD canonique est [hardware/bom.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/bom.csv). Il répertorie le PCB rempli sous la forme d'une ligne d'assemblage au niveau du périphérique afin que la documentation de l'assemblage reste concentrée sur la version du formateur.
+
+Les composants enfants au niveau de la carte sont conservés dans [hardware/pcb/diptrace-rev4/pcb-bom-full.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/pcb-bom-full.csv) pour éviter de perdre les données du fabricant, du fournisseur, de l'empreinte et de l'assemblage lors de l'exportation de la source du PCB.

@@ -1,0 +1,26 @@
+---
+title: "Faisceaux de câbles"
+description: "Faisceaux de câbles pour OSSM."
+---
+
+{/* Ported from MkDocs: cable-harnesses.md */}
+
+Les sources du faisceau de câbles OSSM se trouvent sous [`hardware/cables/`](https://github.com/researchanddesire/ossm/tree/main/hardware/cables).
+Wireviz restitue chaque source de faisceau en artefacts de diagramme et en un enfant détaillé
+Nomenclature. La [Bill of Materials](product-bom.mdx) au niveau du produit doit répertorier chaque harnais en tant que
+assemblage de niveau supérieur et lien vers la source Wireviz.
+
+## Harnais de commande du moteur
+
+| Actif                     | Localisation                                                                                                                           |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Source Wireviz            | [`OSSM-Motor-Control-Harness.yml`](https://github.com/researchanddesire/ossm/blob/main/hardware/cables/OSSM-Motor-Control-Harness.yml) |
+| Notes sources             | [`hardware/cables/README.md`](https://github.com/researchanddesire/ossm/blob/main/hardware/cables/README.md)                           |
+| Actifs de version générés | [Dernière version d'OSSM](https://github.com/researchanddesire/ossm/releases/latest)                                                   |
+
+Le workflow d'exportation de câbles publie les actifs générés à partir de `cable-export/`,
+comprenant :
+
+- `OSSM-Motor-Control-Harness.pdf`
+- `OSSM-Motor-Control-Harness.png`
+- `OSSM-Motor-Control-Harness.bom.tsv`
