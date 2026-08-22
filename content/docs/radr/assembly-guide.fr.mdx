@@ -1,21 +1,21 @@
 ---
-title: "Guide d'assemblage de la télécommande sans fil RADR"
-description: "Guide d'assemblage de la télécommande sans fil RADR pour la télécommande sans fil RADR."
+title: "Guide d’assemblage de la télécommande sans fil RADR"
+description: "Guide d’assemblage de la télécommande sans fil RADR."
 ---
 
 {/* Ported from MkDocs: assembly-guide.md */}
 
-## But
+## Objectif
 
-Cette instruction de travail documente le processus actuel d'assemblage à distance sans fil RADR, à partir du PCB préparé et des pièces imprimées jusqu'au test final du dispositif.
+Cette instruction de travail documente le processus actuel d’assemblage de la télécommande sans fil RADR, depuis le PCB préparé et les pièces imprimées jusqu’au test final de l’appareil.
 
-Utilisez ces instructions avec le PCB actif, les pièces imprimées et la version de nomenclature pour la construction.
+Utilisez ces instructions avec les versions actuellement validées du PCB, des pièces imprimées et de la nomenclature.
 
-## Pièces et consommables requis
+## Pièces et consommables nécessaires
 
-1. Rassemblez les pièces requises avant de commencer l'assemblage.
+1. Rassemblez les pièces nécessaires avant de commencer l’assemblage.
 
-2. Confirmez que l'ensemble d'assemblage comprend :
+2. Confirmez que le jeu de pièces comprend :
    - `RADR-PCB-assembly`
    - `screen`
    - `battery`
@@ -27,15 +27,15 @@ Utilisez ces instructions avec le PCB actif, les pièces imprimées et la versio
    - `power-slider-button`
    - `knob`
    - `weather-stripping`
-   - 5x vis trilobées `BC-0408LTFB`
+   - 5x vis tri-lobe `BC-0408LTFB`
    - `hot-glue`
 
-3. Si toutes les pièces requises sont présentes, continuez.
+3. Si toutes les pièces nécessaires sont présentes, passez à la suite.
 
 ## Outils
 
 - Râpe
-- Embout T8 pour vis trilobées
+- Embout T8 pour vis tri-lobe
 - Tournevis électrique ou tournevis manuel
 - Alcool isopropylique
 - Chiffon en microfibre
@@ -45,213 +45,221 @@ Utilisez ces instructions avec le PCB actif, les pièces imprimées et la versio
 
 ## Préparer le PCBA
 
-1. Ébavurez les bords du `RADR-PCB-assembly` avec une râpe jusqu'à ce que le bord de la planche soit lisse.
+1. Ébavurez les bords du `RADR-PCB-assembly` avec une râpe jusqu’à ce que le bord de la carte soit lisse.
 
-![Assemblage PCB RADR avec zones de bord marquées pour l'ébavurage](assets/pcba-deburr-edges.webp)
+   ![Assemblage PCB RADR avec zones de bord marquées pour l’ébavurage](assets/pcba-deburr-edges.webp)
 
-_Ébavurez les bords du PCBA jusqu'à ce qu'ils soient lisses._
+   _Ébavurez les bords du PCBA jusqu’à ce qu’ils soient lisses._
 
-2. Essuyez la zone marquée du coupe-froid sur le PCBA avec du `isopropyl-alcohol` et un `microfiber-cloth`.
+2. Essuyez la zone marquée de la bande d’étanchéité sur le PCBA avec de l’`isopropyl-alcohol` et un `microfiber-cloth`.
 
-![Zone de coupe-froid marquée sur l'ensemble PCB RADR](assets/pcba-clean-weather-strip-area.webp)
+   ![Zone de bande d’étanchéité marquée sur l’assemblage PCB RADR](assets/pcba-clean-weather-strip-area.webp)
 
-_Nettoyer la zone marquée du coupe-froid._
+   _Nettoyez la zone marquée de la bande d’étanchéité._
 
 3. Fixez un morceau de 2,5 cm de `weather-stripping` au centre de la zone nettoyée.
 
-![Coupe-froid installé sur l'ensemble PCB RADR](assets/weather-strip-installed.webp)
+   ![Bande d’étanchéité installée sur l’assemblage PCB RADR](assets/weather-strip-installed.webp)
 
-_Coupe-froid installé sur le PCBA._
+   _Bande d’étanchéité installée sur le PCBA._
 
-4. Placez le `power-slider-button` imprimé sur l'interrupteur marche/arrêt du PCBA.
+4. Placez le `power-slider-button` imprimé sur l’interrupteur marche/arrêt du PCBA.
 
-![Couvercle d'interrupteur d'alimentation imprimé installé sur l'interrupteur marche/arrêt PCBA](assets/power-switch-cover-installed.webp)
+   ![Couvercle d’interrupteur d’alimentation imprimé installé sur l’interrupteur marche/arrêt du PCBA](assets/power-switch-cover-installed.webp)
 
-_Couvercle de l'interrupteur d'alimentation installé._
+   _Couvercle de l’interrupteur d’alimentation installé._
 
-5. Connectez le LiPo `battery` de 800 mAh au PCBA.
+5. Connectez la `battery` LiPo de 800 mAh au PCBA.
 
-Gardez le PCBA éteint après avoir connecté la batterie. Le PCBA produit une lumière verte lorsqu’il est allumé et ne produit pas cette lumière lorsqu’il est éteint.
+   Laissez le PCBA éteint après avoir connecté la batterie. Un voyant vert s’allume sur le PCBA lorsqu’il est sous tension et reste éteint lorsqu’il est hors tension.
 
-![Batterie LiPo connectée à l'ensemble PCB RADR](assets/battery-connected-to-pcba.webp)
+   ![Batterie LiPo connectée à l’assemblage PCB RADR](assets/battery-connected-to-pcba.webp)
 
-_Batterie connectée au PCBA._
+   _Batterie connectée au PCBA._
 
-6. Vérifiez que le PCBA est ébavuré, rembourré, équipé du couvercle de l'interrupteur d'alimentation, connecté à la batterie et éteint avant de continuer.
+6. Avant de continuer, vérifiez que le PCBA est ébavuré, muni de la bande d’étanchéité, que le couvercle de l’interrupteur d’alimentation est installé, que la batterie est connectée et que le PCBA est éteint.
 
-## Préparez le boîtier avant
+## Préparer le boîtier avant
 
-1. Utilisez un `razor-blade` pour découper un petit triangle sur les deux pare-chocs du `front-housing`.
+1. Utilisez une `razor-blade` pour découper un petit triangle sur les deux pare-chocs du `front-housing`.
 
-Ces coupes empêchent les pare-chocs de s'accrocher au PCBA lors de l'installation.
+   Ces découpes empêchent les pare-chocs de s’accrocher au PCBA pendant l’installation.
 
-![Caractéristiques du pare-chocs du boîtier avant marquées pour la coupe](assets/front-housing-bumper-cut-lines.webp)
-
-_Découpez les deux éléments du pare-chocs._
-![Pare-chocs du boîtier avant après découpe](assets/front-housing-bumper-trimmed.webp)
-
-_Référence de pare-chocs intérieur garni._
+   <PhotoGrid>
+     <Photo caption="Découpez les deux éléments du pare-chocs.">
+       ![Éléments des pare-chocs du boîtier avant marqués pour la découpe](assets/front-housing-bumper-cut-lines.webp)
+     </Photo>
+     <Photo caption="Référence du pare-chocs intérieur découpé.">
+       ![Pare-chocs du boîtier avant après la découpe](assets/front-housing-bumper-trimmed.webp)
+     </Photo>
+   </PhotoGrid>
 
 2. Retirez le film protecteur du `screen`.
 
-![Film de protection retiré de l'écran RADR](assets/screen-protective-film-removal.webp)
+   ![Film protecteur retiré de l’écran RADR](assets/screen-protective-film-removal.webp)
 
-_Retirez le film d'affichage._
+   _Retirez le film de l’écran._
 
 3. Installez le `screen` dans le `front-housing`.
 
-Insérez d'abord l'écran dans la lèvre inférieure du boîtier avant intérieur. Pliez doucement le boîtier vers l'extérieur tout en appuyant sur l'écran dans le rebord supérieur de l'écran. Confirmez que l'écran est aligné contre le boîtier.
+   Insérez d’abord l’écran dans la lèvre inférieure à l’intérieur du boîtier avant. Fléchissez doucement le boîtier vers l’extérieur tout en appuyant sur l’écran pour l’insérer dans la lèvre supérieure. Vérifiez que l’écran affleure le boîtier.
 
-![Affichage inséré dans la lèvre inférieure du boîtier avant du RADR](assets/screen-bottom-lip-insertion.webp)
+   <PhotoGrid>
+     <Photo caption="Insérez d’abord l’écran dans la lèvre inférieure.">
+       ![Écran inséré dans la lèvre inférieure du boîtier avant du RADR](assets/screen-bottom-lip-insertion.webp)
+     </Photo>
+     <Photo caption="Écran installé à fleur dans le boîtier.">
+       ![Écran installé à fleur dans le boîtier avant du RADR](assets/screen-seated-flush.webp)
+     </Photo>
+   </PhotoGrid>
 
-_Insérez d'abord l'écran dans la lèvre inférieure._
-![Affichage encastré dans le boîtier avant RADR](assets/screen-seated-flush.webp)
+4. Appliquez un cordon fin et discret de `hot-glue` le long des bords de l’écran.
 
-_Écran encastré dans le boîtier._
+   Maintenez le cordon de colle en contact avec le bord de l’écran et le boîtier en plastique. Le plastique du boîtier doit fondre légèrement dans la colle.
 
-4. Appliquez un cordon fin et discret de `hot-glue` le long des bords de l'écran.
+   ![Cordon de colle chaude autour du bord de l’écran RADR](assets/screen-hot-glue-bead.webp)
 
-Gardez le cordon de colle en contact avec le bord de l'écran et le boîtier en plastique. Le plastique du boîtier doit fondre légèrement dans la colle.
-
-![Perle de colle chaude autour du bord de l'écran RADR](assets/screen-hot-glue-bead.webp)
-
-_Perle de colle discrète autour du bord de l'écran._
+   _Cordon de colle discret autour du bord de l’écran._
 
 5. Déposez les boutons imprimés dans le `front-housing`.
 
-![Boutons RADR imprimés installés dans le boîtier avant](assets/buttons-installed-in-front-housing.webp)
+   ![Boutons RADR imprimés installés dans le boîtier avant](assets/buttons-installed-in-front-housing.webp)
 
-_Boutons installés dans le boîtier avant._
+   _Boutons installés dans le boîtier avant._
 
-6. Vérifiez que les pare-chocs sont coupés, que l'écran est collé en place et que les boutons bougent librement avant de continuer.
+6. Avant de continuer, vérifiez que les pare-chocs sont découpés, que l’écran est collé et que les boutons bougent librement.
 
 ## Installer le PCBA
 
-1. Faites passer le ruban d'écran à travers la découpe du PCBA, puis appuyez sur le PCBA dans le `front-housing`.
+1. Faites passer la nappe de l’écran par la découpe du PCBA, puis appuyez sur le PCBA pour l’installer à fleur dans le `front-housing`.
 
-![Ensemble PCB RADR placé dans le boîtier avant avec ruban d'écran acheminé à travers la découpe du PCB](assets/pcba-seated-in-front-housing.webp)
+   ![Assemblage PCB RADR installé à fleur dans le boîtier avant, nappe de l’écran acheminée par la découpe du PCB](assets/pcba-seated-in-front-housing.webp)
 
-_PCBA placé dans le boîtier avant._
+   _PCBA installé dans le boîtier avant._
 
-2. Ouvrez le connecteur du ruban d'écran sur le PCBA avec un petit tournevis.
+2. Ouvrez le connecteur de la nappe de l’écran sur le PCBA avec un petit tournevis.
 
-![Ouvrir le connecteur de ruban d'écran sur l'ensemble PCB RADR](assets/screen-connector-open.webp)
+   ![Connecteur de la nappe de l’écran ouvert sur l’assemblage PCB RADR](assets/screen-connector-open.webp)
 
-_Ouvrez le connecteur de l'écran._
+   _Ouvrez le connecteur de l’écran._
 
-3. Insérez le ruban d'écran dans le connecteur et fermez le connecteur.
+3. Insérez la nappe de l’écran dans le connecteur et fermez le connecteur.
 
-![Ruban d'écran inséré dans le connecteur RADR PCB](assets/screen-ribbon-connected.webp)
+   ![Nappe de l’écran insérée dans le connecteur du PCB RADR](assets/screen-ribbon-connected.webp)
 
-_Ruban d'écran connecté._
+   _Nappe de l’écran connectée._
 
-4. Rentrez le ruban d'écran dans le boîtier.
+4. Rangez la nappe de l’écran dans le boîtier.
 
-![Ruban d'écran inséré dans le boîtier RADR](assets/screen-ribbon-tucked.webp)
+   ![Nappe de l’écran rangée dans le boîtier RADR](assets/screen-ribbon-tucked.webp)
 
-_Ruban d'écran rentré dans le boîtier._
+   _Nappe de l’écran rangée dans le boîtier._
 
-5. Vérifiez que le PCBA est bien aligné, que le connecteur du ruban est fermé et que le ruban est éloigné des points de pincement avant de continuer.
+5. Avant de continuer, vérifiez que le PCBA affleure le boîtier, que le connecteur de la nappe est fermé et que la nappe est éloignée des points de pincement.
 
-## Fermer le logement
+## Fermer le boîtier
 
-1. Placez le `back-housing` sur le `front-housing` en insérant l'interrupteur marche/arrêt dans sa découpe.
+1. Placez le `back-housing` sur le `front-housing` en insérant l’interrupteur marche/arrêt dans sa découpe.
 
-![Boîtier arrière du RADR aligné sur le boîtier avant avec l'interrupteur d'alimentation entrant dans sa découpe](assets/bottom-housing-power-switch-alignment.webp)
+   ![Boîtier arrière du RADR aligné sur le boîtier avant, interrupteur d’alimentation entrant dans sa découpe](assets/bottom-housing-power-switch-alignment.webp)
 
-_Alignez l'interrupteur d'alimentation avec la découpe à l'arrière du boîtier._
+   _Alignez l’interrupteur d’alimentation avec la découpe du boîtier arrière._
 
-2. Tirez le `battery` à travers l'espace ouvert du boîtier arrière qui deviendra le compartiment à piles.
+2. Tirez la `battery` à travers l’espace ouvert du boîtier arrière qui deviendra le compartiment de la batterie.
 
-![Batterie tirée à travers l'ouverture du compartiment à batterie du boîtier arrière du RADR](assets/battery-pulled-through-bottom-housing.webp)
+   <PhotoGrid>
+     <Photo caption="Tirez la batterie à travers l’ouverture du compartiment de la batterie.">
+       ![Batterie tirée à travers l’ouverture du compartiment de la batterie du boîtier arrière du RADR](assets/battery-pulled-through-bottom-housing.webp)
+     </Photo>
+     <Photo caption="Référence du cheminement de la batterie.">
+       ![Référence du cheminement de la batterie avec les boîtiers avant et arrière du RADR partiellement fermés](assets/battery-routing-reference.webp)
+     </Photo>
+   </PhotoGrid>
 
-_Tirez la batterie à travers l'ouverture du compartiment à batterie._
-![Référence de routage de la batterie avec boîtiers avant et arrière RADR partiellement fermés](assets/battery-routing-reference.webp)
+3. Avec un réglage de couple moyen, fixez les boîtiers avant et arrière ensemble avec des vis tri-lobe.
 
-_Référence de routage de la batterie._
+   La vis est suffisamment enfoncée lorsque le tournevis cliquette.
 
-3. À l'aide d'un couple de serrage moyen, fixez les boîtiers avant et arrière ensemble à l'aide de vis trilobées.
+   ![Emplacements des vis du boîtier arrière du RADR fixés avec des vis tri-lobe](assets/rear-screws-fastened.webp)
 
-La vis est suffisamment profonde lorsque le tournevis s'enclenche.
+   _Serrez les vis du boîtier arrière._
 
-![Emplacements des vis du boîtier arrière du RADR fixés avec des vis trilobées](assets/rear-screws-fastened.webp)
+4. Fixez les trous de vis du boîtier avant avec les mêmes vis tri-lobe.
 
-_Serrez les vis du boîtier arrière._
+   ![Emplacements des vis du boîtier avant du RADR fixés avec des vis tri-lobe](assets/front-screws-fastened.webp)
 
-4. Fixez les trous de vis du boîtier avant avec les mêmes vis trilobées.
+   _Serrez les vis du boîtier avant._
 
-![Emplacements des vis du boîtier avant du RADR fixés avec des vis trilobées](assets/front-screws-fastened.webp)
+5. Placez la `battery` dans le compartiment de la batterie.
 
-_Serrez les vis du boîtier avant._
+   ![Batterie RADR placée dans le compartiment de la batterie](assets/battery-in-compartment.webp)
 
-5. Placez le `battery` à l'intérieur du compartiment à piles.
+   _Batterie placée dans le compartiment._
 
-![Batterie RADR placée à l'intérieur du compartiment à piles](assets/battery-in-compartment.webp)
+6. Placez le `battery-flap` sur la batterie et vissez-le avec des vis tri-lobe.
 
-_Batterie placée dans le compartiment._
+   ![Couvercle de batterie RADR installé sur le compartiment de la batterie](assets/battery-cover-installed.webp)
 
-6. Placez le `battery-flap` sur la batterie et vissez-le avec des vis trilobées.
+   _Couvercle de batterie installé._
 
-![Couvercle de la batterie RADR installé sur le compartiment de la batterie](assets/battery-cover-installed.webp)
-
-_Couvercle de batterie installé._
-
-7. Vérifiez que le boîtier est complètement fermé, que toutes les vis sont en place et que le couvercle de la batterie est sécurisé avant de continuer.
+7. Avant de continuer, vérifiez que le boîtier est complètement fermé, que toutes les vis sont en place et que le couvercle de batterie est fixé.
 
 ## Installer le bouton et tester
 
-1. Utilisez un petit tournevis pour nettoyer tout excès de filament du cercle intérieur du bouton.
+1. Utilisez un petit tournevis pour retirer tout excès de filament de l’alésage intérieur du bouton.
 
-![Alésage intérieur du bouton RADR après nettoyage de l'excès de filament](assets/knob-interior-cleaned.webp)
+   ![Alésage intérieur du bouton RADR après nettoyage de l’excès de filament](assets/knob-interior-cleaned.webp)
 
-_Nettoyez l'alésage du bouton avant l'installation._
+   _Nettoyez l’alésage du bouton avant l’installation._
 
-2. Alignez la forme de l'encodeur avec la forme du cercle du bouton intérieur et appuyez sur le `knob` sur l'encodeur jusqu'à ce qu'il s'enclenche doucement.
+2. Alignez la forme de l’encodeur sur celle de l’alésage intérieur du bouton et appuyez sur le `knob` pour l’enfoncer sur l’encodeur jusqu’à ce qu’il s’enclenche doucement.
 
-![Le bouton RADR est enfoncé sur l'encodeur rotatif](assets/knob-installed-on-encoder.webp)
+   ![Bouton RADR enfoncé sur l’encodeur rotatif](assets/knob-installed-on-encoder.webp)
 
-_Appuyez sur le bouton sur l'encodeur._
+   _Appuyez sur le bouton pour l’installer sur l’encodeur._
 
-3. Allumez l'appareil et testez selon le protocole.
+3. Allumez l’appareil et testez-le conformément au protocole.
 
-![Télécommande sans fil RADR allumée pour le test final](assets/device-test-on.webp)
+   ![Télécommande sans fil RADR allumée pour le test final](assets/device-test-on.webp)
 
-_Appareil allumé pour le test final._
+   _Appareil allumé pour le test final._
 
 ## Assemblage final
 
-1. Vérifiez que les bords du PCBA sont lisses et ne s'accrochent pas au boîtier.
-2. Confirmez que le coupe-froid est centré et collé au PCBA.
-3. Vérifiez que le couvercle de l'interrupteur d'alimentation déplace l'interrupteur marche/arrêt proprement.
-4. Vérifiez que les pare-chocs du boîtier avant sont coupés.
-5. Confirmez que l'écran est affleurant et collé avec un cordon à profil bas.
-6. Confirmez que les boutons sont installés et bougent librement.
-7. Vérifiez que le PCBA est bien encastré dans le boîtier avant.
-8. Vérifiez que le ruban d'écran est entièrement inséré et que le connecteur est fermé.
-9. Vérifiez que le ruban d'écran et les fils de la batterie sont éloignés des points de pincement.
-10. Vérifiez que les boîtiers et le couvercle de la batterie sont fixés avec des vis trilobées.
-11. Confirmez que le bouton est bien en place sur l'encodeur.
-12. Confirmez que l'appareil est sous tension et réussit le protocole de test fonctionnel actuel.
+1. Vérifiez que les bords du PCBA sont lisses et ne s’accrochent pas au boîtier.
+2. Vérifiez que la bande d’étanchéité est centrée et adhère au PCBA.
+3. Vérifiez que le couvercle de l’interrupteur d’alimentation actionne correctement l’interrupteur marche/arrêt.
+4. Vérifiez que les pare-chocs du boîtier avant sont découpés.
+5. Vérifiez que l’écran affleure le boîtier et est fixé avec un cordon de colle fin et discret.
+6. Vérifiez que les boutons sont installés et bougent librement.
+7. Vérifiez que le PCBA affleure le boîtier avant.
+8. Vérifiez que la nappe de l’écran est entièrement insérée et que le connecteur est fermé.
+9. Vérifiez que la nappe de l’écran et les fils de la batterie sont éloignés des points de pincement.
+10. Vérifiez que les boîtiers et le couvercle de batterie sont fixés avec des vis tri-lobe.
+11. Vérifiez que le bouton est bien installé sur l’encodeur.
+12. Confirmez que l’appareil s’allume et réussit le protocole actuel de test fonctionnel.
 
 ## Liste de contrôle CQ
 
--[ ] Les bords du PCBA ont été ébavurés jusqu'à ce qu'ils soient lisses.
-
-- [ ] La zone du coupe-froid a été nettoyée avec de l'alcool isopropylique. -[ ] Un coupe-froid de 2,5 cm a été installé sur le PCBA.
-- [ ] Le couvercle imprimé de l'interrupteur d'alimentation a été installé.
-- [ ] La batterie était connectée avec le PCBA éteint.
-- [ ] Les pare-chocs avant ont été coupés.
-- [ ] Le film d'écran a été retiré.
-- [ ] L'écran a été installé à plat dans le boîtier avant. -[ ] L’écran a été fixé avec un mince cordon de colle chaude à profil bas.
+- [ ] Les bords du PCBA ont été ébavurés jusqu’à être lisses.
+- [ ] La zone de la bande d’étanchéité a été nettoyée avec de l’alcool isopropylique.
+- [ ] Un morceau de bande d’étanchéité de 2,5 cm a été installé sur le PCBA.
+- [ ] Le couvercle imprimé de l’interrupteur d’alimentation a été installé.
+- [ ] La batterie a été connectée avec le PCBA éteint.
+- [ ] Les pare-chocs du boîtier avant ont été découpés.
+- [ ] Le film de l’écran a été retiré.
+- [ ] L’écran a été installé à fleur dans le boîtier avant.
+- [ ] L’écran a été fixé avec un cordon fin et discret de colle chaude.
 - [ ] Les boutons ont été déposés dans le boîtier avant.
-- [ ] Le ruban d'écran a été introduit à travers la découpe PCBA.
-- [ ] Le PCBA a été enfoncé dans le boîtier.
-- [ ] Le connecteur du ruban d'écran a été ouvert, mis en place et fermé.
-- [ ] Le ruban d'écran était rentré dans le boîtier.
-- [ ] Le boîtier arrière était aligné autour de l'interrupteur marche/arrêt.
-- [ ] La batterie a été tirée à travers l'ouverture du compartiment à batterie. -[ ] Les boîtiers avant et arrière ont été fixés avec des vis trilobées.
-- [ ] La batterie a été placée à l'intérieur du compartiment à batterie.
-- [ ] Le couvercle de la batterie a été installé et vissé.
-- [ ] L'alésage du bouton a été nettoyé de l'excès de filament.
-- Le bouton [ ] a été enfoncé sur l'encodeur jusqu'à ce qu'il s'enclenche.
-- [ ] L'appareil a été allumé et testé conformément au protocole.
+- [ ] La nappe de l’écran a été passée par la découpe du PCBA.
+- [ ] Le PCBA a été pressé à fleur dans le boîtier.
+- [ ] Le connecteur de la nappe de l’écran a été ouvert, la nappe a été insérée et le connecteur a été fermé.
+- [ ] La nappe de l’écran a été rangée dans le boîtier.
+- [ ] Le boîtier arrière a été aligné autour de l’interrupteur marche/arrêt.
+- [ ] La batterie a été tirée à travers l’ouverture du compartiment de la batterie.
+- [ ] Les boîtiers avant et arrière ont été fixés avec des vis tri-lobe.
+- [ ] La batterie a été placée dans le compartiment de la batterie.
+- [ ] Le couvercle de batterie a été installé et vissé.
+- [ ] L’alésage du bouton a été nettoyé de l’excès de filament.
+- [ ] Le bouton a été enfoncé sur l’encodeur jusqu’à ce qu’il s’enclenche.
+- [ ] L’appareil a été allumé et testé conformément au protocole.

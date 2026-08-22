@@ -5,15 +5,15 @@ description: "Kabelbomen voor Lockbox."
 
 {/* Ported from MkDocs: cable-harnesses.md */}
 
-Lockbox bevat motor, batterij, USB-C, scherm en andere kleine kabel
-verbindingen in de montagestroom. Het productniveau [Bill of Materials](bill-of-materials.mdx)
-houdt deze bij als regelitems op apparaatniveau.
+Lockbox bevat motor-, batterij-, USB-C-, scherm- en andere kleine kabelverbindingen
+in het assemblageproces. De [stuklijst](bill-of-materials) op productniveau houdt deze bij als posten op
+apparaatniveau.
 
-Er is nog geen Wireviz-harnasbron gemigreerd naar `hardware/cables/` . Wanneer een
-De Wireviz-bron is toegevoegd, koppel het gegenereerde diagram en de onderliggende stuklijstartefacten
-vanaf deze pagina in plaats van de stuklijstrijen van onderliggende kabels in `hardware/bom.csv`te dupliceren.
+Er is nog geen Wireviz-bron voor kabelbomen gemigreerd naar `hardware/cables/`. Wanneer een
+Wireviz-bron wordt toegevoegd, verwijs dan vanaf deze pagina naar het gegenereerde diagram en de
+onderliggende BOM-artefacten, in plaats van rijen uit onderliggende kabel-BOM's naar `hardware/bom.csv` te kopiëren.
 
-| Activa                     | Locatie                                                                                           | Opmerkingen                                                           |
+| Asset                      | Locatie                                                                                           | Opmerkingen                                                           |
 | -------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| Map kabelbron              | [`hardware/cables/`](https://github.com/researchanddesire/Lockbox-OSS/tree/main/hardware/cables)  | Wireviz YAML-bronnen horen hier thuis.                                |
+| Map met kabelbronnen       | [`hardware/cables/`](https://github.com/researchanddesire/Lockbox-OSS/tree/main/hardware/cables)  | Wireviz-YAML-bronnen horen hier thuis.                                |
 | Stuklijst op productniveau | [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) | Geeft een overzicht van kabelassemblages en kant-en-klare kabelitems. |

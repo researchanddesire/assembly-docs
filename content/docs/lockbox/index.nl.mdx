@@ -1,28 +1,41 @@
 ---
-title: "Documenten voor montage van lockbox"
-description: "Montagedocumentatie voor lockbox voor lockbox."
+title: "Montagedocumentatie voor Lockbox"
+description: "Montagedocumentatie voor Lockbox."
 ---
 
 {/* Ported from MkDocs: index.md */}
 
 ## Doel
 
-Deze documenten verzamelen de informatie over de Lockbox-hardwareassemblage in een op zichzelf staande map voor toekomstige aggregatie in `ohai.researchanddesire.com`. Ze zijn geschreven als open hardware-montage-instructies voor OSS-bouwers en productiemedewerkers.
+Deze documentatie verzamelt de informatie over de assemblage van Lockbox-hardware voor OSS-bouwers
+en productiepartners.
 
 ## Lockbox-overzicht
 
-Lockbox is een kleinschalig consumentenelektronicaproduct dat is opgebouwd rond een aangepaste PCB, ESP32-S3-firmware, een gemotoriseerde vergrendeling, magnetische sensoren, TFT-display, roterende encoder, batterij en 3D-geprinte plastic behuizing.
+Lockbox is een compact consumentenelektronicaproduct dat is opgebouwd rond een aangepaste PCB, ESP32-S3-firmware, een gemotoriseerde vergrendeling, magnetische sensoren, een TFT-display, een roterende encoder, een batterij en een 3D-geprinte kunststof behuizing.
 
-![Overzicht lockbox-apparaten](assets/device-overview.webp)
+![Overzicht van het Lockbox-apparaat](assets/device-overview.webp)
 
-| Eigendom                       | Waarde                                           |
-| ------------------------------ | ------------------------------------------------ |
-| Afmetingen                     | 57 mm x 43 mm x 134 mm                           |
-| Kunststof volume               | 156.408,422 mm^3                                 |
-| Huidig ​​huisvestingsmateriaal | 3D-geprint PLA-plastic                           |
-| Ingebouwde magneten            | Drie tot vier magneten in de kunststof behuizing |
+| Eigenschap                    | Waarde                                         |
+| ----------------------------- | ---------------------------------------------- |
+| Afmetingen                    | 57 mm x 43 mm x 134 mm                         |
+| Kunststofvolume               | 156,408.422 mm^3                               |
+| Huidig behuizingsmateriaal    | 3D-geprinte PLA-kunststof                      |
+| Ingebouwde magneten           | Drie tot vier magneten in de kunststof behuizing |
 
-## Montagepakket
+## Montagedocumentatie
 
-- [PCB-overzicht](pcb-overview.mdx) -[Stuklijst](bill-of-materials.mdx)
-- [Montagehandleiding](assembly-guide.mdx)
+<CardGroup cols={2}>
+  <Card title="Montagehandleiding" href="/lockbox/assembly-guide">
+    Volg de mechanische opbouw, de bedrading van de elektronica en de afsluitende kwaliteitscontrole.
+  </Card>
+  <Card title="Stuklijst" href="/lockbox/bill-of-materials">
+    Bekijk onderdelen, leveranciers en verwijzingen naar hardwarebronnen.
+  </Card>
+  <Card title="Kabelbomen" href="/lockbox/cable-harnesses">
+    Bekijk informatie over de verantwoordelijkheid voor kabels en kabelbomen binnen de assemblage.
+  </Card>
+  <Card title="PCB-overzicht" href="/lockbox/pcb-overview">
+    Bekijk de besturingsprint, de KiCanvas-preview en de productiebestanden.
+  </Card>
+</CardGroup>

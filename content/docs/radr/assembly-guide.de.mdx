@@ -1,19 +1,19 @@
 ---
 title: "Montageanleitung für die drahtlose RADR-Fernbedienung"
-description: "Montageanleitung für die RADR-Funkfernbedienung für die RADR-Funkfernbedienung."
+description: "Montageanleitung für die drahtlose RADR-Fernbedienung."
 ---
 
 {/* Ported from MkDocs: assembly-guide.md */}
 
 ## Zweck
 
-Diese Arbeitsanweisung dokumentiert den aktuellen RADR-Wireless-Remote-Montageprozess von der vorbereiteten Leiterplatte und den gedruckten Teilen bis hin zum abschließenden Gerätetest.
+Diese Arbeitsanweisung dokumentiert den aktuellen Montageprozess der drahtlosen RADR-Fernbedienung – von der vorbereiteten Leiterplattenbaugruppe und den gedruckten Teilen bis zum abschließenden Gerätetest.
 
-Verwenden Sie diese Anweisungen mit der aktiven Leiterplatte, den gedruckten Teilen und der Stücklistenversion für den Build.
+Verwenden Sie diese Anleitung zusammen mit den aktuell freigegebenen Versionen der Leiterplattenbaugruppe, der gedruckten Teile und der Stückliste.
 
 ## Erforderliche Teile und Verbrauchsmaterialien
 
-1. Stellen Sie die erforderlichen Teile bereit, bevor Sie mit der Montage beginnen.
+1. Stellen Sie vor Beginn der Montage alle erforderlichen Teile bereit.
 
 2. Bestätigen Sie, dass das Montageset Folgendes enthält:
    - `RADR-PCB-assembly`
@@ -27,233 +27,239 @@ Verwenden Sie diese Anweisungen mit der aktiven Leiterplatte, den gedruckten Tei
    - `power-slider-button`
    - `knob`
    - `weather-stripping`
-   - 5x `BC-0408LTFB` Dreilappenschrauben
+   - 5x `BC-0408LTFB` tri-lobe-Schrauben
    - `hot-glue`
 
-3. Wenn alle benötigten Teile vorhanden sind, fahren Sie fort.
+3. Wenn alle erforderlichen Teile vorhanden sind, fahren Sie mit dem nächsten Schritt fort.
 
 ## Werkzeuge
 
 - Raspel
-- T8-Bit für Tri-Lobe-Schrauben
-- Elektroschrauber oder Handschrauber
+- T8-Bit für tri-lobe-Schrauben
+- Elektrischer Schrauber oder Handschrauber
 - Isopropylalkohol
 - Mikrofasertuch
 - Rasierklinge
 - Heißklebepistole
-- Kleiner Schraubenzieher
+- Kleiner Schraubendreher
 
-## Bereiten Sie die PCBA vor
+## PCBA vorbereiten
 
-1. Entgraten Sie die Kanten des `RADR-PCB-assembly` mit einer Raspel, bis die Brettkante glatt ist.
+1. Entgraten Sie die Kanten des `RADR-PCB-assembly` mit einer Raspel, bis die Platinenkante glatt ist.
 
-![RADR-Leiterplattenbaugruppe mit zum Entgraten markierten Randbereichen](assets/pcba-deburr-edges.webp)
+   ![RADR-Leiterplattenbaugruppe mit zum Entgraten markierten Randbereichen](assets/pcba-deburr-edges.webp)
 
-_Entgraten Sie die PCBA-Kanten, bis sie glatt sind._
+   _Entgraten Sie die PCBA-Kanten, bis sie glatt sind._
 
-2. Wischen Sie den markierten Dichtungsstreifenbereich auf der PCBA mit `isopropyl-alcohol` und einem `microfiber-cloth`ab.
+2. Wischen Sie den markierten Bereich für den Dichtungsstreifen auf der PCBA mit `isopropyl-alcohol` und einem `microfiber-cloth` ab.
 
-![Markierter Dichtungsstreifenbereich auf der RADR-Leiterplattenbaugruppe](assets/pcba-clean-weather-strip-area.webp)
+   ![Markierter Bereich für den Dichtungsstreifen auf der RADR-Leiterplattenbaugruppe](assets/pcba-clean-weather-strip-area.webp)
 
-_Reinigen Sie den markierten Dichtungsstreifenbereich._
+   _Reinigen Sie den markierten Bereich für den Dichtungsstreifen._
 
-3. Bringen Sie ein 2,5 cm großes Stück `weather-stripping` in der Mitte des gereinigten Bereichs an.
+3. Bringen Sie ein 2,5 cm langes Stück `weather-stripping` in der Mitte des gereinigten Bereichs an.
 
-![Auf der RADR-Leiterplattenbaugruppe installierter Wetterschutz](assets/weather-strip-installed.webp)
+   ![Dichtungsstreifen auf der RADR-Leiterplattenbaugruppe angebracht](assets/weather-strip-installed.webp)
 
-_Wetterschutz auf der PCBA installiert._
+   _Dichtungsstreifen auf der PCBA angebracht._
 
-4. Bringen Sie das gedruckte `power-slider-button` über dem PCBA-Ein/Aus-Schalter an.
+4. Bringen Sie den gedruckten `power-slider-button` über dem Ein-/Ausschalter der PCBA an.
 
-![Bedruckte Netzschalterabdeckung über dem PCBA-Ein-Aus-Schalter installiert](assets/power-switch-cover-installed.webp)
+   ![Gedruckte Abdeckung des Netzschalters über dem Ein-/Ausschalter der PCBA angebracht](assets/power-switch-cover-installed.webp)
 
-_Netzschalterabdeckung installiert._
+   _Abdeckung des Netzschalters angebracht._
 
-5. Schließen Sie den 800 mAh LiPo `battery` an die PCBA an.
+5. Schließen Sie die 800-mAh-LiPo-`battery` an die PCBA an.
 
-Lassen Sie die PCBA nach dem Anschließen der Batterie ausgeschaltet. Die PCBA erzeugt im eingeschalteten Zustand ein grünes Licht, im ausgeschalteten Zustand jedoch kein grünes Licht.
+   Lassen Sie die PCBA nach dem Anschließen der Batterie ausgeschaltet. Im eingeschalteten Zustand leuchtet an der PCBA ein grünes Licht; im ausgeschalteten Zustand leuchtet es nicht.
 
-![LiPo-Akku mit der RADR-Leiterplattenbaugruppe verbunden](assets/battery-connected-to-pcba.webp)
+   ![LiPo-Batterie an die RADR-Leiterplattenbaugruppe angeschlossen](assets/battery-connected-to-pcba.webp)
 
-_Batterie an die PCBA angeschlossen._
+   _Batterie an der PCBA angeschlossen._
 
-6. Stellen Sie sicher, dass die PCBA entgratet, gepolstert, mit der Netzschalterabdeckung versehen, an die Batterie angeschlossen und ausgeschaltet ist, bevor Sie fortfahren.
+6. Stellen Sie sicher, dass die PCBA entgratet und gepolstert ist, die Abdeckung des Netzschalters angebracht ist, die Batterie angeschlossen ist und die PCBA ausgeschaltet ist, bevor Sie fortfahren.
 
-## Bereiten Sie das vordere Gehäuse vor
+## Vorderes Gehäuse vorbereiten
 
-1. Schneiden Sie mit einem `razor-blade` ein kleines Dreieck von beiden Stoßstangen des `front-housing`ab.
+1. Schneiden Sie mit einer `razor-blade` ein kleines Dreieck von beiden Bumpern am `front-housing` ab.
 
-Diese Einschnitte verhindern, dass die Stoßfänger während der Installation an der PCBA hängen bleiben.
+   Diese Einschnitte verhindern, dass die Bumper während der Installation an der PCBA hängen bleiben.
 
-![Merkmale des vorderen Gehäusestoßfängers zum Zuschneiden markiert](assets/front-housing-bumper-cut-lines.webp)
-
-_Schneiden Sie beide Stoßfängerelemente._
-![Stoßstange des vorderen Gehäuses nach dem Zuschneiden](assets/front-housing-bumper-trimmed.webp)
-
-_Verzierung der Innenstoßstange._
+   <PhotoGrid>
+     <Photo caption="Beide Bumper-Elemente zuschneiden.">
+       ![Bumper-Elemente des vorderen Gehäuses zum Zuschneiden markiert](assets/front-housing-bumper-cut-lines.webp)
+     </Photo>
+     <Photo caption="Referenz für den zugeschnittenen inneren Bumper.">
+       ![Bumper des vorderen Gehäuses nach dem Zuschneiden](assets/front-housing-bumper-trimmed.webp)
+     </Photo>
+   </PhotoGrid>
 
 2. Entfernen Sie die Schutzfolie vom `screen`.
 
-![Schutzfolie wird vom RADR-Display entfernt](assets/screen-protective-film-removal.webp)
+   ![Schutzfolie wird vom RADR-Display entfernt](assets/screen-protective-film-removal.webp)
 
-_Entfernen Sie die Displayfolie._
+   _Entfernen Sie die Displayfolie._
 
-3. Installieren Sie `screen` im `front-housing`.
+3. Setzen Sie den `screen` in das `front-housing` ein.
 
-Setzen Sie den Bildschirm zuerst in die untere Lippe des inneren Vordergehäuses ein. Biegen Sie das Gehäuse vorsichtig nach außen, während Sie den Bildschirm in die obere Bildschirmlippe drücken. Stellen Sie sicher, dass der Bildschirm bündig am Gehäuse anliegt.
+   Setzen Sie den Bildschirm zuerst in die untere Lippe an der Innenseite des Vordergehäuses ein. Biegen Sie das Gehäuse vorsichtig nach außen, während Sie den Bildschirm in die obere Bildschirmlippe drücken. Vergewissern Sie sich, dass der Bildschirm bündig am Gehäuse anliegt.
 
-![Display wird in die untere Lippe des RADR-Frontgehäuses eingesetzt](assets/screen-bottom-lip-insertion.webp)
+   <PhotoGrid>
+     <Photo caption="Setzen Sie den Bildschirm zuerst in die untere Lippe ein.">
+       ![Display wird in die untere Lippe des RADR-Vordergehäuses eingesetzt](assets/screen-bottom-lip-insertion.webp)
+     </Photo>
+     <Photo caption="Bildschirm sitzt bündig im Gehäuse.">
+       ![Display sitzt bündig im RADR-Vordergehäuse](assets/screen-seated-flush.webp)
+     </Photo>
+   </PhotoGrid>
 
-_Setzen Sie den Bildschirm zuerst in die Unterlippe ein._
-![Display sitzt bündig im RADR-Frontgehäuse](assets/screen-seated-flush.webp)
+4. Tragen Sie entlang der Bildschirmkanten eine dünne, flache Raupe aus `hot-glue` auf.
 
-_Sieb sitzt bündig im Gehäuse._
+   Halten Sie die Kleberaupe sowohl an der Bildschirmkante als auch am Kunststoffgehäuse anliegend. Der Kunststoff des Gehäuses sollte leicht in den Kleber einschmelzen.
 
-4. Tragen Sie eine dünne, flache Raupe `hot-glue` entlang der Bildschirmkanten auf.
+   ![Heißkleberraupe um den Rand des RADR-Displays](assets/screen-hot-glue-bead.webp)
 
-Achten Sie darauf, dass die Kleberaupe sowohl mit der Bildschirmkante als auch mit dem Kunststoffgehäuse in Kontakt bleibt. Der Gehäusekunststoff sollte leicht mit dem Kleber verschmelzen.
+   _Flache Kleberaupe um die Bildschirmkante._
 
-![Heißkleberraupe um den Rand des RADR-Displays](assets/screen-hot-glue-bead.webp)
+5. Legen Sie die gedruckten Tasten in das `front-housing`.
 
-_Low-Profile-Kleberaupe um den Bildschirmrand._
+   ![Gedruckte RADR-Tasten im vorderen Gehäuse angebracht](assets/buttons-installed-in-front-housing.webp)
 
-5. Legen Sie die gedruckten Tasten in das `front-housing`ein.
+   _Tasten im vorderen Gehäuse angebracht._
 
-![Im vorderen Gehäuse installierte gedruckte RADR-Tasten](assets/buttons-installed-in-front-housing.webp)
+6. Stellen Sie sicher, dass die Bumper zugeschnitten und der Bildschirm festgeklebt sind und sich die Tasten frei bewegen lassen, bevor Sie fortfahren.
 
-_Tasten im Frontgehäuse verbaut._
+## PCBA einsetzen
 
-6. Stellen Sie sicher, dass die Stoßstangen zugeschnitten sind, der Bildschirm festgeklebt ist und sich die Tasten frei bewegen lassen, bevor Sie fortfahren.
+1. Führen Sie das Bildschirm-Flachbandkabel durch die Aussparung in der PCBA und drücken Sie die PCBA anschließend bündig in das `front-housing`.
 
-## Installieren Sie die PCBA
+   ![RADR-Leiterplattenbaugruppe bündig im vorderen Gehäuse, Bildschirm-Flachbandkabel durch die Leiterplattenaussparung geführt](assets/pcba-seated-in-front-housing.webp)
 
-1. Führen Sie das Siebband durch die Aussparung in der PCBA und drücken Sie dann die PCBA bündig in das `front-housing`.
+   _PCBA sitzt im vorderen Gehäuse._
 
-![RADR-Leiterplattenbaugruppe sitzt im vorderen Gehäuse, wobei das Schirmband durch den Leiterplattenausschnitt geführt wird](assets/pcba-seated-in-front-housing.webp)
+2. Öffnen Sie den Anschluss des Bildschirm-Flachbandkabels auf der PCBA mit einem kleinen Schraubendreher.
 
-_PCBA sitzt im vorderen Gehäuse._
+   ![Geöffneter Anschluss des Bildschirm-Flachbandkabels auf der RADR-Leiterplattenbaugruppe](assets/screen-connector-open.webp)
 
-2. Öffnen Sie den Schirmbandstecker auf der PCBA mit einem kleinen Schraubendreher.
+   _Öffnen Sie den Bildschirmanschluss._
 
-![Offener Schirmbandstecker auf der RADR-Leiterplattenbaugruppe](assets/screen-connector-open.webp)
+3. Stecken Sie das Bildschirm-Flachbandkabel in den Anschluss und schließen Sie ihn.
 
-_Öffnen Sie den Bildschirmanschluss._
+   ![Bildschirm-Flachbandkabel in den RADR-Leiterplattenanschluss eingesteckt](assets/screen-ribbon-connected.webp)
 
-3. Legen Sie das Schirmband in den Anschluss ein und schließen Sie den Anschluss.
+   _Bildschirm-Flachbandkabel angeschlossen._
 
-![Bildschirmband in den RADR-Leiterplattenanschluss eingelegt](assets/screen-ribbon-connected.webp)
+4. Verstauen Sie das Bildschirm-Flachbandkabel im Gehäuse.
 
-_Siebband angeschlossen._
+   ![Bildschirm-Flachbandkabel im RADR-Gehäuse verstaut](assets/screen-ribbon-tucked.webp)
 
-4. Stecken Sie das Bildschirmband in das Gehäuse.
+   _Bildschirm-Flachbandkabel im Gehäuse verstaut._
 
-![Bildschirmband im RADR-Gehäuse versteckt](assets/screen-ribbon-tucked.webp)
+5. Stellen Sie sicher, dass die PCBA bündig sitzt, der Anschluss des Flachbandkabels geschlossen ist und das Kabel von Quetschstellen ferngehalten wird, bevor Sie fortfahren.
 
-_Siebband im Gehäuse verstaut._
+## Gehäuse schließen
 
-5. Stellen Sie sicher, dass die PCBA bündig sitzt, der Flachbandstecker geschlossen ist und das Flachband nicht in der Nähe von Quetschstellen verstaut ist, bevor Sie fortfahren.
+1. Setzen Sie das `back-housing` auf das `front-housing`, indem Sie den Ein-/Ausschalter in seine Aussparung einsetzen.
 
-## Schließen Sie das Gehäuse
+   ![RADR-Rückgehäuse über dem vorderen Gehäuse ausgerichtet, Netzschalter wird in seine Aussparung eingesetzt](assets/bottom-housing-power-switch-alignment.webp)
 
-1. Platzieren Sie den `back-housing` über dem `front-housing` , indem Sie den Ein-/Ausschalter in die Aussparung einführen.
+   _Richten Sie den Netzschalter an der Aussparung des hinteren Gehäuses aus._
 
-![RADR-Rückgehäuse über dem Vordergehäuse ausgerichtet, wobei der Netzschalter in seine Aussparung passt](assets/bottom-housing-power-switch-alignment.webp)
+2. Ziehen Sie die `battery` durch den offenen Bereich im hinteren Gehäuse, der zum Batteriefach wird.
 
-_Richten Sie den Netzschalter auf den Ausschnitt auf der Rückseite des Gehäuses aus._
+   <PhotoGrid>
+     <Photo caption="Ziehen Sie die Batterie durch die Öffnung des Batteriefachs.">
+       ![Batterie durch die Öffnung des Batteriefachs im hinteren RADR-Gehäuse gezogen](assets/battery-pulled-through-bottom-housing.webp)
+     </Photo>
+     <Photo caption="Referenz für die Batterieführung.">
+       ![Referenz für die Batterieführung bei teilweise geschlossenen vorderen und hinteren RADR-Gehäusen](assets/battery-routing-reference.webp)
+     </Photo>
+   </PhotoGrid>
 
-2. Ziehen Sie den `battery` durch den offenen Raum im hinteren Gehäuse, der zum Batteriefach wird.
+3. Befestigen Sie das vordere und hintere Gehäuse mit mittlerem Drehmoment und tri-lobe-Schrauben.
 
-![Batterie durch die hintere Batteriefachöffnung des RADR-Gehäuses gezogen](assets/battery-pulled-through-bottom-housing.webp)
+   Die Schraube sitzt tief genug, wenn der Schrauber rattert.
 
-_Ziehen Sie die Batterie durch die Batteriefachöffnung._
-![Batterieführungsreferenz mit teilweise geschlossenen RADR-Gehäusen vorne und hinten](assets/battery-routing-reference.webp)
+   ![Schraubenpositionen am hinteren RADR-Gehäuse mit befestigten tri-lobe-Schrauben](assets/rear-screws-fastened.webp)
 
-_Batterie-Routing-Referenz._
+   _Befestigen Sie die Schrauben des hinteren Gehäuses._
 
-3. Befestigen Sie das vordere und hintere Gehäuse mit einem mittleren Drehmoment mithilfe von Dreilappenschrauben.
+4. Befestigen Sie die Schraubenlöcher des vorderen Gehäuses mit denselben tri-lobe-Schrauben.
 
-Die Schraube sitzt tief genug, wenn der Schraubendreher einrastet.
+   ![Schraubenpositionen am vorderen RADR-Gehäuse mit befestigten tri-lobe-Schrauben](assets/front-screws-fastened.webp)
 
-![Radr-Schraubenpositionen am hinteren Gehäuse, befestigt mit Dreilappenschrauben](assets/rear-screws-fastened.webp)
+   _Befestigen Sie die Schrauben des vorderen Gehäuses._
 
-_Befestigen Sie die hinteren Gehäuseschrauben._
+5. Legen Sie die `battery` in das Batteriefach.
 
-4. Befestigen Sie die Schraubenlöcher des Vordergehäuses mit denselben Dreilappenschrauben.
+   ![RADR-Batterie im Batteriefach platziert](assets/battery-in-compartment.webp)
 
-![Radr-Frontgehäuse-Schraubenpositionen mit Dreilappenschrauben befestigt](assets/front-screws-fastened.webp)
+   _Batterie im Batteriefach platziert._
 
-_Befestigen Sie die Schrauben des vorderen Gehäuses._
+6. Legen Sie die `battery-flap` über die Batterie und verschrauben Sie sie mit tri-lobe-Schrauben.
 
-5. Legen Sie den `battery` in das Batteriefach.
+   ![RADR-Batterieabdeckung über dem Batteriefach angebracht](assets/battery-cover-installed.webp)
 
-![RADR-Batterie im Batteriefach platziert](assets/battery-in-compartment.webp)
+   _Batterieabdeckung angebracht._
 
-_Batterie im Fach platziert._
+7. Stellen Sie sicher, dass das Gehäuse vollständig geschlossen, alle Schrauben eingesetzt und die Batterieabdeckung gesichert ist, bevor Sie fortfahren.
 
-6. Platzieren Sie den `battery-flap` über der Batterie und schrauben Sie ihn mit Dreilappenschrauben fest.
+## Knopf einsetzen und testen
 
-![RADR-Batterieabdeckung über dem Batteriefach angebracht](assets/battery-cover-installed.webp)
+1. Entfernen Sie mit einem kleinen Schraubendreher überschüssiges Filament aus der Innenbohrung des Knopfs.
 
-_Batterieabdeckung installiert._
+   ![Innenbohrung des RADR-Knopfs nach dem Entfernen überschüssigen Filaments](assets/knob-interior-cleaned.webp)
 
-7. Stellen Sie sicher, dass das Gehäuse vollständig geschlossen ist, alle Schrauben sitzen und die Batterieabdeckung gesichert ist, bevor Sie fortfahren.
+   _Reinigen Sie die Knopfbohrung vor dem Einsetzen._
 
-## Knopf installieren und testen
+2. Richten Sie die Encoderform an der Form der Knopfbohrung aus und drücken Sie den `knob` auf den Encoder, bis er sanft einrastet.
 
-1. Entfernen Sie überschüssiges Filament mit einem kleinen Schraubenzieher vom inneren Knopfkreis.
+   ![RADR-Knopf wird auf den Drehgeber gedrückt](assets/knob-installed-on-encoder.webp)
 
-![Innenbohrung des RADR-Knopfes nach dem Entfernen überschüssigen Filaments](assets/knob-interior-cleaned.webp)
+   _Drücken Sie den Knopf auf den Encoder._
 
-_Reinigen Sie die Knopfbohrung vor dem Einbau._
+3. Schalten Sie das Gerät ein und testen Sie es gemäß dem Protokoll.
 
-2. Richten Sie die Form des Encoders an der Kreisform des inneren Knopfs aus und drücken Sie den `knob` auf den Encoder, bis er sanft einrastet.
+   ![RADR-Funkfernbedienung für den Abschlusstest eingeschaltet](assets/device-test-on.webp)
 
-![RADR-Knopf wird auf den Drehgeber gedrückt](assets/knob-installed-on-encoder.webp)
-
-_Drücken Sie den Knopf auf den Encoder._
-
-3. Schalten Sie das Gerät ein und testen Sie es gemäß Protokoll.
-
-![RADR-Funkfernbedienung für Abschlusstest eingeschaltet](assets/device-test-on.webp)
-
-_Gerät für Endtest eingeschaltet._
+   _Gerät für den Abschlusstest eingeschaltet._
 
 ## Endmontage
 
 1. Stellen Sie sicher, dass die PCBA-Kanten glatt sind und nicht am Gehäuse hängen bleiben.
-2. Stellen Sie sicher, dass der Dichtungsstreifen zentriert ist und an der PCBA haftet.
-3. Stellen Sie sicher, dass die Netzschalterabdeckung den Ein-/Ausschalter sauber bewegt.
-4. Stellen Sie sicher, dass die Stoßfänger des Vordergehäuses zugeschnitten sind.
-5. Stellen Sie sicher, dass der Bildschirm bündig ist und mit einer flachen Wulst verklebt ist.
-6. Stellen Sie sicher, dass die Tasten installiert sind und sich frei bewegen lassen.
+2. Stellen Sie sicher, dass der Dichtungsstreifen mittig sitzt und an der PCBA haftet.
+3. Stellen Sie sicher, dass die Abdeckung des Netzschalters den Ein-/Ausschalter reibungslos bewegt.
+4. Stellen Sie sicher, dass die Bumper des vorderen Gehäuses zugeschnitten sind.
+5. Stellen Sie sicher, dass der Bildschirm bündig sitzt und mit einer dünnen, flachen Kleberaupe befestigt ist.
+6. Stellen Sie sicher, dass die Tasten eingesetzt sind und sich frei bewegen lassen.
 7. Stellen Sie sicher, dass die PCBA bündig im vorderen Gehäuse sitzt.
-8. Stellen Sie sicher, dass das Bildschirmband vollständig eingelegt und der Stecker geschlossen ist.
-9. Stellen Sie sicher, dass das Bildschirmband und die Batteriekabel nicht in der Nähe von Quetschstellen verlegt sind.
-10. Stellen Sie sicher, dass die Gehäuse und die Batterieabdeckung mit Dreilappenschrauben befestigt sind.
+8. Stellen Sie sicher, dass das Bildschirm-Flachbandkabel vollständig eingesteckt und der Anschluss geschlossen ist.
+9. Stellen Sie sicher, dass das Bildschirm-Flachbandkabel und die Batteriekabel von Quetschstellen ferngehalten werden.
+10. Stellen Sie sicher, dass die Gehäuse und die Batterieabdeckung mit tri-lobe-Schrauben befestigt sind.
 11. Stellen Sie sicher, dass der Knopf auf dem Encoder sitzt.
-12. Bestätigen Sie, dass das Gerät eingeschaltet ist und das aktuelle Funktionstestprotokoll besteht.
+12. Bestätigen Sie, dass das Gerät eingeschaltet wird und das aktuelle Funktionstestprotokoll besteht.
 
 ## QC-Checkliste
 
-- [ ] PCBA-Kanten wurden entgratet, bis sie glatt waren.
-- [ ] Der Dichtungsstreifenbereich wurde mit Isopropylalkohol gereinigt.
-- [ ] 2,5 cm dickes Dichtungsstreifenstück wurde auf der PCBA installiert.
-- [ ] Die bedruckte Netzschalterabdeckung wurde installiert.
-- [ ] Batterie wurde bei ausgeschalteter PCBA angeschlossen.
-- [ ] Die Stoßfänger am Vordergehäuse wurden gekürzt.
-- [ ] Bildschirmfolie wurde entfernt.
-- [ ] Bildschirm wurde bündig in das Frontgehäuse eingebaut.
-- [ ] Der Bildschirm wurde mit einer dünnen Heißkleberraupe mit niedrigem Profil befestigt.
-- [ ] Knöpfe wurden in das vordere Gehäuse eingelassen.
-- [ ] Das Siebband wurde durch den PCBA-Ausschnitt geführt.
-- [ ] PCBA wurde bündig in das Gehäuse gedrückt.
-- [ ] Bildschirmbandstecker wurde geöffnet, eingesetzt und geschlossen.
-- [ ] Siebband war im Gehäuse verstaut.
-- [ ] Das hintere Gehäuse wurde rund um den Ein-/Ausschalter ausgerichtet.
-- [ ] Batterie wurde durch die Batteriefachöffnung gezogen.
-- [ ] Vorder- und Rückseite des Gehäuses wurden mit Dreilappenschrauben befestigt.
-- [ ] Die Batterie wurde im Batteriefach platziert.
-- [ ] Batterieabdeckung wurde angebracht und verschraubt.
-- [ ] Knopfbohrung wurde von überschüssigem Filament gereinigt.
-- Der Knopf [ ] wurde auf den Encoder gedrückt, bis er klickte.
-- [ ] Gerät wurde eingeschaltet und gemäß Protokoll getestet.
+- [ ] Die PCBA-Kanten wurden glatt entgratet.
+- [ ] Der Bereich für den Dichtungsstreifen wurde mit Isopropylalkohol gereinigt.
+- [ ] Ein 2,5 cm langes Stück Dichtungsstreifen wurde auf der PCBA angebracht.
+- [ ] Die gedruckte Abdeckung des Netzschalters wurde angebracht.
+- [ ] Die Batterie wurde bei ausgeschalteter PCBA angeschlossen.
+- [ ] Die Bumper des vorderen Gehäuses wurden zugeschnitten.
+- [ ] Die Schutzfolie des Bildschirms wurde entfernt.
+- [ ] Der Bildschirm wurde bündig in das vordere Gehäuse eingesetzt.
+- [ ] Der Bildschirm wurde mit einer dünnen, flachen Heißkleberraupe befestigt.
+- [ ] Die Tasten wurden in das vordere Gehäuse eingesetzt.
+- [ ] Das Bildschirm-Flachbandkabel wurde durch die PCBA-Aussparung geführt.
+- [ ] Die PCBA wurde bündig in das Gehäuse gedrückt.
+- [ ] Der Anschluss des Bildschirm-Flachbandkabels wurde geöffnet, das Kabel eingesetzt und der Anschluss geschlossen.
+- [ ] Das Bildschirm-Flachbandkabel wurde im Gehäuse verstaut.
+- [ ] Das hintere Gehäuse wurde um den Ein-/Ausschalter ausgerichtet.
+- [ ] Die Batterie wurde durch die Öffnung des Batteriefachs gezogen.
+- [ ] Das vordere und hintere Gehäuse wurden mit tri-lobe-Schrauben befestigt.
+- [ ] Die Batterie wurde in das Batteriefach gelegt.
+- [ ] Die Batterieabdeckung wurde angebracht und verschraubt.
+- [ ] Die Knopfbohrung wurde von überschüssigem Filament gereinigt.
+- [ ] Der Knopf wurde auf den Encoder gedrückt, bis er klickte.
+- [ ] Das Gerät wurde eingeschaltet und gemäß dem Protokoll getestet.

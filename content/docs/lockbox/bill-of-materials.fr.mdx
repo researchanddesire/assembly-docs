@@ -5,11 +5,11 @@ description: "Nomenclature pour Lockbox."
 
 {/* Ported from MkDocs: bom.md */}
 
-Le Lockbox utilise un PCB imprimé personnalisé avec des composants externes supplémentaires, notamment un écran, une batterie, un moteur, un encodeur, des boutons et des aimants.
+Le Lockbox utilise un PCB personnalisé avec des composants externes supplémentaires, notamment un écran, une batterie, un moteur, un encodeur, des boutons et des aimants.
 
 ## Pièces
 
-Cette liste de pièces est générée à partir de [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) lors de la construction de la documentation d'assemblage — ne modifiez pas le tableau ci-dessous à la main. Mettez plutôt à jour le CSV. Les pièces sont référencées tout au long du [Guide d'assemblage](assembly-guide.mdx).
+Cette liste de pièces est générée à partir de [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) lors de la construction de la documentation d'assemblage — ne modifiez pas le tableau ci-dessous à la main. Mettez plutôt à jour le CSV. Les pièces sont référencées tout au long du [Guide d'assemblage](assembly-guide).
 
 {/* BEGIN GENERATED BOM */}
 
@@ -39,11 +39,10 @@ Lockbox-OSS
 </span>
 </dd>
 </dl>
-<p className="bom-status bom-status-preview">
-<strong>Il ne s'agit pas d'une version balisée.</strong>Cette nomenclature est rendue à partir de la version actuelle{" "}.
-<code>main</code>et est un matériel de prévisualisation/de référence, pas une production
-    publier un instantané.
-</p>
+<div className="bom-status bom-status-preview">
+<strong>Aucune release taguée.</strong> Cette nomenclature est rendue à partir de la branche{" "}
+<code>main</code> actuelle et constitue un support de prévisualisation/référence, pas un instantané d’une release de production.
+</div>
   <div
     className="bom-table-frame"
     role="region"
@@ -78,10 +77,10 @@ Lockbox-OSS
             réf. du fabricant
 </th>
 <th className="bom-col-vendor" scope="col">
-            Vendeur
+            Fournisseur
 </th>
 <th className="bom-col-vendor_part_number" scope="col">
-            Référence du fournisseur
+            Référence fournisseur
 </th>
 <th className="bom-col-source" scope="col">
             Source
@@ -101,8 +100,9 @@ Lockbox-OSS
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Pièce imprimée FDM"
               aria-label="Catégorie : Pièce imprimée FDM"
@@ -120,7 +120,7 @@ Boîtier supérieur imprimé FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -134,13 +134,13 @@ Boîtier supérieur imprimé FDM
             <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/top-housing.étape">
+<div className="bom-clamp" title="cad/top-housing.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/top-housing.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-cad/top-housing.étape
+cad/top-housing.step
 </a>
 </div>
 </td>
@@ -157,8 +157,9 @@ cad/top-housing.étape
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Pièce imprimée FDM"
               aria-label="Catégorie : Pièce imprimée FDM"
@@ -176,7 +177,7 @@ Boîtier inférieur imprimé FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -190,13 +191,13 @@ Boîtier inférieur imprimé FDM
             <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/boîtier inférieur.étape">
+<div className="bom-clamp" title="cad/bottom-housing.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/bottom-housing.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-cad/boîtier inférieur.étape
+cad/bottom-housing.step
 </a>
 </div>
 </td>
@@ -213,8 +214,9 @@ cad/boîtier inférieur.étape
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Pièce imprimée FDM"
               aria-label="Catégorie : Pièce imprimée FDM"
@@ -224,12 +226,12 @@ FDM
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="Couvercle de circuit imprimé imprimé FDM">
-              Couvercle de circuit imprimé imprimé FDM
+<div className="bom-clamp" title="Couvercle de PCB imprimé en FDM">
+              Couvercle de PCB imprimé en FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -243,19 +245,19 @@ FDM
             <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/pcb-cover.étape">
+<div className="bom-clamp" title="cad/pcb-cover.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/pcb-cover.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-cad/pcb-cover.étape
+cad/pcb-cover.step
 </a>
 </div>
 </td>
 <td className="bom-col-notes">
-<div className="bom-clamp" title="Se fixe sur le PCB peuplé.">
-              Se fixe sur le PCB peuplé.
+<div className="bom-clamp" title="Se fixe sur le PCB équipé.">
+              Se fixe sur le PCB équipé.
 </div>
 </td>
 </tr>
@@ -268,8 +270,9 @@ cad/pcb-cover.étape
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Pièce imprimée FDM"
               aria-label="Catégorie : Pièce imprimée FDM"
@@ -281,13 +284,13 @@ FDM
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Capuchon du bouton arrière/flèche imprimé FDM"
+              title="Capuchon du bouton Retour/flèche imprimé FDM"
             >
-Capuchon du bouton arrière/flèche imprimé FDM
+Capuchon du bouton Retour/flèche imprimé FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -324,8 +327,9 @@ cad/back-button.step
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Pièce imprimée FDM"
               aria-label="Catégorie : Pièce imprimée FDM"
@@ -343,7 +347,7 @@ Capuchon du bouton de verrouillage/entrée imprimé FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -357,13 +361,13 @@ Capuchon du bouton de verrouillage/entrée imprimé FDM
             <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/enter-bouton.étape">
+<div className="bom-clamp" title="cad/enter-button.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/enter-button.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-cad/enter-bouton.étape
+cad/enter-button.step
 </a>
 </div>
 </td>
@@ -380,8 +384,9 @@ cad/enter-bouton.étape
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Pièce imprimée FDM"
               aria-label="Catégorie : Pièce imprimée FDM"
@@ -396,7 +401,7 @@ FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -435,8 +440,9 @@ cad/locking-latch.step
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Pièce imprimée FDM"
               aria-label="Catégorie : Pièce imprimée FDM"
@@ -451,7 +457,7 @@ FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -487,14 +493,15 @@ S'installe sur l'arbre de l'encodeur rotatif.
 <tr>
 <td className="bom-col-line_item bom-num">8</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="Pince moteur">
-              Pince moteur
+<div className="bom-clamp" title="Bride de moteur">
+              Bride de moteur
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Pièce imprimée FDM"
               aria-label="Catégorie : Pièce imprimée FDM"
@@ -504,12 +511,12 @@ FDM
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="Pince moteur imprimée FDM">
-              Pince moteur imprimée FDM
+<div className="bom-clamp" title="Bride de moteur imprimée en FDM">
+              Bride de moteur imprimée en FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
             <div className="bom-clamp">–</div>
 </td>
@@ -541,28 +548,29 @@ cad/motor-clamp.step
 <td className="bom-col-line_item bom-num">9</td>
 <td className="bom-col-part_name">
 <div className="bom-clamp" title="Lockbox PCBA">
-              Boîte de verrouillage PCBA
+              Lockbox PCBA
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#1864ab", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Assemblage de circuits imprimés"
               aria-label="Catégorie : Assemblage de circuits imprimés"
               data-label="Assemblage de circuits imprimés"
             >
-APC
+              PCA
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="Assemblage PCB Lockbox peuplé">
-              Assemblage de PCB Lockbox peuplé
+<div className="bom-clamp" title="Assemblage du PCB Lockbox équipé">
+              Assemblage du PCB Lockbox équipé
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp" title="JLCPCB">
               JLCPCB
@@ -593,28 +601,28 @@ pcb/production/v1.4/bom_v1.4.csv
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Élément de chaîne d'assemblage de PCB de niveau supérieur ; Le composant EBOM renseigné est suivi dans git au niveau du chemin source."
+              title="Élément de nomenclature d’assemblage du PCB de niveau supérieur ; l’EBOM des composants montés est suivie dans Git sur le chemin source."
             >
-Élément de chaîne d'assemblage de PCB de niveau supérieur ; Le composant EBOM renseigné est
-              suivi dans git sur le chemin source.
+Élément de nomenclature d’assemblage du PCB de niveau supérieur ; l’EBOM des composants montés est suivie dans Git sur le chemin source.
 </div>
 </td>
 </tr>
 <tr>
 <td className="bom-col-line_item bom-num">10</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="Interrupteur à bouton PCB">
-              Interrupteur à bouton PCB
+<div className="bom-clamp" title="Interrupteur tactile pour bouton du PCB">
+              Interrupteur tactile pour bouton du PCB
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#1098ad", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Changer"
+              title="Commutateur"
               aria-label="Catégorie : Commutateur"
-              data-label="Changer"
+              data-label="Commutateur"
             >
 SWI
 </span>
@@ -625,10 +633,10 @@ SWI
 </div>
 </td>
 <td className="bom-col-qty bom-num">2</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Même ciel">
-              Même ciel
+<div className="bom-clamp" title="Same Sky">
+              Same Sky
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -637,8 +645,8 @@ SWI
 </div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="Souris">
-              Souris
+<div className="bom-clamp" title="Mouser">
+              Mouser
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -682,12 +690,13 @@ https://www.mouser.ca/ProductDetail/179-TS0266100BK260SC
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#1098ad", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Changer"
+              title="Commutateur"
               aria-label="Catégorie : Commutateur"
-              data-label="Changer"
+              data-label="Commutateur"
             >
 SWI
 </span>
@@ -698,7 +707,7 @@ SWI
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp" title="Bourns">
               Bourns
@@ -710,8 +719,8 @@ SWI
 </div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="Souris">
-              Souris
+<div className="bom-clamp" title="Mouser">
+              Mouser
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -749,14 +758,15 @@ https://www.mouser.ca/ProductDetail/652-PEC12R-2120F-N12
 <tr>
 <td className="bom-col-line_item bom-num">12</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="aimant de 4 mm">
-              aimant de 4 mm
+<div className="bom-clamp" title="Aimant de 4 mm">
+              Aimant de 4 mm
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#a8703a", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Fabriqué, Autre"
               aria-label="Catégorie : Fabriqué, Autre"
@@ -774,18 +784,18 @@ Aimant néodyme N52, 4 mm x 5 mm
 </div>
 </td>
 <td className="bom-col-qty bom-num">4</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Usine générique">
-              Usine générique
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
             <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="À déterminer">
-              À déterminer
+<div className="bom-clamp" title="TBD">
+              TBD
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -797,11 +807,9 @@ Aimant néodyme N52, 4 mm x 5 mm
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Un dans le loquet de verrouillage, un dans le boîtier supérieur et deux dans le boîtier inférieur. La feuille de calcul des coûts à la source indique que le fournisseur est À LA RECHERCHE D'UN NOUVEAU FOURNISSEUR."
+              title="Le champ Fournisseur de la feuille de calcul des coûts source indique « À LA RECHERCHE D’UN NOUVEAU FOURNISSEUR »."
             >
-Un dans le loquet de verrouillage, un dans le boîtier supérieur et deux dans
-              boîtier inférieur. La feuille de calcul des coûts à la source indique que le fournisseur est À LA RECHERCHE
-              NOUVEAU FOURNISSEUR.
+Le champ Fournisseur de la feuille de calcul des coûts source indique « À LA RECHERCHE D’UN NOUVEAU FOURNISSEUR ».
 </div>
 </td>
 </tr>
@@ -814,8 +822,9 @@ Un dans le loquet de verrouillage, un dans le boîtier supérieur et deux dans
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#a8703a", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Fabriqué, Autre"
               aria-label="Catégorie : Fabriqué, Autre"
@@ -827,13 +836,13 @@ FBO
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Pied pare-chocs en polyuréthane, 0,312 po de diamètre, transparent"
+              title="Butée adhésive transparente en polyuréthane de 0.312 in de diamètre"
             >
-Pied pare-chocs en polyuréthane, 0,312 po de diamètre, transparent
+              Butée adhésive transparente en polyuréthane de 0.312 in de diamètre
 </div>
 </td>
 <td className="bom-col-qty bom-num">4</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp" title="3M">
               3M
@@ -869,22 +878,23 @@ https://www.digikey.ca/en/products/detail/3m/SJ5302/2345107
 </div>
 </td>
 <td className="bom-col-notes">
-<div className="bom-clamp" title="https://www.digikey.ca/en/products/detail/3m/SJ5302/2345107">
-              Collé sur plaque arrière.
+<div className="bom-clamp" title="Collé sur la plaque arrière.">
+              Collé sur la plaque arrière.
 </div>
 </td>
 </tr>
 <tr>
 <td className="bom-col-line_item bom-num">14</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="Collé sur plaque arrière.">
+<div className="bom-clamp" title="Moteur">
               Moteur
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#6741d9", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Moteur"
               aria-label="Catégorie : Moteur"
@@ -902,10 +912,10 @@ Micromoteur à engrenages CC, 12 V, 60 tr/min
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Usine générique">
-              Usine générique
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -922,13 +932,13 @@ Micromoteur à engrenages CC, 12 V, 60 tr/min
 </div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/moteur.step">
+<div className="bom-clamp" title="cad/motor.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/motor.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-cad/moteur.step
+cad/motor.step
 </a>
 </div>
 </td>
@@ -957,11 +967,12 @@ https://www.aliexpress.com/item/33022320164.html
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#0b7285", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Ensemble de faisceau de câbles"
-              aria-label="Catégorie : Assemblage de faisceau de câbles"
+              aria-label="Catégorie : Ensemble de faisceau de câbles"
               data-label="Ensemble de faisceau de câbles"
             >
 CHA
@@ -970,17 +981,17 @@ CHA
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Faisceau de câbles moteur, connecteur femelle au pas de 1 mm, 2P, 100 mm, simple tête"
+              title="Faisceau de câbles moteur, connecteur femelle au pas de 1 mm, 2P, 100 mm, tête unique"
             >
 Faisceau de câbles moteur, connecteur femelle au pas de 1 mm, 2P, 100 mm,
               tête unique
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Usine générique">
-              Usine générique
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1011,7 +1022,7 @@ https://www.aliexpress.com/item/1005007218127653.html
 </div>
 </td>
 <td className="bom-col-notes">
-<div className="bom-clamp" title="https://www.aliexpress.com/item/1005007218127653.html">
+<div className="bom-clamp" title="Connecte le moteur au PCB.">
               Connecte le moteur au PCB.
 </div>
 </td>
@@ -1019,14 +1030,15 @@ https://www.aliexpress.com/item/1005007218127653.html
 <tr>
 <td className="bom-col-line_item bom-num">16</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="Connecte le moteur au PCB.">
+<div className="bom-clamp" title="Batterie">
               Batterie
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#2b8a3e", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Batterie"
               aria-label="Catégorie : Batterie"
@@ -1038,17 +1050,16 @@ BTY
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Batterie lithium polymère 3,7 V 500 mAh avec JST personnalisé à 2 broches et câble noir/rouge de 5 cm"
+              title="Batterie lithium-polymère 3.7 V 500 mAh avec un JST personnalisé à 2 broches et un câble noir/rouge de 5 cm"
             >
-Batterie au lithium polymère 3,7 V 500 mAh avec JST personnalisé à 2 broches et 5
-              cm câble noir/rouge
+Batterie lithium-polymère 3.7 V 500 mAh avec un JST personnalisé à 2 broches et un câble noir/rouge de 5 cm
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Usine générique">
-              Usine générique
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1065,22 +1076,22 @@ Batterie au lithium polymère 3,7 V 500 mAh avec JST personnalisé à 2 broches 
 </div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/batterie.étape">
+<div className="bom-clamp" title="cad/battery.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/battery.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-cad/batterie.étape
+cad/battery.step
 </a>
 </div>
 </td>
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Installé dans le boîtier supérieur. Lien du fournisseur : https://www.aliexpress.com/item/1005009279419327.html"
+              title="Installée dans le boîtier supérieur. Lien du fournisseur : https://www.aliexpress.com/item/1005009279419327.html"
             >
-Installé dans le boîtier supérieur. Lien du fournisseur :{" "}
+Installée dans le boîtier supérieur. Lien du fournisseur :{" "}
               <a
                 href="https://www.aliexpress.com/item/1005009279419327.html"
                 target="_blank"
@@ -1100,12 +1111,13 @@ https://www.aliexpress.com/item/1005009279419327.html
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#a61e4d", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Assemblée"
+              title="Assemblage"
               aria-label="Catégorie : Assemblage"
-              data-label="Assemblée"
+              data-label="Assemblage"
             >
 ASM
 </span>
@@ -1113,16 +1125,16 @@ ASM
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Module LCD TFT SPI 14 broches PS 2,0 pouces"
+              title="Module LCD TFT SPI à 14 broches, PS 2.0 inch"
             >
-Module LCD TFT SPI 14 broches PS 2,0 pouces
+              Module LCD TFT SPI à 14 broches, PS 2.0 inch
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Usine générique">
-              Usine générique
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1139,13 +1151,13 @@ Module LCD TFT SPI 14 broches PS 2,0 pouces
 </div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/écran.étape">
+<div className="bom-clamp" title="cad/screen.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/screen.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-cad/écran.étape
+cad/screen.step
 </a>
 </div>
 </td>
@@ -1174,30 +1186,30 @@ https://www.aliexpress.com/item/1005005865407299.html
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#c92a2a", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Attache"
+              title="Fixation"
               aria-label="Catégorie : Fixation"
-              data-label="Attache"
+              data-label="Fixation"
             >
-TVF
+              FST
 </span>
 </td>
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Vis #4-20 x 1/2 po plate Plastite alternative 48-2 à 6 lobes, oxyde noir"
+              title="#4-20 x 1/2 in, vis à tête plate Plastite alternative 48-2 à 6 lobes, finition oxyde noir"
             >
-Vis alternative 48-2 plate Plastite #4-20 x 1/2 po à 6 lobes, noire
-              oxyde
+#4-20 x 1/2 in, vis à tête plate Plastite alternative 48-2 à 6 lobes, finition oxyde noir
 </div>
 </td>
 <td className="bom-col-qty bom-num">7</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Shorpien">
-              Shorpien
+<div className="bom-clamp" title="Shorpioen">
+              Shorpioen
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1206,8 +1218,8 @@ Vis alternative 48-2 plate Plastite #4-20 x 1/2 po à 6 lobes, noire
 </div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="Shorpien">
-              Shorpien
+<div className="bom-clamp" title="Shorpioen">
+              Shorpioen
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -1232,26 +1244,26 @@ https://shorpioen.com/4-20x1-2-6-lobe-flat-plastite-alternative-48-2-fully-threa
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="https://shorpioen.com/4-20x1-2-6-lobe-flat-plastite-alternative-48-2-fully-threaded-black-oxyde-and-wax-box-qty-10000-bc-0408ltfb/"
+              title="2x pour la bride de moteur, 5x pour le couvercle du PCB ; monté avec un tournevis Torx T7."
             >
-2x pour pince moteur, 5x pour couvercle de circuit imprimé ; installé avec T7 Torx
-              conducteur.
+2x pour la bride de moteur, 5x pour le couvercle du PCB ; monté avec un tournevis Torx T7.
 </div>
 </td>
 </tr>
 <tr>
 <td className="bom-col-line_item bom-num">19</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="2x pour pince moteur, 5x pour couvercle de circuit imprimé ; installé avec le pilote Torx T7.">
+<div className="bom-clamp" title="Câble USB-C">
               Câble USB-C
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#0c8599", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Câble USB-C"
+              title="Câble"
               aria-label="Catégorie : Câble"
               data-label="Câble"
             >
@@ -1261,24 +1273,24 @@ CBL
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Câble USB-A vers USB-C, 4 pieds tressé"
+              title="Câble USB-A vers USB-C, 4 ft tressé"
             >
-Câble USB-A vers USB-C, 4 pieds tressé
+Câble USB-A vers USB-C, 4 ft tressé
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Usine générique">
-              Usine générique
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
             <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="Amazone">
-              Amazone
+<div className="bom-clamp" title="Amazon">
+              Amazon
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -1307,16 +1319,17 @@ https://www.amazon.ca/dp/B0CRYMGXMX
 <tr>
 <td className="bom-col-line_item bom-num">20</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="https://www.amazon.ca/dp/B0CRYMGXMX">
+<div className="bom-clamp" title="Sac refermable">
               Sac refermable
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex="0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d6336c", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Sac refermable"
+              title="Emballage"
               aria-label="Catégorie : Emballage"
               data-label="Emballage"
             >
@@ -1324,12 +1337,12 @@ PKG
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="6 x 8 dans un sac refermable">
-              6 x 8 dans un sac refermable
+<div className="bom-clamp" title="Sac refermable de 6 x 8 in">
+              Sac refermable de 6 x 8 in
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">chaque</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp" title="Uline">
               Uline
@@ -1372,12 +1385,12 @@ https://www.uline.ca/Product/Detail/S-5065/Resealable-Bags/6-x-8-15-Mil-Resealab
 </table>
 </div>
 <footer className="bom-footer">
-<p>
-      Nomenclature générée à partir de<code>hardware/bom.csv</code>par Research
-      et les outils de nomenclature Desire.
-</p>
-<p>Licence : CERN-OHL-S v2 (matériel) / MPL-2.0 (firmware).</p>
-<p>
+<div>
+      Nomenclature générée à partir de{" "}<code>hardware/bom.csv</code> par Research
+      and Desire avec les outils de nomenclature.
+</div>
+<div>Licence : CERN-OHL-S v2 (matériel) / MPL-2.0 (firmware).</div>
+<div>
       Source :{" "}
       <a
         href="https://github.com/researchanddesire/Lockbox-OSS"
@@ -1387,8 +1400,8 @@ https://www.uline.ca/Product/Detail/S-5065/Resealable-Bags/6-x-8-15-Mil-Resealab
 Lockbox-OSS sur GitHub
 </a>
       .
-</p>
-<p>© Recherche et Désir.</p>
+</div>
+<div>&copy; Research and Desire.</div>
 </footer>
 </section>
 {/* END GENERATED BOM */}
@@ -1401,5 +1414,5 @@ Lockbox-OSS sur GitHub
 | `flat-jaw-pliers`   | Enfoncer des aimants dans des inserts en plastique                                 |
 | `tweezers`          | Manipulation de câbles plats et de petites pièces                                  |
 | `paperclip`         | Application d'une légère couche de `SA-glue` à l'intérieur des inserts magnétiques |
-| `isopropyl-alcohol` | Nettoyage de l'arrière de l'écran et de la batterie avant de coller                |
+| `isopropyl-alcohol` | Nettoyage de l’arrière de l’écran et de la batterie avant d’appliquer le ruban adhésif |
 | `microfibre-cloth`  | Protection de la face avant et des pièces imprimées lors du montage                |

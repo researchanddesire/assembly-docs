@@ -1,29 +1,41 @@
 ---
-title: "Documents sur l'assemblage du coffre-fort"
-description: "Documents d'assemblage de Lockbox pour Lockbox."
+title: "Documentation d’assemblage de Lockbox"
+description: "Documentation d’assemblage pour Lockbox."
 ---
 
 {/* Ported from MkDocs: index.md */}
 
 ## But
 
-Ces documents collectent les informations sur l'assemblage matériel Lockbox dans un dossier autonome pour une agrégation future dans `ohai.researchanddesire.com`. Ils sont rédigés sous forme d'instructions d'assemblage de matériel ouvertes destinées aux constructeurs d'OSS et aux collaborateurs de fabrication.
+Cette documentation rassemble les informations d’assemblage du matériel Lockbox pour les constructeurs OSS
+et les partenaires de fabrication.
 
-## Aperçu du coffre-fort
+## Présentation de Lockbox
 
-Lockbox est un produit électronique grand public à petite échelle construit autour d'un PCB personnalisé, d'un micrologiciel ESP32-S3, d'un loquet motorisé, de capteurs magnétiques, d'un écran TFT, d'un encodeur rotatif, d'une batterie et d'un boîtier en plastique imprimé en 3D.
+Lockbox est un produit électronique grand public de petite taille, construit autour d’un PCB personnalisé, du micrologiciel ESP32-S3, d’un loquet motorisé, de capteurs magnétiques, d’un écran TFT, d’un encodeur rotatif, d’une batterie et d’un boîtier en plastique imprimé en 3D.
 
-![Présentation du périphérique Lockbox](assets/device-overview.webp)
+![Présentation du dispositif Lockbox](assets/device-overview.webp)
 
-| Propriété                   | Valeur                                              |
-| --------------------------- | --------------------------------------------------- |
-| Dimensions                  | 57 mm x 43 mm x 134 mm                              |
-| Volume plastique            | 156 408,422 mm ^ 3                                  |
-| Matériel de logement actuel | Plastique PLA imprimé en 3D                         |
-| Aimants intégrés            | Trois à quatre aimants dans le boîtier en plastique |
+| Propriété                  | Valeur                                        |
+| -------------------------- | --------------------------------------------- |
+| Dimensions                 | 57 mm x 43 mm x 134 mm                        |
+| Volume de plastique        | 156,408.422 mm^3                              |
+| Matériau actuel du boîtier | Plastique PLA imprimé en 3D                   |
+| Aimants intégrés           | Trois à quatre aimants dans le boîtier en plastique |
 
-## Package d'assemblage
+## Dossier d’assemblage
 
-- [Aperçu du PCB](pcb-overview.mdx)
-- [Nomelle de matériaux](bill-of-materials.mdx)
-- [Guide d'assemblage](assembly-guide.mdx)
+<CardGroup cols={2}>
+  <Card title="Guide d’assemblage" href="/lockbox/assembly-guide">
+    Suivez l’assemblage mécanique, le câblage électronique et la séquence finale de contrôle qualité.
+  </Card>
+  <Card title="Nomenclature" href="/lockbox/bill-of-materials">
+    Consultez les pièces, les fournisseurs et les références des sources du matériel.
+  </Card>
+  <Card title="Faisceaux de câbles" href="/lockbox/cable-harnesses">
+    Consultez les informations sur la responsabilité des câbles et des faisceaux dans l’assemblage.
+  </Card>
+  <Card title="Aperçu du PCB" href="/lockbox/pcb-overview">
+    Examinez la carte de commande, l’aperçu KiCanvas et les fichiers de production.
+  </Card>
+</CardGroup>

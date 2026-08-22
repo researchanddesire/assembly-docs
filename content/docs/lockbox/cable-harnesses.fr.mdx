@@ -5,15 +5,15 @@ description: "Faisceaux de câbles pour Lockbox."
 
 {/* Ported from MkDocs: cable-harnesses.md */}
 
-Lockbox comprend un moteur, une batterie, un port USB-C, un écran et un autre petit câble
-connexions dans le flux d’assemblage. La [Nomenclature](bill-of-materials.mdx) au niveau du produit
-les suit en tant qu'éléments de campagne au niveau de l'appareil.
+Lockbox intègre les connexions câblées du moteur, de la batterie, de l’USB-C, de l’écran et
+d’autres petits câbles dans le flux d’assemblage. La [nomenclature](bill-of-materials) au niveau
+du produit les répertorie comme postes au niveau de l’appareil.
 
-Aucune source de faisceau Wireviz n'a encore été migrée vers `hardware/cables/` . Quand un
-La source Wireviz est ajoutée, liez son diagramme généré et les artefacts de nomenclature enfants
-à partir de cette page au lieu de dupliquer les lignes de nomenclature de câbles enfants dans `hardware/bom.csv`.
+Aucune source de faisceau Wireviz n’a encore été migrée vers `hardware/cables/`. Lorsqu’une
+source Wireviz est ajoutée, créez depuis cette page des liens vers son diagramme généré et les artefacts de sa nomenclature enfant,
+au lieu de dupliquer dans `hardware/bom.csv` les lignes de cette nomenclature enfant.
 
-| Actif                             | Localisation                                                                                      | Remarques                                                                                    |
+| Élément                           | Emplacement                                                                                       | Remarques                                                                                    |
 | --------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| Dossier source du câble           | [`hardware/cables/`](https://github.com/researchanddesire/Lockbox-OSS/tree/main/hardware/cables)  | Les sources Wireviz YAML appartiennent ici.                                                  |
-| Nomenclature au niveau du produit | [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) | Répertorie les assemblages de câbles et les éléments de câbles disponibles dans le commerce. |
+| Dossier des sources de câbles     | [`hardware/cables/`](https://github.com/researchanddesire/Lockbox-OSS/tree/main/hardware/cables)  | Les sources Wireviz-YAML se trouvent ici.                                                    |
+| Nomenclature au niveau du produit | [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) | Répertorie les assemblages de câbles et les câbles disponibles dans le commerce.             |

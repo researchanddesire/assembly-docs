@@ -5,11 +5,11 @@ description: "Stückliste für Lockbox."
 
 {/* Ported from MkDocs: bom.md */}
 
-Die Lockbox verwendet eine individuell bedruckte Leiterplatte mit zusätzlichen externen Komponenten, darunter Display, Batterie, Motor, Encoder, Tasten und Magnete.
+Die Lockbox verwendet eine individuell gefertigte Leiterplatte mit zusätzlichen externen Komponenten, darunter Display, Batterie, Motor, Encoder, Tasten und Magnete.
 
 ## Teile
 
-Diese Teileliste wird während der Erstellung der Baugruppendokumente aus [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) generiert. Bearbeiten Sie die Tabelle unten nicht manuell. Aktualisieren Sie stattdessen die CSV-Datei. Auf die Teile wird in der gesamten [Montageanleitung](assembly-guide.mdx) verwiesen.
+Diese Teileliste wird während der Erstellung der Baugruppendokumente aus [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) generiert. Bearbeiten Sie die Tabelle unten nicht manuell. Aktualisieren Sie stattdessen die CSV-Datei. Auf die Teile wird in der gesamten [Montageanleitung](assembly-guide) verwiesen.
 
 {/* BEGIN GENERATED BOM */}
 
@@ -39,11 +39,10 @@ Lockbox-OSS
 </span>
 </dd>
 </dl>
-<p className="bom-status bom-status-preview">
-<strong>Keine getaggte Version.</strong>Diese Stückliste wird aus dem aktuellen{" "}gerendert
-<code>main</code>und ist Vorschau-/Referenzmaterial, keine Produktion
-    Schnappschuss veröffentlichen.
-</p>
+<div className="bom-status bom-status-preview">
+<strong>Kein getaggtes Release.</strong> Diese Stückliste wird aus dem aktuellen{" "}
+<code>main</code> gerendert und dient als Vorschau-/Referenzmaterial, nicht als Snapshot eines Produktions-Releases.
+</div>
   <div
     className="bom-table-frame"
     role="region"
@@ -95,14 +94,15 @@ Lockbox-OSS
 <tr>
 <td className="bom-col-line_item bom-num">1</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="Top-Gehäuse">
-              Top-Gehäuse
+<div className="bom-clamp" title="Oberes Gehäuse">
+              Oberes Gehäuse
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="FDM-gedrucktes Teil"
               aria-label="Kategorie: FDM-gedrucktes Teil"
@@ -134,13 +134,13 @@ FDM-gedrucktes Gehäuseoberteil
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/top-gehäuse.schritt">
+<div className="bom-clamp" title="cad/top-housing.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/top-housing.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-cad/top-gehäuse.schritt
+cad/top-housing.step
 </a>
 </div>
 </td>
@@ -157,8 +157,9 @@ cad/top-gehäuse.schritt
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="FDM-gedrucktes Teil"
               aria-label="Kategorie: FDM-gedrucktes Teil"
@@ -170,9 +171,9 @@ FDM
 <td className="bom-col-description">
             <div
               className="bom-clamp"
-              title="FDM-bedrucktes unteres Gehäusegehäuse"
+              title="FDM-gedrucktes Gehäuseunterteil"
             >
-FDM-bedrucktes unteres Gehäusegehäuse
+FDM-gedrucktes Gehäuseunterteil
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
@@ -190,13 +191,13 @@ FDM-bedrucktes unteres Gehäusegehäuse
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/bottom-gehäuse.schritt">
+<div className="bom-clamp" title="cad/bottom-housing.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/bottom-housing.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-cad/bottom-gehäuse.schritt
+cad/bottom-housing.step
 </a>
 </div>
 </td>
@@ -213,8 +214,9 @@ cad/bottom-gehäuse.schritt
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="FDM-gedrucktes Teil"
               aria-label="Kategorie: FDM-gedrucktes Teil"
@@ -243,19 +245,19 @@ FDM
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="CAD/PCB-Abdeckung.Schritt">
+<div className="bom-clamp" title="cad/pcb-cover.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/pcb-cover.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-CAD/PCB-Abdeckung.Schritt
+cad/pcb-cover.step
 </a>
 </div>
 </td>
 <td className="bom-col-notes">
-<div className="bom-clamp" title="Sichert über der bestückten Leiterplatte.">
-              Sichert über der bestückten Leiterplatte.
+<div className="bom-clamp" title="Wird über der bestückten Leiterplatte befestigt.">
+              Wird über der bestückten Leiterplatte befestigt.
 </div>
 </td>
 </tr>
@@ -268,8 +270,9 @@ CAD/PCB-Abdeckung.Schritt
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="FDM-gedrucktes Teil"
               aria-label="Kategorie: FDM-gedrucktes Teil"
@@ -281,9 +284,9 @@ FDM
 <td className="bom-col-description">
             <div
               className="bom-clamp"
-              title="FDM-bedruckte Rückseite/Pfeilknopfkappe"
+              title="FDM-gedruckte Kappe der Zurück-/Pfeiltaste"
             >
-FDM-bedruckte Rückseite/Pfeilknopfkappe
+FDM-gedruckte Kappe der Zurück-/Pfeiltaste
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
@@ -324,8 +327,9 @@ cad/back-button.step
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="FDM-gedrucktes Teil"
               aria-label="Kategorie: FDM-gedrucktes Teil"
@@ -337,9 +341,9 @@ FDM
 <td className="bom-col-description">
             <div
               className="bom-clamp"
-              title="FDM-bedruckte Verriegelungs-/Eingabetastenkappe"
+              title="FDM-gedruckte Verriegelungs-/Eingabetastenkappe"
             >
-FDM-bedruckte Verriegelungs-/Eingabetastenkappe
+FDM-gedruckte Verriegelungs-/Eingabetastenkappe
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
@@ -380,8 +384,9 @@ cad/enter-button.step
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="FDM-gedrucktes Teil"
               aria-label="Kategorie: FDM-gedrucktes Teil"
@@ -435,8 +440,9 @@ cad/locking-latch.step
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="FDM-gedrucktes Teil"
               aria-label="Kategorie: FDM-gedrucktes Teil"
@@ -465,13 +471,13 @@ FDM
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="CAD/Encoder-Rad.Schritt">
+<div className="bom-clamp" title="cad/encoder-wheel.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/encoder-wheel.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-CAD/Encoder-Rad.Schritt
+cad/encoder-wheel.step
 </a>
 </div>
 </td>
@@ -493,8 +499,9 @@ Wird auf der Welle des Drehgebers installiert.
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="FDM-gedrucktes Teil"
               aria-label="Kategorie: FDM-gedrucktes Teil"
@@ -541,17 +548,18 @@ cad/motor-clamp.step
 <td className="bom-col-line_item bom-num">9</td>
 <td className="bom-col-part_name">
 <div className="bom-clamp" title="Lockbox PCBA">
-              Lockbox-PCBA
+              Lockbox PCBA
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#1864ab", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Montage von Leiterplatten"
-              aria-label="Kategorie: Leiterplattenbestückung"
-              data-label="Montage von Leiterplatten"
+              title="Leiterplattenbaugruppe"
+              aria-label="Kategorie: Leiterplattenbaugruppe"
+              data-label="Leiterplattenbaugruppe"
             >
 PCA
 </span>
@@ -580,23 +588,23 @@ PCA
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="pcb/produktion/v1.4/bom_v1.4.csv">
+<div className="bom-clamp" title="pcb/production/v1.4/bom_v1.4.csv">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/pcb/production/v1.4/bom_v1.4.csv"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-pcb/produktion/v1.4/bom_v1.4.csv
+pcb/production/v1.4/bom_v1.4.csv
 </a>
 </div>
 </td>
 <td className="bom-col-notes">
             <div
               className="bom-clamp"
-              title="Leiterplattenbestückungslinienelement der obersten Ebene; Die EBOM der bestückten Komponente wird in Git im Quellpfad verfolgt."
+              title="PCB-Baugruppenposition auf oberster Ebene; die EBOM der bestückten Komponenten wird in Git am Quellpfad nachverfolgt."
             >
-Leiterplattenbestückungslinienelement der obersten Ebene; Die EBOM der bestückten Komponente ist
-              in Git im Quellpfad verfolgt.
+PCB-Baugruppenposition auf oberster Ebene; die EBOM der bestückten Komponenten wird in Git am Quellpfad
+              nachverfolgt.
 </div>
 </td>
 </tr>
@@ -609,12 +617,13 @@ Leiterplattenbestückungslinienelement der obersten Ebene; Die EBOM der bestück
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#1098ad", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Wechseln"
+              title="Schalter"
               aria-label="Kategorie: Schalter"
-              data-label="Wechseln"
+              data-label="Schalter"
             >
 SWI
 </span>
@@ -627,8 +636,8 @@ SWI
 <td className="bom-col-qty bom-num">2</td>
 <td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Gleicher Himmel">
-              Gleicher Himmel
+<div className="bom-clamp" title="Same Sky">
+              Same Sky
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -647,13 +656,13 @@ SWI
 </div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="pcb/produktion/v1.4/bom_v1.4.csv">
+<div className="bom-clamp" title="pcb/production/v1.4/bom_v1.4.csv">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/pcb/production/v1.4/bom_v1.4.csv"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-pcb/produktion/v1.4/bom_v1.4.csv
+pcb/production/v1.4/bom_v1.4.csv
 </a>
 </div>
 </td>
@@ -682,12 +691,13 @@ https://www.mouser.ca/ProductDetail/179-TS0266100BK260SC
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#1098ad", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Wechseln"
+              title="Schalter"
               aria-label="Kategorie: Schalter"
-              data-label="Wechseln"
+              data-label="Schalter"
             >
 SWI
 </span>
@@ -755,12 +765,13 @@ https://www.mouser.ca/ProductDetail/652-PEC12R-2120F-N12
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#a8703a", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Hergestellt, Sonstiges"
-              aria-label="Kategorie: Hergestellt, Andere"
-              data-label="Hergestellt, Sonstiges"
+              title="Gefertigt, Sonstiges"
+              aria-label="Kategorie: Gefertigt, Sonstiges"
+              data-label="Gefertigt, Sonstiges"
             >
 FBO
 </span>
@@ -776,16 +787,16 @@ N52 Neodym-Magnet, 4 mm x 5 mm
 <td className="bom-col-qty bom-num">4</td>
 <td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generische Fabrik">
-              Generische Fabrik
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="Noch offen">
-              Noch offen
+<div className="bom-clamp" title="TBD">
+              TBD
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -797,11 +808,9 @@ N52 Neodym-Magnet, 4 mm x 5 mm
 <td className="bom-col-notes">
             <div
               className="bom-clamp"
-              title="Einer im Verriegelungsriegel, einer im oberen Gehäuse und zwei im unteren Gehäuse. Das Quellenkalkulationsblatt markiert den Lieferanten als „SUCHT NEUEN LIEFERANTEN“."
+              title="Im Lieferantenfeld der Quell-Kalkulationstabelle steht „SUCHE NACH NEUEM LIEFERANTEN“."
             >
-Einer im Verriegelungsriegel, einer im oberen Gehäuse und zwei innen
-              Bodengehäuse. Das Quellenkalkulationsblatt markiert den Lieferanten als SUCHE NACH
-              NEUER LIEFERANT.
+Im Lieferantenfeld der Quell-Kalkulationstabelle steht „SUCHE NACH NEUEM LIEFERANTEN“.
 </div>
 </td>
 </tr>
@@ -814,12 +823,13 @@ Einer im Verriegelungsriegel, einer im oberen Gehäuse und zwei innen
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#a8703a", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Hergestellt, Sonstiges"
-              aria-label="Kategorie: Hergestellt, Andere"
-              data-label="Hergestellt, Sonstiges"
+              title="Gefertigt, Sonstiges"
+              aria-label="Kategorie: Gefertigt, Sonstiges"
+              data-label="Gefertigt, Sonstiges"
             >
 FBO
 </span>
@@ -827,9 +837,9 @@ FBO
 <td className="bom-col-description">
             <div
               className="bom-clamp"
-              title="Stoßfängerfuß aus Polyurethan, 0,312 Zoll Durchmesser, transparent"
+              title="Stoßfängerfuß aus Polyurethan, 0.312 in Durchmesser, transparent"
             >
-Stoßfängerfuß aus Polyurethan, 0,312 Zoll Durchmesser, transparent
+Stoßfängerfuß aus Polyurethan, 0.312 in Durchmesser, transparent
 </div>
 </td>
 <td className="bom-col-qty bom-num">4</td>
@@ -883,8 +893,9 @@ https://www.digikey.ca/en/products/detail/3m/SJ5302/2345107
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#6741d9", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Motor"
               aria-label="Kategorie: Motor"
@@ -896,16 +907,16 @@ MTR
 <td className="bom-col-description">
             <div
               className="bom-clamp"
-              title="DC-Mikrogetriebemotor, 12 V, 60 U/min"
+              title="DC-Mikrogetriebemotor, 12 V, 60 RPM"
             >
-DC-Mikrogetriebemotor, 12 V, 60 U/min
+DC-Mikrogetriebemotor, 12 V, 60 RPM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
 <td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generische Fabrik">
-              Generische Fabrik
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -922,22 +933,22 @@ DC-Mikrogetriebemotor, 12 V, 60 U/min
 </div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="CAD/Motor.Schritt">
+<div className="bom-clamp" title="cad/motor.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/motor.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-CAD/Motor.Schritt
+cad/motor.step
 </a>
 </div>
 </td>
 <td className="bom-col-notes">
             <div
               className="bom-clamp"
-              title="Treibt die Verriegelung an. Anbieterlink: https://www.aliexpress.com/item/33022320164.html"
+              title="Treibt den Verriegelungsriegel an. Anbieterlink: https://www.aliexpress.com/item/33022320164.html"
             >
-Treibt die Verriegelung an. Anbieterlink:{" "}
+Treibt den Verriegelungsriegel an. Anbieterlink:{" "}
               <a
                 href="https://www.aliexpress.com/item/33022320164.html"
                 target="_blank"
@@ -957,8 +968,9 @@ https://www.aliexpress.com/item/33022320164.html
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#0b7285", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Kabelbaumbaugruppe"
               aria-label="Kategorie: Kabelbaumbaugruppe"
@@ -972,15 +984,14 @@ CHA
               className="bom-clamp"
               title="Motorkabelbaum, 1-mm-Raster-Buchse, 2P, 100 mm, Einzelkopf"
             >
-Motorkabelbaum, 1-mm-Raster-Buchse, 2P, 100 mm,
-              einzelner Kopf
+Motorkabelbaum, 1-mm-Raster-Buchse, 2P, 100 mm, Einzelkopf
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
 <td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generische Fabrik">
-              Generische Fabrik
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1025,8 +1036,9 @@ https://www.aliexpress.com/item/1005007218127653.html
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#2b8a3e", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Batterie"
               aria-label="Kategorie: Batterie"
@@ -1038,17 +1050,16 @@ BTY
 <td className="bom-col-description">
             <div
               className="bom-clamp"
-              title="3,7 V 500 mAh Lithium-Polymer-Akku mit maßgeschneidertem 2-Pin-JST und 5 cm langem schwarz/rotem Kabel"
+              title="3,7 V 500 mAh Lithium-Polymer-Akku mit benutzerdefiniertem 2-Pin-JST und 5 cm langem schwarz/rotem Kabel"
             >
-3,7 V 500 mAh Lithium-Polymer-Akku mit benutzerdefiniertem 2-Pin-JST und 5
-              cm schwarz/rotes Kabel
+3,7 V 500 mAh Lithium-Polymer-Akku mit benutzerdefiniertem 2-Pin-JST und 5 cm langem schwarz/rotem Kabel
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
 <td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generische Fabrik">
-              Generische Fabrik
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1065,13 +1076,13 @@ BTY
 </div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="CAD/Batterie.Schritt">
+<div className="bom-clamp" title="cad/battery.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/battery.step"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-CAD/Batterie.Schritt
+cad/battery.step
 </a>
 </div>
 </td>
@@ -1100,11 +1111,12 @@ https://www.aliexpress.com/item/1005009279419327.html
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#a61e4d", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Montage"
-              aria-label="Kategorie: Versammlung"
+              aria-label="Kategorie: Montage"
               data-label="Montage"
             >
 ASM
@@ -1121,8 +1133,8 @@ PS 2,0 Zoll 14-poliges SPI-TFT-LCD-Modul
 <td className="bom-col-qty bom-num">1</td>
 <td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generische Fabrik">
-              Generische Fabrik
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1174,12 +1186,13 @@ https://www.aliexpress.com/item/1005005865407299.html
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#c92a2a", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
-              title="Verschluss"
-              aria-label="Kategorie: Verbindungselement"
-              data-label="Verschluss"
+              title="Befestigungselement"
+              aria-label="Kategorie: Befestigungselement"
+              data-label="Befestigungselement"
             >
 FST
 </span>
@@ -1187,10 +1200,9 @@ FST
 <td className="bom-col-description">
             <div
               className="bom-clamp"
-              title="#4-20 x 1/2 Zoll 6-lappige flache Plastite-Alternative 48-2-Schraube, schwarzes Oxid"
+              title="#4-20 x 1/2 in, 6-Lobe-Flachkopfschraube, Plastite-Alternative 48-2, Schwarzoxid"
             >
-#4-20 x 1/2 Zoll 6-lappige flache Plastite-Alternative 48-2-Schraube, schwarz
-              Oxid
+#4-20 x 1/2 in, 6-Lobe-Flachkopfschraube, Plastite-Alternative 48-2, Schwarzoxid
 </div>
 </td>
 <td className="bom-col-qty bom-num">7</td>
@@ -1232,10 +1244,9 @@ https://shorpioen.com/4-20x1-2-6-lobe-flat-plastite-alternative-48-2-fully-threa
 <td className="bom-col-notes">
             <div
               className="bom-clamp"
-              title="2x für Motorklemme, 5x für Platinenabdeckung; installiert mit T7 Torx-Treiber."
+              title="2x für die Motorklemme, 5x für die PCB-Abdeckung; montiert mit einem T7-Torx-Schraubendreher."
             >
-2x für Motorklemme, 5x für Platinenabdeckung; installiert mit T7 Torx
-              Fahrer.
+2x für die Motorklemme, 5x für die PCB-Abdeckung; montiert mit einem T7-Torx-Schraubendreher.
 </div>
 </td>
 </tr>
@@ -1248,8 +1259,9 @@ https://shorpioen.com/4-20x1-2-6-lobe-flat-plastite-alternative-48-2-fully-threa
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#0c8599", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Kabel"
               aria-label="Kategorie: Kabel"
@@ -1261,16 +1273,16 @@ CBL
 <td className="bom-col-description">
             <div
               className="bom-clamp"
-              title="USB-A-auf-USB-C-Kabel, 1,2 m lang, geflochten"
+              title="USB-A-auf-USB-C-Kabel, 4 ft lang, geflochten"
             >
-USB-A-auf-USB-C-Kabel, 1,2 m lang, geflochten
+USB-A-auf-USB-C-Kabel, 4 ft lang, geflochten
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
 <td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generische Fabrik">
-              Generische Fabrik
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1313,8 +1325,9 @@ https://www.amazon.ca/dp/B0CRYMGXMX
 </td>
 <td className="bom-col-category">
             <span
-              className="bom-cat"
-              tabIndex="0"
+             className="bom-cat"
+              style={{ backgroundColor: "#d6336c", color: "#ffffff" }}
+             tabIndex="0"
               role="img"
               title="Verpackung"
               aria-label="Kategorie: Verpackung"
@@ -1324,8 +1337,8 @@ PKG
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="6 x 8 im wiederverschließbaren Beutel">
-              6 x 8 im wiederverschließbaren Beutel
+<div className="bom-clamp" title="Wiederverschließbarer Beutel, 6 x 8 in">
+              Wiederverschließbarer Beutel, 6 x 8 in
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
@@ -1372,12 +1385,12 @@ https://www.uline.ca/Product/Detail/S-5065/Resealable-Bags/6-x-8-15-Mil-Resealab
 </table>
 </div>
 <footer className="bom-footer">
-<p>
-      Stückliste erstellt aus<code>hardware/bom.csv</code>von Research
-      und Desire-Stücklistenwerkzeuge.
-</p>
-<p>Lizenz: CERN-OHL-S v2 (Hardware) / MPL-2.0 (Firmware).</p>
-<p>
+<div>
+      Stückliste erstellt aus{" "}<code>hardware/bom.csv</code> von Research
+      and Desire mit den BOM-Werkzeugen.
+</div>
+<div>Lizenz: CERN-OHL-S v2 (Hardware) / MPL-2.0 (Firmware).</div>
+<div>
       Quelle:{" "}
       <a
         href="https://github.com/researchanddesire/Lockbox-OSS"
@@ -1387,8 +1400,8 @@ https://www.uline.ca/Product/Detail/S-5065/Resealable-Bags/6-x-8-15-Mil-Resealab
 Lockbox-OSS auf GitHub
 </a>
       .
-</p>
-<p>© Forschung und Begehren.</p>
+</div>
+<div>&copy; Research and Desire.</div>
 </footer>
 </section>
 {/* END GENERATED BOM */}
@@ -1397,9 +1410,9 @@ Lockbox-OSS auf GitHub
 
 | Artikel                 | Verwenden Sie                                                                  |
 | ----------------------- | ------------------------------------------------------------------------------ |
-| T7 Torx-Schraubendreher | Montage von `torx-screw` -Befestigungselementen                                |
+| T7-Torx-Schraubendreher | Montage von `torx-screw`-Befestigungselementen                                |
 | `flat-jaw-pliers`       | Einpressen von Magneten in Kunststoffeinsätze                                  |
 | `tweezers`              | Umgang mit Flachbandkabeln und Kleinteilen                                     |
 | `paperclip`             | Auftragen einer dünnen Schicht `SA-glue` auf die Innenseite der Magneteinsätze |
-| `isopropyl-alcohol`     | Reinigen Sie die Rückseite des Bildschirms und den Akku vor dem Aufkleben      |
-| `microfibre-cloth`      | Schutz der Vorderseite und bedruckter Teile bei der Montage                    |
+| `isopropyl-alcohol`     | Reinigen der Rückseite des Bildschirms und des Akkus vor dem Anbringen des Klebebands. |
+| `microfibre-cloth`      | Schutz der Vorderseite und gedruckter Teile bei der Montage                    |
