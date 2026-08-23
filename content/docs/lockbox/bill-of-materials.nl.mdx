@@ -9,7 +9,7 @@ De Lockbox maakt gebruik van een op maat gemaakte printplaat met extra externe c
 
 ## Onderdelen
 
-Deze onderdelenlijst wordt gegenereerd op basis van [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) tijdens het bouwen van de assemblagedocumenten. Bewerk de onderstaande tabel niet met de hand. Update in plaats daarvan het CSV-bestand. Er wordt overal in de [Montagehandleiding](assembly-guide.mdx) naar onderdelen verwezen.
+Deze onderdelenlijst wordt gegenereerd op basis van [`hardware/bom.csv`](https://github.com/researchanddesire/Lockbox-OSS/blob/main/hardware/bom.csv) tijdens het bouwen van de assemblagedocumenten. Bewerk de onderstaande tabel niet met de hand. Update in plaats daarvan het CSV-bestand. Er wordt overal in de [Montagehandleiding](assembly-guide) naar onderdelen verwezen.
 
 {/* BEGIN GENERATED BOM */}
 
@@ -39,15 +39,14 @@ Lockbox-OSS
 </span>
 </dd>
 </dl>
-<p className="bom-status bom-status-preview">
-<strong>Geen getagde release.</strong>Deze stuklijst wordt weergegeven op basis van de huidige{" "}
-<code>main</code>en is preview/referentiemateriaal, geen productie
-    momentopname vrijgeven.
-</p>
+<div className="bom-status bom-status-preview">
+<strong>Geen getagde release.</strong> Deze stuklijst wordt gegenereerd vanuit de huidige{" "}
+<code>main</code>-branch en dient als preview-/referentiemateriaal, niet als momentopname van een productierelease.
+</div>
   <div
-    className = "bom-tabel-frame"
+    className = "bom-table-frame"
     role="region"
-    aria-label="Lijst met materialen"
+    aria-label="Stuklijsttabel"
     tabIndex = "0"
   >
 <table className="bom-table">
@@ -78,10 +77,10 @@ Lockbox-OSS
             MFG-PN
 </th>
 <th className="bom-col-vendor" scope="col">
-            Verkoper
+            Leverancier
 </th>
 <th className="bom-col-vendor_part_number" scope="col">
-            Leverancier PN
+            Leveranciersartikelnummer
 </th>
 <th className="bom-col-source" scope="col">
             Bron
@@ -101,11 +100,12 @@ Lockbox-OSS
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="FDM-gedrukt onderdeel"
-              aria-label="Categorie: FDM gedrukt onderdeel"
+              aria-label="Categorie: FDM-gedrukt onderdeel"
               data-label="FDM-gedrukt onderdeel"
             >
 FDM
@@ -114,13 +114,13 @@ FDM
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="FDM-gedrukte behuizing van de bovenste behuizing"
+              title="FDM-geprinte bovenbehuizing"
             >
-FDM-gedrukte behuizing van de bovenste behuizing
+FDM-geprinte bovenbehuizing
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -157,11 +157,12 @@ cad/top-housing.step
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="FDM-gedrukt onderdeel"
-              aria-label="Categorie: FDM gedrukt onderdeel"
+              aria-label="Categorie: FDM-gedrukt onderdeel"
               data-label="FDM-gedrukt onderdeel"
             >
 FDM
@@ -170,13 +171,13 @@ FDM
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="FDM-gedrukte behuizing aan de onderkant"
+              title="FDM-geprinte onderbehuizing"
             >
-FDM-gedrukte behuizing aan de onderkant
+FDM-geprinte onderbehuizing
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -213,11 +214,12 @@ cad/bottom-housing.step
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="FDM-gedrukt onderdeel"
-              aria-label="Categorie: FDM gedrukt onderdeel"
+              aria-label="Categorie: FDM-gedrukt onderdeel"
               data-label="FDM-gedrukt onderdeel"
             >
 FDM
@@ -229,7 +231,7 @@ FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -254,25 +256,26 @@ cad/pcb-cover.step
 </div>
 </td>
 <td className="bom-col-notes">
-<div className="bom-clamp" title="Beveiligt over de bevolkte PCB.">
-              Beveiligt over de bevolkte PCB.
+<div className="bom-clamp" title="Wordt over de bestukte PCB bevestigd.">
+              Wordt over de bestukte PCB bevestigd.
 </div>
 </td>
 </tr>
 <tr>
 <td className="bom-col-line_item bom-num">4</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="Terug-knop">
-              Terug-knop
+<div className="bom-clamp" title="Terugknop">
+              Terugknop
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="FDM-gedrukt onderdeel"
-              aria-label="Categorie: FDM gedrukt onderdeel"
+              aria-label="Categorie: FDM-gedrukt onderdeel"
               data-label="FDM-gedrukt onderdeel"
             >
 FDM
@@ -281,13 +284,13 @@ FDM
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Cap met FDM-print op de rug/pijlknop"
+              title="FDM-geprinte kap voor de terug-/pijlknop"
             >
-Cap met FDM-print op de rug/pijlknop
+FDM-geprinte kap voor de terug-/pijlknop
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -301,13 +304,13 @@ Cap met FDM-print op de rug/pijlknop
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/terugknop.step">
+<div className="bom-clamp" title="cad/back-button.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/back-button.step"
                 target = "_blank"
                 rel="noopener noreferrer"
               >
-cad/terugknop.step
+cad/back-button.step
 </a>
 </div>
 </td>
@@ -324,11 +327,12 @@ cad/terugknop.step
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="FDM-gedrukt onderdeel"
-              aria-label="Categorie: FDM gedrukt onderdeel"
+              aria-label="Categorie: FDM-gedrukt onderdeel"
               data-label="FDM-gedrukt onderdeel"
             >
 FDM
@@ -337,13 +341,13 @@ FDM
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="FDM-gedrukte dop voor slot/enter-knop"
+              title="FDM-gedrukte kap voor vergrendelings-/enterknop"
             >
-FDM-gedrukte dop voor slot/enter-knop
+FDM-gedrukte kap voor vergrendelings-/enterknop
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -357,13 +361,13 @@ FDM-gedrukte dop voor slot/enter-knop
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/enter-knop.step">
+<div className="bom-clamp" title="cad/enter-button.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/enter-button.step"
                 target = "_blank"
                 rel="noopener noreferrer"
               >
-cad/enter-knop.step
+cad/enter-button.step
 </a>
 </div>
 </td>
@@ -374,17 +378,18 @@ cad/enter-knop.step
 <tr>
 <td className="bom-col-line_item bom-num">6</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="Vergrendelingsgrendel">
-              Vergrendelingsgrendel
+<div className="bom-clamp" title="Vergrendeling">
+              Vergrendeling
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="FDM-gedrukt onderdeel"
-              aria-label="Categorie: FDM gedrukt onderdeel"
+              aria-label="Categorie: FDM-gedrukt onderdeel"
               data-label="FDM-gedrukt onderdeel"
             >
 FDM
@@ -396,7 +401,7 @@ FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -435,11 +440,12 @@ cad/locking-latch.step
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="FDM-gedrukt onderdeel"
-              aria-label="Categorie: FDM gedrukt onderdeel"
+              aria-label="Categorie: FDM-gedrukt onderdeel"
               data-label="FDM-gedrukt onderdeel"
             >
 FDM
@@ -451,7 +457,7 @@ FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -465,13 +471,13 @@ FDM
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/encoder-wiel.stap">
+<div className="bom-clamp" title="cad/encoder-wheel.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/encoder-wheel.step"
                 target = "_blank"
                 rel="noopener noreferrer"
               >
-cad/encoder-wiel.stap
+cad/encoder-wheel.step
 </a>
 </div>
 </td>
@@ -487,17 +493,18 @@ Wordt geïnstalleerd op de roterende encoderas.
 <tr>
 <td className="bom-col-line_item bom-num">8</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="Motor klem">
-              Motor klem
+<div className="bom-clamp" title="Motorklem">
+              Motorklem
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d9480f", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="FDM-gedrukt onderdeel"
-              aria-label="Categorie: FDM gedrukt onderdeel"
+              aria-label="Categorie: FDM-gedrukt onderdeel"
               data-label="FDM-gedrukt onderdeel"
             >
 FDM
@@ -509,7 +516,7 @@ FDM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp">–</div>
 </td>
@@ -546,8 +553,9 @@ cad/motor-clamp.step
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#1864ab", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="Assemblage van printplaten"
               aria-label="Categorie: Assemblage van printplaten"
@@ -557,12 +565,12 @@ PCA
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="Bevolkte Lockbox PCB-assemblage">
-              Gevulde Lockbox PCB-assemblage
+<div className="bom-clamp" title="Bestukte Lockbox-PCB-assemblage">
+              Bestukte Lockbox-PCB-assemblage
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp" title="JLCPCB">
               JLCPCB
@@ -580,23 +588,22 @@ PCA
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="pcb/productie/v1.4/bom_v1.4.csv">
+<div className="bom-clamp" title="pcb/production/v1.4/bom_v1.4.csv">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/pcb/production/v1.4/bom_v1.4.csv"
                 target = "_blank"
                 rel="noopener noreferrer"
               >
-pcb/productie/v1.4/bom_v1.4.csv
+pcb/production/v1.4/bom_v1.4.csv
 </a>
 </div>
 </td>
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="PCB-assemblagelijnitem op het hoogste niveau; bevolkte component-EBOM wordt bijgehouden in git op het bronpad."
+              title="PCB-assemblagepost op het hoogste niveau; de EBOM van de bestukte componenten wordt in Git op het bronpad bijgehouden."
             >
-PCB-assemblagelijnitem op het hoogste niveau; bevolkte component EBOM is
-              bijgehouden in git op bronpad.
+PCB-assemblagepost op het hoogste niveau; de EBOM van de bestukte componenten wordt in Git op het bronpad bijgehouden.
 </div>
 </td>
 </tr>
@@ -609,14 +616,15 @@ PCB-assemblagelijnitem op het hoogste niveau; bevolkte component EBOM is
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#1098ad", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
-              title="Schakel"
+              title="Schakelaar"
               aria-label="Categorie: Schakelaar"
-              data-label = "Schakelen"
+              data-label = "Schakelaar"
             >
-ZWI
+              SWI
 </span>
 </td>
 <td className="bom-col-description">
@@ -625,10 +633,10 @@ ZWI
 </div>
 </td>
 <td className="bom-col-qty bom-num">2</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Dezelfde lucht">
-              Dezelfde lucht
+<div className="bom-clamp" title="Same Sky">
+              Same Sky
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -637,8 +645,8 @@ ZWI
 </div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="Muiser">
-              Muiser
+<div className="bom-clamp" title="Mouser">
+              Mouser
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -647,13 +655,13 @@ ZWI
 </div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="pcb/productie/v1.4/bom_v1.4.csv">
+<div className="bom-clamp" title="pcb/production/v1.4/bom_v1.4.csv">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/pcb/production/v1.4/bom_v1.4.csv"
                 target = "_blank"
                 rel="noopener noreferrer"
               >
-pcb/productie/v1.4/bom_v1.4.csv
+pcb/production/v1.4/bom_v1.4.csv
 </a>
 </div>
 </td>
@@ -682,14 +690,15 @@ https://www.mouser.ca/ProductDetail/179-TS0266100BK260SC
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#1098ad", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
-              title="Schakel"
+              title="Schakelaar"
               aria-label="Categorie: Schakelaar"
-              data-label = "Schakelen"
+              data-label = "Schakelaar"
             >
-ZWI
+              SWI
 </span>
 </td>
 <td className="bom-col-description">
@@ -698,7 +707,7 @@ ZWI
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp" title="Bourns">
               Bourns
@@ -710,8 +719,8 @@ ZWI
 </div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="Muiser">
-              Muiser
+<div className="bom-clamp" title="Mouser">
+              Mouser
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -720,13 +729,13 @@ ZWI
 </div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/encoder.stap">
+<div className="bom-clamp" title="cad/encoder.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/encoder.step"
                 target = "_blank"
                 rel="noopener noreferrer"
               >
-cad/encoder.stap
+cad/encoder.step
 </a>
 </div>
 </td>
@@ -755,11 +764,12 @@ https://www.mouser.ca/ProductDetail/652-PEC12R-2120F-N12
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#a8703a", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="Gefabriceerd, anders"
-              aria-label="Categorie: Gefabriceerd, Anders"
+              aria-label="Categorie: Gefabriceerd, anders"
               data-label="Gefabriceerd, anders"
             >
 FBO
@@ -774,18 +784,18 @@ N52 neodymiummagneet, 4 mm x 5 mm
 </div>
 </td>
 <td className="bom-col-qty bom-num">4</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generieke fabriek">
-              Generieke fabriek
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="Nader te bepalen">
-              Nader te bepalen
+<div className="bom-clamp" title="TBD">
+              TBD
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -797,11 +807,9 @@ N52 neodymiummagneet, 4 mm x 5 mm
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Eén in de vergrendeling, één in de bovenste behuizing en twee in de onderste behuizing. Het bronberekeningsblad markeert de leverancier als OP ZOEK NAAR NIEUWE LEVERANCIER."
+              title="In het leveranciersveld van het bronkostenblad staat OP ZOEK NAAR EEN NIEUWE LEVERANCIER."
             >
-Eén in de vergrendeling, één in de bovenbehuizing en twee in de behuizing
-              bodembehuizing. Het bronberekeningsblad markeert de leverancier als OP ZOEK NAAR
-              NIEUWE LEVERANCIER.
+In het leveranciersveld van het bronkostenblad staat OP ZOEK NAAR EEN NIEUWE LEVERANCIER.
 </div>
 </td>
 </tr>
@@ -814,11 +822,12 @@ Eén in de vergrendeling, één in de bovenbehuizing en twee in de behuizing
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#a8703a", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="Gefabriceerd, anders"
-              aria-label="Categorie: Gefabriceerd, Anders"
+              aria-label="Categorie: Gefabriceerd, anders"
               data-label="Gefabriceerd, anders"
             >
 FBO
@@ -827,13 +836,13 @@ FBO
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Bumpervoet van polyurethaan, diameter 0,312 mm, helder"
+              title="Transparant polyurethaan stootvoetje met een diameter van 0.312 in"
             >
-Bumpervoet van polyurethaan, diameter 0,312 mm, helder
+Transparant polyurethaan stootvoetje met een diameter van 0.312 in
 </div>
 </td>
 <td className="bom-col-qty bom-num">4</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
 <div className="bom-clamp" title="3M">
               3M
@@ -877,16 +886,17 @@ https://www.digikey.ca/en/products/detail/3m/SJ5302/2345107
 <tr>
 <td className="bom-col-line_item bom-num">14</td>
 <td className="bom-col-part_name">
-<div className="bom-clamp" title="Motorisch">
-              Motorisch
+<div className="bom-clamp" title="Motor">
+              Motor
 </div>
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#6741d9", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
-              title="Motorisch"
+              title="Motor"
               aria-label="Categorie: Motor"
               data-label = "Motor"
             >
@@ -902,10 +912,10 @@ DC-micro-reductiemotor, 12 V, 60 RPM
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generieke fabriek">
-              Generieke fabriek
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -922,22 +932,22 @@ DC-micro-reductiemotor, 12 V, 60 RPM
 </div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/motor.stap">
+<div className="bom-clamp" title="cad/motor.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/motor.step"
                 target = "_blank"
                 rel="noopener noreferrer"
               >
-cad/motor.stap
+cad/motor.step
 </a>
 </div>
 </td>
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Rijdt vergrendeling. Leverancier link: https://www.aliexpress.com/item/33022320164.html"
+              title="Drijft de vergrendelingsgrendel aan. Leverancierslink: https://www.aliexpress.com/item/33022320164.html"
             >
-Rijdt vergrendeling. Leverancierslink:{" "}
+Drijft de vergrendelingsgrendel aan. Leverancierslink:{" "}
               <a
                 href="https://www.aliexpress.com/item/33022320164.html"
                 target = "_blank"
@@ -957,12 +967,13 @@ https://www.aliexpress.com/item/33022320164.html
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#0b7285", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
-              title="Montage van kabelboom"
-              aria-label="Categorie: Kabelboommontage"
-              data-label="Montage van kabelboom"
+              title="Kabelboomassemblage"
+              aria-label="Categorie: Kabelboomassemblage"
+              data-label="Kabelboomassemblage"
             >
 CHA
 </span>
@@ -970,17 +981,17 @@ CHA
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="Motorkabelboom, vrouwelijke connector met steek van 1 mm, 2-pins, 100 mm, enkele kop"
+              title="Motorkabelboom, vrouwelijke connector met steek van 1 mm, 2P, 100 mm, enkele kop"
             >
 Motorkabelboom, vrouwelijke connector met steek van 1 mm, 2P, 100 mm,
               enkele kop
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generieke fabriek">
-              Generieke fabriek
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -999,7 +1010,7 @@ Motorkabelboom, vrouwelijke connector met steek van 1 mm, 2P, 100 mm,
 <td className="bom-col-source">
             <div
               className = "bom-clamp"
-              title="Https://www.aliexpress.com/item/1005007218127653.html"
+              title="https://www.aliexpress.com/item/1005007218127653.html"
             >
 <a
                 href="https://www.aliexpress.com/item/1005007218127653.html"
@@ -1025,8 +1036,9 @@ https://www.aliexpress.com/item/1005007218127653.html
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#2b8a3e", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="Batterij"
               aria-label="Categorie: Batterij"
@@ -1045,10 +1057,10 @@ BTY
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generieke fabriek">
-              Generieke fabriek
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1065,20 +1077,20 @@ BTY
 </div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/batterij.stap">
+<div className="bom-clamp" title="cad/battery.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/battery.step"
                 target = "_blank"
                 rel="noopener noreferrer"
               >
-cad/batterij.stap
+cad/battery.step
 </a>
 </div>
 </td>
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Geïnstalleerd in de bovenste behuizing. Leverancier link: https://www.aliexpress.com/item/1005009279419327.html"
+              title="Geïnstalleerd in de bovenste behuizing. Leverancierslink: https://www.aliexpress.com/item/1005009279419327.html"
             >
 Geïnstalleerd in de bovenste behuizing. Leverancierslink:{" "}
               <a
@@ -1100,12 +1112,13 @@ https://www.aliexpress.com/item/1005009279419327.html
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#a61e4d", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="Montage"
               aria-label="Categorie: Montage"
-              data-label = "Assemblage"
+              data-label = "Montage"
             >
 ASM
 </span>
@@ -1113,16 +1126,16 @@ ASM
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="PS 2,0 inch 14-pins SPI TFT LCD-module"
+              title="2,0-inch PS SPI-TFT-LCD-module met 14 pinnen"
             >
-PS 2,0 inch 14-pins SPI TFT LCD-module
+2,0-inch PS SPI-TFT-LCD-module met 14 pinnen
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generieke fabriek">
-              Generieke fabriek
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1139,20 +1152,20 @@ PS 2,0 inch 14-pins SPI TFT LCD-module
 </div>
 </td>
 <td className="bom-col-source">
-<div className="bom-clamp" title="cad/scherm.stap">
+<div className="bom-clamp" title="cad/screen.step">
               <a
                 href="https://github.com/researchanddesire/Lockbox-OSS/blob/43fffcdb1f4bee82c7d74d9f610a12e9035b9553/hardware/cad/screen.step"
                 target = "_blank"
                 rel="noopener noreferrer"
               >
-cad/scherm.stap
+cad/screen.step
 </a>
 </div>
 </td>
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="Geïnstalleerd in de bovenste behuizing. Leverancier link: https://www.aliexpress.com/item/1005005865407299.html"
+              title="Geïnstalleerd in de bovenste behuizing. Leverancierslink: https://www.aliexpress.com/item/1005005865407299.html"
             >
 Geïnstalleerd in de bovenste behuizing. Leverancierslink:{" "}
               <a
@@ -1174,8 +1187,9 @@ https://www.aliexpress.com/item/1005005865407299.html
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#c92a2a", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="Bevestigingsmiddel"
               aria-label="Categorie: Bevestigingsmiddel"
@@ -1187,17 +1201,16 @@ FST
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="#4-20 x 1/2 in 6-lobbig plat Plastiet alternatief 48-2 schroef, zwart oxide"
+              title="#4-20 x 1/2 in, 6-lobbige platkopschroef, Plastite-alternatief 48-2, zwart geoxideerd"
             >
-#4-20 x 1/2 in 6-lobbig plat Plastiet alternatief 48-2 schroef, zwart
-              oxide
+#4-20 x 1/2 in, 6-lobbige platkopschroef, Plastite-alternatief 48-2, zwart geoxideerd
 </div>
 </td>
 <td className="bom-col-qty bom-num">7</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Schorpioen">
-              Schorpioen
+<div className="bom-clamp" title="Shorpioen">
+              Shorpioen
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1206,8 +1219,8 @@ FST
 </div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="Schorpioen">
-              Schorpioen
+<div className="bom-clamp" title="Shorpioen">
+              Shorpioen
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -1232,10 +1245,9 @@ https://shorpioen.com/4-20x1-2-6-lobe-flat-plastite-alternative-48-2-fully-threa
 <td className="bom-col-notes">
             <div
               className = "bom-clamp"
-              title="2x voor motorklem, 5x voor printplaat; geïnstalleerd met T7 Torx-stuurprogramma."
+              title="2x voor de motorklem, 5x voor de PCB-afdekking; gemonteerd met een T7-Torx-schroevendraaier."
             >
-2x voor motorklem, 5x voor printplaat; geïnstalleerd met T7 Torx
-              bestuurder.
+2x voor de motorklem, 5x voor de PCB-afdekking; gemonteerd met een T7-Torx-schroevendraaier.
 </div>
 </td>
 </tr>
@@ -1248,8 +1260,9 @@ https://shorpioen.com/4-20x1-2-6-lobe-flat-plastite-alternative-48-2-fully-threa
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#0c8599", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="Kabel"
               aria-label="Categorie: Kabel"
@@ -1261,24 +1274,24 @@ CBL
 <td className="bom-col-description">
             <div
               className = "bom-clamp"
-              title="USB-A naar USB-C-kabel, 1,20 meter gevlochten"
+              title="gevlochten USB-A-naar-USB-C-kabel van 4 ft"
             >
-USB-A naar USB-C-kabel, 1,20 meter gevlochten
+gevlochten USB-A-naar-USB-C-kabel van 4 ft
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Generieke fabriek">
-              Generieke fabriek
+<div className="bom-clamp" title="Generic Factory">
+              Generic Factory
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
 <div className="bom-clamp">–</div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="Amazone">
-              Amazone
+<div className="bom-clamp" title="Amazon">
+              Amazon
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -1313,8 +1326,9 @@ https://www.amazon.ca/dp/B0CRYMGXMX
 </td>
 <td className="bom-col-category">
             <span
-              className = "bom-cat"
-              tabIndex = "0"
+             className = "bom-cat"
+              style={{ backgroundColor: "#d6336c", color: "#ffffff" }}
+             tabIndex = "0"
               role="img"
               title="Verpakking"
               aria-label="Categorie: Verpakking"
@@ -1324,15 +1338,15 @@ PKG
 </span>
 </td>
 <td className="bom-col-description">
-<div className="bom-clamp" title="6 x 8 in hersluitbare zak">
-              6 x 8 in hersluitbare zak
+<div className="bom-clamp" title="Hersluitbare zak van 6 x 8 in">
+              Hersluitbare zak van 6 x 8 in
 </div>
 </td>
 <td className="bom-col-qty bom-num">1</td>
-<td className="bom-col-unit_of_measure bom-num">elke</td>
+<td className="bom-col-unit_of_measure bom-num">each</td>
 <td className="bom-col-manufacturer">
-<div className="bom-clamp" title="Ulijn">
-              Ulijn
+<div className="bom-clamp" title="Uline">
+              Uline
 </div>
 </td>
 <td className="bom-col-mfg_part_number">
@@ -1341,8 +1355,8 @@ PKG
 </div>
 </td>
 <td className="bom-col-vendor">
-<div className="bom-clamp" title="Ulijn">
-              Ulijn
+<div className="bom-clamp" title="Uline">
+              Uline
 </div>
 </td>
 <td className="bom-col-vendor_part_number">
@@ -1353,7 +1367,7 @@ PKG
 <td className="bom-col-source">
             <div
               className = "bom-clamp"
-              title="https://www.uline.ca/Product/Detail/S-5065/Hersluitbare-zakken/6-x-8-15-Mil-Hersluitbare-zakken"
+              title="https://www.uline.ca/Product/Detail/S-5065/Resealable-Bags/6-x-8-15-Mil-Resealable-Bags"
             >
 <a
                 href="https://www.uline.ca/Product/Detail/S-5065/Resealable-Bags/6-x-8-15-Mil-Resealable-Bags"
@@ -1372,34 +1386,34 @@ https://www.uline.ca/Product/Detail/S-5065/Resealable-Bags/6-x-8-15-Mil-Resealab
 </table>
 </div>
 <footer className="bom-footer">
-<p>
-      Stuklijst gegenereerd uit<code>hardware/bom.csv</code>door Research
-      en Desire BOM-tooling.
-</p>
-<p>Licentie: CERN-OHL-S v2 (hardware) / MPL-2.0 (firmware).</p>
-<p>
+<div>
+      Stuklijst gegenereerd uit{" "}<code>hardware/bom.csv</code> door Research
+      and Desire met BOM-tools.
+</div>
+<div>Licentie: CERN-OHL-S v2 (hardware) / MPL-2.0 (firmware).</div>
+<div>
       Bron:{" "}
       <a
         href="https://github.com/researchanddesire/Lockbox-OSS"
-        target = "_blank"
+        target="_blank"
         rel="noopener noreferrer"
       >
 Lockbox-OSS op GitHub
 </a>
       .
-</p>
-<p>© Onderzoek en verlangen.</p>
+</div>
+<div>&copy; Research and Desire.</div>
 </footer>
 </section>
 {/* END GENERATED BOM */}
 
-## Montagegereedschap en winkelbenodigdheden
+## Montagegereedschap en werkplaatsbenodigdheden
 
 | Artikel                | Gebruik                                                             |
 | ---------------------- | ------------------------------------------------------------------- |
-| T7 Torx-stuurprogramma | `torx-screw` -bevestigingsmiddelen installeren                      |
+| T7-Torx-schroevendraaier | `torx-screw`-bevestigingsmiddelen installeren                      |
 | `flat-jaw-pliers`      | Magneten in kunststof inzetstukken drukken                          |
-| `tweezers`             | Omgaan met lintkabel en kleine onderdelen                           |
-| `paperclip`            | Aanbrengen van een lichte laag `SA-glue` binnenmagneetinzetstukken  |
-| `isopropyl-alcohol`    | De achterkant van het scherm en de batterij reinigen voordat u tape |
-| `microfibre-cloth`     | Bescherming van de voorkant en bedrukte onderdelen tijdens montage  |
+| `tweezers`             | Hanteren van lintkabels en kleine onderdelen                        |
+| `paperclip`            | Een dunne laag `SA-glue` aanbrengen in de magneetinzetstukken        |
+| `isopropyl-alcohol`    | De achterkant van het scherm en de batterij reinigen voordat u tape aanbrengt |
+| `microfibre-cloth`     | Bescherming van de voorkant en geprinte onderdelen tijdens montage  |

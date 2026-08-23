@@ -5,21 +5,21 @@ description: "Kabelbäume für OSSM."
 
 {/* Ported from MkDocs: cable-harnesses.md */}
 
-OSSM-Kabelbaumquellen sind unter [`hardware/cables/`](https://github.com/researchanddesire/ossm/tree/main/hardware/cables) verfügbar.
-Wireviz rendert jede Kabelbaumquelle in Diagrammartefakte und ein detailliertes untergeordnetes Element
-Stückliste. Die [Stückliste](product-bom.mdx) auf Produktebene sollte jeden Kabelbaum als einen auflisten
-Top-Level-Assembly und Link zur Wireviz-Quelle.
+Die Quellen der OSSM-Kabelbäume befinden sich unter [`hardware/cables/`](https://github.com/researchanddesire/ossm/tree/main/hardware/cables).
+Wireviz erzeugt aus jeder Kabelbaumquelle Diagrammartefakte und eine detaillierte untergeordnete
+Stückliste. Die [Stückliste](product-bom) auf Produktebene sollte jeden Kabelbaum als Baugruppe der obersten Ebene aufführen
+und mit der Wireviz-Quelle verknüpfen.
 
 ## Motorsteuerungskabelbaum
 
-| Vermögenswert             | Standort                                                                                                                               |
+| Ressource                 | Speicherort                                                                                                                            |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | Wireviz-Quelle            | [`OSSM-Motor-Control-Harness.yml`](https://github.com/researchanddesire/ossm/blob/main/hardware/cables/OSSM-Motor-Control-Harness.yml) |
-| Quellenanmerkungen        | [`hardware/cables/README.md`](https://github.com/researchanddesire/ossm/blob/main/hardware/cables/README.md)                           |
-| Generierte Release-Assets | [Neueste OSSM-Version](https://github.com/researchanddesire/ossm/releases/latest)                                                      |
+| Quellenhinweise           | [`hardware/cables/README.md`](https://github.com/researchanddesire/ossm/blob/main/hardware/cables/README.md)                           |
+| Generierte Release-Dateien | [Neueste OSSM-Version](https://github.com/researchanddesire/ossm/releases/latest)                                                      |
 
-Der Kabelexport-Workflow veröffentlicht generierte Assets von `cable-export/`,
-einschließlich:
+Der Kabelexport-Workflow veröffentlicht die generierten Dateien aus `cable-export/`,
+darunter:
 
 - `OSSM-Motor-Control-Harness.pdf`
 - `OSSM-Motor-Control-Harness.png`

@@ -1,29 +1,41 @@
 ---
-title: "Dokumente zur Lockboxmontage"
-description: "Lockbox-Montagedokumente für Lockbox."
+title: "Montagedokumentation für Lockbox"
+description: "Montagedokumentation für Lockbox."
 ---
 
 {/* Ported from MkDocs: index.md */}
 
 ## Zweck
 
-Diese Dokumente sammeln die Informationen zur Lockbox-Hardware-Assembly in einem eigenständigen Ordner für die zukünftige Aggregation in `ohai.researchanddesire.com`. Sie sind als offene Hardware-Montageanleitungen für OSS-Erbauer und Fertigungsmitarbeiter verfasst.
+Diese Dokumentation bündelt die Informationen zur Montage der Lockbox-Hardware für OSS-Erbauer
+und Fertigungspartner.
 
-## Lockboxübersicht
+## Lockbox-Übersicht
 
-Lockbox ist ein kleines Unterhaltungselektronikprodukt, das auf einer benutzerdefinierten Leiterplatte, der ESP32-S3-Firmware, einem motorisierten Riegel, magnetischen Sensoren, einem TFT-Display, einem Drehgeber, einer Batterie und einem 3D-gedruckten Kunststoffgehäuse basiert.
+Lockbox ist ein kompaktes Produkt der Unterhaltungselektronik auf Basis einer kundenspezifischen Leiterplatte, der ESP32-S3-Firmware, eines motorisierten Riegels, magnetischer Sensoren, eines TFT-Displays, eines Drehgebers, einer Batterie und eines 3D-gedruckten Kunststoffgehäuses.
 
-![Übersicht über Lockbox-Geräte](assets/device-overview.webp)
+![Übersicht über das Lockbox-Gerät](assets/device-overview.webp)
 
-| Eigentum                  | Wert                                       |
-| ------------------------- | ------------------------------------------ |
-| Abmessungen               | 57 mm x 43 mm x 134 mm                     |
-| Plastikvolumen            | 156.408,422 mm^3                           |
-| Aktuelles Gehäusematerial | 3D-gedruckter PLA-Kunststoff               |
-| Eingebettete Magnete      | Drei bis vier Magnete im Kunststoffgehäuse |
+| Eigenschaft               | Wert                                         |
+| ------------------------ | -------------------------------------------- |
+| Abmessungen              | 57 mm x 43 mm x 134 mm                       |
+| Kunststoffvolumen        | 156,408.422 mm^3                             |
+| Aktuelles Gehäusematerial | 3D-gedruckter PLA-Kunststoff                |
+| Eingebettete Magnete     | Drei bis vier Magnete im Kunststoffgehäuse  |
 
-## Montagepaket
+## Montageunterlagen
 
-- [PCB-Übersicht](pcb-overview.mdx)
-- [Stückliste](bill-of-materials.mdx)
-- [Montageanleitung](assembly-guide.mdx)
+<CardGroup cols={2}>
+  <Card title="Montageanleitung" href="/lockbox/assembly-guide">
+    Befolgen Sie den mechanischen Aufbau, die Elektronikverkabelung und die abschließende Qualitätskontrolle.
+  </Card>
+  <Card title="Stückliste" href="/lockbox/bill-of-materials">
+    Prüfen Sie Teile, Lieferanten und Referenzen zu den Hardwarequellen.
+  </Card>
+  <Card title="Kabelbäume" href="/lockbox/cable-harnesses">
+    Hier finden Sie Hinweise zur Zuständigkeit für Kabel und Kabelbäume beim Aufbau.
+  </Card>
+  <Card title="PCB-Übersicht" href="/lockbox/pcb-overview">
+    Prüfen Sie die Steuerplatine, die KiCanvas-Vorschau und die Produktionsdateien.
+  </Card>
+</CardGroup>

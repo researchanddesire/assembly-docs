@@ -5,56 +5,54 @@ description: "PCB-overzicht voor Deepthroat Trainer."
 
 {/* Ported from MkDocs: pcb-overview.md */}
 
-De DT Trainer rev4 PCB is het apparaatbesturingssamenstel voor de alles-in-één trainer-build. Het bevat de ESP32-firmware, dashboardconnectiviteit, stroom- en oplaadinterfaces, sensorinvoer, display en LED-feedback, en de trillingsoutput die tijdens de training wordt gebruikt.
+De PCB van de DT Trainer rev4 is de besturingsassemblage voor de alles-in-één traineropbouw. Deze bevat de ESP32-firmware, dashboardconnectiviteit, stroom- en oplaadinterfaces, sensorinvoer, display en LED-feedback, en de trillingsoutput die tijdens de training wordt gebruikt.
 
-<Card
-  title="KiCad-bordbestand"
-  href="./assets/kicanvas/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_pcb"
->
-Download het bordbestand voor KiCanvas of KiCad.
-</Card>
+<KiCanvas
+  src="./assets/kicanvas/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_pcb"
+  fileName="217A_dttrainer_rev4.kicad_pcb"
+/>
 
-De originele bewerkbare bordbron is DipTrace rev4. Een KiCad rev4-conversie is dat wel
-ook gepubliceerd en bedoeld om in overeenstemming te blijven met de originele DipTrace
-bron in afwachting van de definitieve conversieverificatie.
+De oorspronkelijke bewerkbare PCB-bron is DipTrace rev4. Er is ook een KiCad-conversie voor rev4
+gepubliceerd, die tot aan de definitieve verificatie van de conversie gelijk moet blijven aan de
+oorspronkelijke DipTrace-bron.
 
 ## Elektrische architectuur
 
 | Gebied                     | Rol                                                                                                                                 |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| ESP32-besturing            | Voert firmware, WiFi-communicatie, OTA-updatecontroles, apparaatstatus en sessielogica uit.                                         |
-| Stroom en opladen          | Verwerkt USB-C-ingang, batterijaansluiting, oplaadondersteuning en gereguleerde voeding voor het bord.                              |
+| ESP32-besturing            | Voert de firmware uit en verzorgt WiFi-communicatie, OTA-updatecontroles, apparaatstatus en sessielogica.                           |
+| Stroom en opladen          | Verwerkt de USB-C-ingang, batterijaansluiting, oplaadondersteuning en gereguleerde voeding voor de PCB.                            |
 | Sensorinterface            | Verbindt de trainerpositiesensor die wordt gebruikt voor kalibratie en trainingsfeedback.                                           |
-| Gebruikersinterface        | Stuurt het OLED-scherm, de knopinvoer en de RGB-status-LED's aan die worden gebruikt door de montage- en firmwarestroom.            |
+| Gebruikersinterface        | Stuurt het OLED-scherm, de knopinvoer en de RGB-status-LED's aan die worden gebruikt in de assemblage en de firmwareflow.          |
 | Haptiek en output          | Stuurt de vibratiemotor en lokale feedbackuitgangen aan tijdens de training.                                                        |
-| Programmering en productie | Biedt de plaatbron, productiestuklijst, gerbers en pick-and-place-pakket die nodig zijn voor de fabricage en assemblage van platen. |
+| Programmering en productie | Biedt de PCB-bron, productie-BOM, Gerber-bestanden en het pick-and-place-pakket die nodig zijn voor fabricage en assemblage.      |
 
 ## PCB-bronbestanden
 
-| Activa                       | Locatie                                                                                                                                                                  | Opmerkingen                                                                                         |
+| Asset                        | Locatie                                                                                                                                                                  | Opmerkingen                                                                                         |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
-| DipTrace-schema              | [217A_dttrainer_rev4.dch](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/217A_dttrainer_rev4.dch)                              | Bewerkbare rev4 schematische bron.                                                                  |
-| DipTrace-bordindeling        | [217A_dttrainer_rev4.dip](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/217A_dttrainer_rev4.dip)                              | Bewerkbare rev4 PCB-lay-outbron.                                                                    |
+| DipTrace-schema              | [217A_dttrainer_rev4.dch](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/217A_dttrainer_rev4.dch)                              | Bewerkbare rev4-schemabron.                                                                        |
+| DipTrace-bordindeling        | [217A_dttrainer_rev4.dip](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/217A_dttrainer_rev4.dip)                              | Bewerkbare bron van de rev4-PCB-lay-out.                                                           |
 | KiCad-project                | [217A_dttrainer_rev4.kicad_pro](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_pro) | Geconverteerd rev4 KiCad-project.                                                                   |
 | KiCad-schema                 | [217A_dttrainer_rev4.kicad_sch](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_sch) | Geconverteerd rev4 KiCad-schema.                                                                    |
-| KiCad-bordindeling           | [217A_dttrainer_rev4.kicad_pcb](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_pcb) | Omgebouwde rev4 KiCad PCB-indeling.                                                                 |
-| KiCanvas-voorbeeld           | [Open rev4 KiCad-project](https://kicanvas.org/?github=https://github.com/researchanddesire/DT_Trainer-OSS/tree/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4)        | Browservoorbeeld van het geconverteerde KiCad-project.                                              |
-| Gedetailleerde PCB-stuklijst | [pcb-bom-full.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/pcb-bom-full.csv)                                            | Rijke stuklijst op bordniveau met behoud van inkoop- en assemblagekolommen uit het bronspreadsheet. |
+| KiCad-bordindeling           | [217A_dttrainer_rev4.kicad_pcb](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4/217A_dttrainer_rev4.kicad_pcb) | Geconverteerde rev4-KiCad-PCB-indeling.                                                             |
+| KiCanvas-voorbeeld           | [KiCad-rev4-project openen](https://kicanvas.org/?github=https://github.com/researchanddesire/DT_Trainer-OSS/tree/main/hardware/pcb/kicad-rev4/217A_dttrainer_rev4)        | Browservoorbeeld van het geconverteerde KiCad-project.                                              |
+| Gedetailleerde PCB-stuklijst | [pcb-bom-full.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/pcb-bom-full.csv)                                            | Uitgebreide stuklijst op bordniveau, met behoud van de inkoop- en assemblagekolommen uit het bronspreadsheet. |
 | PCB-bronnotities             | [README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/README.md)                                                                        | Herkomst, mapgrens en DipTrace/KiCad-pariteitsnotities.                                             |
 
 ## Productiepakket
 
-De huidige productie-export is het bekende Rev4-orderpakket van mei 2025.
+De huidige productie-export is het rev4-bestelpakket van mei 2025 waarvan is vastgesteld dat het goed functioneert.
 
-| Activa                 | Locatie                                                                                                                                                                                               | Opmerkingen                                                   |
+| Asset                  | Locatie                                                                                                                                                                                               | Opmerkingen                                                   |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| Gerber-archief         | [Trainer_gerber_Y35.zip](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/Trainer_gerber_Y35.zip)                             | Productiearchief van de bekende goede orde.                   |
-| Productie PCB BOM      | [Trainer BoM 15 mei.xls](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/Trainer%20BoM%20May%2015.xls)                       | Plaatmontagestuklijst gebruikt bij de productieorder.         |
+| Gerber-archief         | [Trainer_gerber_Y35.zip](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/Trainer_gerber_Y35.zip)                             | Productiearchief van de beproefde bestelling.                 |
+| Productie PCB BOM      | [Trainer BoM May 15.xls](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/Trainer%20BoM%20May%2015.xls)                       | Productie-PCB-stuklijst voor de productieorder.                |
 | Pick-and-place         | [pickplace_dttrainer_rev4 (1).xlsx](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/pickplace_dttrainer_rev4%20%281%29.xlsx) | Gegevens over plaatsing van componenten voor montage.         |
-| Productie-exportnota's | [README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/README.md)                                                       | Herkomstaantekeningen voor de bekende goede productie-export. |
+| Productie-exportnota's | [README.md](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/production-exports/pcb-rev4/may-2025-good-results/README.md)                                                       | Herkomstnotities voor de beproefde productie-export.          |
 
 ## Stuklijstgrens
 
-De canonieke RAD BOM is [hardware/bom.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/bom.csv). Het vermeldt de ingevulde PCB als één assemblagerij op apparaatniveau, zodat de assemblagedocumentatie gericht blijft op de trainer-build.
+De canonieke RAD-BOM is [hardware/bom.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/bom.csv). Deze vermeldt de bestukte PCB als één assemblageregel op apparaatniveau, zodat de assemblagedocumentatie gericht blijft op de traineropbouw.
 
-De onderliggende onderdelen op bordniveau worden bijgehouden in [hardware/pcb/diptrace-rev4/pcb-bom-full.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/pcb-bom-full.csv) om te voorkomen dat fabrikant-, leverancier-, voetafdruk- en assemblagegegevens verloren gaan uit de PCB-bronexport.
+De onderliggende onderdelen op bordniveau worden bijgehouden in [hardware/pcb/diptrace-rev4/pcb-bom-full.csv](https://github.com/researchanddesire/DT_Trainer-OSS/blob/main/hardware/pcb/diptrace-rev4/pcb-bom-full.csv) om te voorkomen dat fabrikant-, leverancier-, footprintgegevens en assemblagegegevens uit de PCB-bronexport verloren gaan.
