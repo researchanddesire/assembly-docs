@@ -41,8 +41,12 @@ function candidateExists(fromFile, rawTarget, allowExtensionless = false) {
     target,
     `${target}.md`,
     `${target}.mdx`,
+    `${target}.en.md`,
+    `${target}.en.mdx`,
     path.join(target, "index.md"),
     path.join(target, "index.mdx"),
+    path.join(target, "index.en.md"),
+    path.join(target, "index.en.mdx"),
   ].some(existsSync);
 }
 
@@ -125,7 +129,7 @@ for (const file of await walk(contentRoot)) {
   if (/\.mdx?$/.test(file)) {
     validateFrontmatter(file, source);
     validateLinks(file, source);
-  } else if (path.basename(file) === "meta.json") {
+  } else if (/^meta(?:\.[a-z]{2,3}(?:-[A-Za-z0-9]+)*)?\.json$/.test(path.basename(file))) {
     validateMeta(file, source);
   }
 }

@@ -1,5 +1,25 @@
 # AGENTS.md
 
+## Current Fumadocs synchronization contract
+
+`rad-app` is the hub. This repository's `content/**` is the complete, bidirectional
+mirror of `rad-app/apps/docs-ohai/content/**`, including all locales and assets.
+English product pages use `.en.mdx` and English product metadata `meta.en.json`.
+Edit content here and open a PR into `staging`; the notifier wakes the hub after
+merge. The hub reconciles changes and opens reviewed sync PRs before propagating
+to the four English-only hardware spokes. Never sync directly to hardware repos.
+
+`.github/assembly-sync.json` is the hub-managed baseline, outside mirrored
+content. Do not hand-edit it. Preserve `_bom/` CSV, provenance and generated JSON
+together. Workflow authentication uses `RAD_VERSION_CONTROL_APP_ID` and
+`RAD_VERSION_CONTROL_PRIVATE_KEY`, scoped to rad-app for notifications.
+
+Both persistent branches must exist. Normal edits synchronize staging to staging;
+main is audited and updated through reviewed staging-to-main promotion. No
+direct writes or automatic merges into release branches. The legacy MkDocs
+instructions below describe historical tooling only and do not govern the
+active Fumadocs content tree. Do not regenerate content from that tooling.
+
 Guidance for future agents working in the `assembly-docs` aggregator repo,
 especially on BOM rendering.
 
