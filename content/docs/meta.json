@@ -1,4 +1,3 @@
 {
-  "title": "R+D Assembly",
-  "pages": ["index", "dtt", "lockbox", "ossm", "radr", "how-this-site-works"]
+  "pages": ["index", "dtt", "lockbox", "radr", "ossm"]
 }
