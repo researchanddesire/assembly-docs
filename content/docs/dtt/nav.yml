@@ -1,7 +1,0 @@
-site_name: Deepthroat Trainer Assembly Docs
-nav:
-  - Overview: index.mdx
-  - PCB Overview: pcb-overview.mdx
-  - Cable Harnesses: cable-harnesses.mdx
-  - Bill of Materials: bom.mdx
-  - Assembly Guide: assembly-guide.mdx
