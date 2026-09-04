@@ -2,7 +2,27 @@
 
 This repository is the public, editable content mirror for [R+D Assembly](https://ohai.researchanddesire.com). Rendered page titles and section headings link to their exact source lines under `content/docs/`.
 
-Public contributions should target `main`. The dedicated synchronization app mirrors approved content into the private Fumadocs renderer; legacy MkDocs assembly tooling remains below for migration and product-source workflows.
+Public contributions should target `staging`. `rad-app` is the synchronization
+hub: this repository's entire `content/` tree mirrors
+`rad-app/apps/docs-ohai/content/`, including every language and asset. English
+product pages use `.en.mdx`; navigation uses `meta.en.json`. The hub strips `.en`
+only when exporting to the four English-only hardware repositories.
+
+Merging content changes sends an `assembly-content-changed` notification to
+rad-app. The hub detects concurrent edits against `.github/assembly-sync.json`,
+opens a draft import PR, and propagates to affected hardware spokes after that
+PR merges. Do not hand-edit the checkpoint. Routine sync targets staging;
+main follows reviewed staging-to-main releases. No direct spoke-to-spoke writes.
+
+The notifier needs the organization's existing `RAD_VERSION_CONTROL_APP_ID`
+variable and `RAD_VERSION_CONTROL_PRIVATE_KEY` secret with access to rad-app.
+Initial seeding is a separate reviewed action in the hub; it does not overwrite
+content merely because this notifier is installed.
+
+## Historical MkDocs tooling (not the active synchronization pipeline)
+
+The remaining sections document legacy tooling retained for reference. Do not
+use it to regenerate the active `content/` tree or dispatch directly to hardware.
 
 Aggregates each hardware product's `assembly-docs/` folder into a single
 MkDocs Material site, following the same architecture as
