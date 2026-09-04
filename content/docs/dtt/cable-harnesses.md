@@ -1,0 +1,13 @@
+# Cable Harnesses
+
+The DT Trainer build includes a screen, sensor, battery, and PCB cable harness
+as a top-level assembly item in the [Bill of Materials](bom.md).
+
+No Wireviz harness source has been migrated to `hardware/cables/` yet. When a
+Wireviz source is added, keep the product-level BOM focused on the harness
+assembly and link detailed child BOM output from this page.
+
+| Asset | Location | Notes |
+| --- | --- | --- |
+| Cable source folder | [`hardware/cables/`](../hardware/cables/) | Wireviz YAML sources belong here. |
+| Product-level BOM | [`hardware/bom.csv`](../hardware/bom.csv) | Lists the cable harness as an assembly line item. |

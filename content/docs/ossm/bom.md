@@ -1,0 +1,11 @@
+# Bill of Materials
+
+The OSSM product-level BOM is generated from [`hardware/bom.csv`](../hardware/bom.csv)
+during the assembly-docs build. Update the CSV instead of editing the generated
+block by hand.
+
+The BOM is currently a header-only migration placeholder. Until product rows are
+added, Ohai leaves this page text intact.
+
+<!-- BEGIN GENERATED BOM -->
+<!-- END GENERATED BOM -->

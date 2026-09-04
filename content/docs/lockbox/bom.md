@@ -1,0 +1,25 @@
+---
+hide:
+  - toc
+---
+# Bill of Materials
+
+The Lockbox uses a custom printed PCB with additional off-board components including a display, battery, motor, encoder, buttons, and magnets.
+
+## Parts
+
+This parts list is generated from [`hardware/bom.csv`](../hardware/bom.csv) during the assembly-docs build — do not edit the table below by hand. Update the CSV instead. Parts are referenced throughout the [Assembly Guide](assembly-guide.md).
+
+<!-- BEGIN GENERATED BOM -->
+<!-- END GENERATED BOM -->
+
+## Assembly tools and shop supplies
+
+| Item | Use |
+| ---- | --- |
+| T7 Torx driver | Installing `torx-screw` fasteners |
+| `flat-jaw-pliers` | Pressing magnets into plastic inserts |
+| `tweezers` | Handling ribbon cable and small parts |
+| `paperclip` | Applying a light coat of `SA-glue` inside magnet inserts |
+| `isopropyl-alcohol` | Cleaning the rear of the screen and battery before tape |
+| `microfibre-cloth` | Protecting the front face and printed parts during assembly |
