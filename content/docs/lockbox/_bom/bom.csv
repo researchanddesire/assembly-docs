@@ -1,0 +1,21 @@
+#,Part Name,Category,Description,Qty,UOM,Manufacturer,MFG PN,Vendor,Vendor PN,Source,Notes
+1,Top housing,FDM,FDM-printed top enclosure housing,1,each,–,–,–,–,cad/top-housing.step,–
+2,Bottom housing,FDM,FDM-printed bottom enclosure housing,1,each,–,–,–,–,cad/bottom-housing.step,–
+3,PCB cover,FDM,FDM-printed PCB cover,1,each,–,–,–,–,cad/pcb-cover.step,Secures over the populated PCB.
+4,Back button,FDM,FDM-printed back/arrow button cap,1,each,–,–,–,–,cad/back-button.step,–
+5,Enter button,FDM,FDM-printed lock/enter button cap,1,each,–,–,–,–,cad/enter-button.step,–
+6,Locking latch,FDM,FDM-printed locking latch,1,each,–,–,–,–,cad/locking-latch.step,Installs onto motor shaft.
+7,Encoder wheel,FDM,FDM-printed rotary encoder wheel,1,each,–,–,–,–,cad/encoder-wheel.step,Installs onto rotary encoder shaft.
+8,Motor clamp,FDM,FDM-printed motor clamp,1,each,–,–,–,–,cad/motor-clamp.step,–
+9,Lockbox PCBA,PCA,Populated Lockbox PCB assembly,1,each,JLCPCB,–,JLCPCB,–,pcb/production/v1.4/bom_v1.4.csv,Top-level PCB assembly line item; populated component EBOM is tracked in git at source path.
+10,PCB button switch,SWI,Tactile switch for PCB buttons,2,each,Same Sky,TS02-66-100-BK-260-SCR-D,Mouser,179-TS0266100BK260SC,pcb/production/v1.4/bom_v1.4.csv,Vendor link: https://www.mouser.ca/ProductDetail/179-TS0266100BK260SC
+11,Rotary encoder,SWI,Rotary encoder,1,each,Bourns,PEC12R-2120F-N0012,Mouser,652-PEC12R-2120F-N12,cad/encoder.step,Vendor link: https://www.mouser.ca/ProductDetail/652-PEC12R-2120F-N12
+12,4 mm magnet,FBO,"N52 neodymium magnet, 4 mm x 5 mm",4,each,Generic Factory,–,TBD,–,–,"One in locking-latch, one in top-housing, and two in bottom-housing. Source costing sheet marks supplier as LOOKING FOR NEW SUPPLIER."
+13,Rubber foot,FBO,"Polyurethane bumper foot, 0.312 in diameter, clear",4,each,3M,SJ5302,Digi-Key,SJ5302-7-ND,https://www.digikey.ca/en/products/detail/3m/SJ5302/2345107,Glued onto backplate.
+14,Motor,MTR,"DC micro gear motor, 12 V, 60 RPM",1,each,Generic Factory,–,AliExpress,33022320164,cad/motor.step,Drives locking latch. Vendor link: https://www.aliexpress.com/item/33022320164.html
+15,Motor wire,CHA,"Motor wire harness, 1 mm pitch female connector, 2P, 100 mm, single head",1,each,Generic Factory,–,AliExpress,1005007218127653,https://www.aliexpress.com/item/1005007218127653.html,Connects motor to PCB.
+16,Battery,BTY,3.7 V 500 mAh lithium polymer battery with custom 2-pin JST and 5 cm black/red cable,1,each,Generic Factory,–,AliExpress,1005009279419327,cad/battery.step,Installed into top-housing. Vendor link: https://www.aliexpress.com/item/1005009279419327.html
+17,Screen,ASM,PS 2.0 inch 14-pin SPI TFT LCD module,1,each,Generic Factory,–,AliExpress,1005005865407299,cad/screen.step,Installed into top-housing. Vendor link: https://www.aliexpress.com/item/1005005865407299.html
+18,Torx screw,FST,"#4-20 x 1/2 in 6-lobe flat Plastite alternative 48-2 screw, black oxide",7,each,Shorpioen,0408LTFB,Shorpioen,BC-0408LTFB,https://shorpioen.com/4-20x1-2-6-lobe-flat-plastite-alternative-48-2-fully-threaded-black-oxide-and-wax-box-qty-10000-bc-0408ltfb/,"2x for motor-clamp, 5x for pcb-cover; installed with T7 Torx driver."
+19,USB-C cable,CBL,"USB-A to USB-C cable, 4 ft braided",1,each,Generic Factory,–,Amazon,B0CRYMGXMX,https://www.amazon.ca/dp/B0CRYMGXMX,–
+20,Resealable bag,PKG,6 x 8 in resealable bag,1,each,Uline,S-5065,Uline,S-5065,https://www.uline.ca/Product/Detail/S-5065/Resealable-Bags/6-x-8-15-Mil-Resealable-Bags,–
