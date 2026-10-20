@@ -2,22 +2,27 @@
 
 This repository is the public, editable content mirror for [R+D Assembly](https://ohai.researchanddesire.com). Rendered page titles and section headings link to their exact source lines under `content/docs/`.
 
-Public contributions should target `staging`. `rad-app` is the synchronization
-hub: this repository's entire `content/` tree mirrors
-`rad-app/apps/docs-ohai/content/`, including every language and asset. English
-product pages use `.en.mdx`; navigation uses `meta.en.json`. The hub strips `.en`
-only when exporting to the four English-only hardware repositories.
+Contributions target `main`. Documentation syncs run main to main: when a
+change to `content/` merges into `main`, the notifier wakes `rad-app` (the hub),
+which imports it into `rad-app` `main` and merges the import automatically. The
+live site deploys from there. `staging` is never synced; for documentation,
+`main` always wins.
 
-Merging content changes sends an `assembly-content-changed` notification to
-rad-app. The hub detects concurrent edits against `.github/assembly-sync.json`,
-opens a draft import PR, and propagates to affected hardware spokes after that
-PR merges. Do not hand-edit the checkpoint. Routine sync targets staging;
-main follows reviewed staging-to-main releases. No direct spoke-to-spoke writes.
+This repository's `content/` tree mirrors `rad-app/apps/docs-ohai/content/`,
+including every language and asset. English product pages use `.en.mdx`;
+navigation uses `meta.en.json`. The four hardware repositories
+(`researchanddesire/OSSM`, `Open-Source-Chastity-Lockbox_LKBX`,
+`Open-Source-Deepthroat-Trainer_DTT` and `Open-Source-Wireless-Remote_RADR`)
+supply their English product pages from their own `assembly-docs/` folders on
+`main`. When a page exists in both places, the most recently changed copy wins,
+and the OSSM BOM always comes from that repository's `hardware/bom.csv`. The hub
+never writes back to this repository or to the hardware repositories.
 
-The notifier needs the organization's existing `RAD_VERSION_CONTROL_APP_ID`
-variable and `RAD_VERSION_CONTROL_PRIVATE_KEY` secret with access to rad-app.
-Initial seeding is a separate reviewed action in the hub; it does not overwrite
-content merely because this notifier is installed.
+Every change to `main`, including deletions, reaches the live site within
+minutes without further review.
+
+The notifier needs the organization's `RAD_VERSION_CONTROL_APP_ID` variable and
+`RAD_VERSION_CONTROL_PRIVATE_KEY` secret with access to rad-app.
 
 ## Historical MkDocs tooling (not the active synchronization pipeline)
 
