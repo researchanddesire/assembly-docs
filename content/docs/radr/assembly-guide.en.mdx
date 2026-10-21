@@ -8,6 +8,8 @@ This work instruction documents the current RADR wireless remote assembly proces
 
 Use these instructions with the active PCB, printed parts, and BOM release for the build.
 
+Read [Safety first](/radr#safety-first) before you start. Warnings appear at the steps where each hazard occurs.
+
 ## Required Parts and Consumables
 
 1. Gather the required parts before starting assembly.
@@ -49,11 +51,19 @@ Use these instructions with the active PCB, printed parts, and BOM release for t
       <img src="/radr/assets/pcba-deburr-edges.webp" alt="RADR PCB assembly with edge areas marked for deburring" style={{ width: "100%", height: "auto" }} />
     </Photo>
 
+    <Callout type="warning" title="Board dust and static">
+    Deburr before the battery is connected. Circuit-board dust contains glass fibre: avoid breathing it, wipe it up with a damp cloth, and wash your hands afterwards. The PCBA is static-sensitive, so touch grounded metal before you handle it and hold it by its edges.
+    </Callout>
+
 2. Wipe the marked weather-strip area on the PCBA with `isopropyl-alcohol` and a `microfiber-cloth`.
 
     <Photo caption="Clean the marked weather-strip area." style={{ maxWidth: "520px", margin: "0.75rem 0 1.5rem 1.5rem" }}>
       <img src="/radr/assets/pcba-clean-weather-strip-area.webp" alt="Marked weather-strip area on the RADR PCB assembly" style={{ width: "100%", height: "auto" }} />
     </Photo>
+
+    <Callout type="warning" title="Flammable solvent">
+    `isopropyl-alcohol` is flammable. Use a small amount on the cloth, let it evaporate fully, and keep it away from the hot glue gun.
+    </Callout>
 
 3. Attach a 2.5 cm piece of `weather-stripping` to the center of the cleaned area.
 
@@ -75,6 +85,10 @@ Use these instructions with the active PCB, printed parts, and BOM release for t
       <img src="/radr/assets/battery-connected-to-pcba.webp" alt="LiPo battery connected to the RADR PCB assembly" style={{ width: "100%", height: "auto" }} />
     </Photo>
 
+    <Callout type="warning" title="LiPo battery">
+    Do not use a battery that is swollen, dented, punctured, or has damaged wires, and do not bend, pierce, or crush it. The battery stays connected from here on: keep the PCBA switched off, keep the board and battery away from the razor blade and hot glue gun, and do not let metal tools bridge the battery leads or board components.
+    </Callout>
+
 6. Confirm the PCBA is deburred, padded, fitted with the power switch cover, connected to the battery, and switched off before continuing.
 
 ## Prepare the Front Housing
@@ -82,6 +96,10 @@ Use these instructions with the active PCB, printed parts, and BOM release for t
 1. Use a `razor-blade` to cut a small triangle off both bumpers on the `front-housing`.
 
     These cuts stop the bumpers from catching on the PCBA during installation.
+
+    <Callout type="warning" title="Razor blade">
+    Hold the housing on a stable surface and cut away from your fingers with light, controlled strokes. Cover or retract the blade as soon as you finish.
+    </Callout>
 
     <PhotoGrid>
       <Photo caption="Trim both bumper features." style={{ maxWidth: "360px", margin: "0" }}>
@@ -114,6 +132,10 @@ Use these instructions with the active PCB, printed parts, and BOM release for t
 4. Run a thin, low-profile bead of `hot-glue` along the screen edges.
 
     Keep the glue bead in contact with both the screen edge and the plastic housing. The housing plastic should melt slightly into the glue.
+
+    <Callout type="warning" title="Hot glue">
+    The glue gun nozzle and fresh glue can burn skin. Rest the gun on its stand between uses and let the bead cool before you touch it.
+    </Callout>
 
     <Photo caption="Low-profile glue bead around the screen edge." style={{ maxWidth: "520px", margin: "0.75rem 0 1.5rem 1.5rem" }}>
       <img src="/radr/assets/screen-hot-glue-bead.webp" alt="Hot glue bead around the RADR display edge" style={{ width: "100%", height: "auto" }} />
@@ -199,6 +221,10 @@ Use these instructions with the active PCB, printed parts, and BOM release for t
     <Photo caption="Battery cover installed." style={{ maxWidth: "520px", margin: "0.75rem 0 1.5rem 1.5rem" }}>
       <img src="/radr/assets/battery-cover-installed.webp" alt="RADR battery cover installed over the battery compartment" style={{ width: "100%", height: "auto" }} />
     </Photo>
+
+    <Callout type="warning" title="Battery placement">
+    Seat the battery flat and route its wires so the flap and screws do not press into the battery or pinch the wires. A crushed or punctured LiPo can catch fire.
+    </Callout>
 
 7. Confirm the housing is fully closed, all screws are seated, and the battery cover is secured before continuing.
 

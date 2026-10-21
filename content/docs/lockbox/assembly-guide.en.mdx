@@ -8,6 +8,8 @@ This work instruction documents the current Lockbox assembly process from printe
 
 Use these instructions with the active PCB and CAD release for the build.
 
+Read [Safety first](/lockbox#safety-first) before you start. Warnings appear at the steps where each hazard occurs.
+
 ## Required parts and consumables
 
 1. Gather the required parts before starting assembly.
@@ -154,11 +156,19 @@ Use these photos while inspecting printed parts.
 
 1. Install four magnets: one in the `locking-latch`, one in the `top-housing`, and two in the `bottom-housing`.
 
+    <Callout type="warning" title="Magnets">
+    The `4mm-magnet` parts are strong neodymium magnets. Keep loose magnets away from children and pets: swallowed magnets can cause serious internal injury.
+    </Callout>
+
 2. Use a `paperclip` to lightly coat the inside of each magnet insert with `SA-glue`.
 
     <Photo caption="Apply a light coat of glue inside the magnet insert." style={{ maxWidth: "520px", margin: "0.75rem 0 1.5rem 1.5rem" }}>
       <img src="/lockbox/assets/build-magnet-glue-paperclip.jpg" alt="Applying superglue to magnet insert with a paperclip" style={{ width: "100%", height: "auto" }} />
     </Photo>
+
+    <Callout type="warning" title="Superglue">
+    `SA-glue` (cyanoacrylate superglue) bonds skin and eyes in seconds. Wear eye protection, work with ventilation, and keep your fingers off glued surfaces. If skin bonds, do not pull it apart: soak it in warm, soapy water and peel it gently. If glue gets in an eye, rinse it with water and get medical help.
+    </Callout>
 
 3. Check magnet polarity before pressing each magnet into place:
 
@@ -216,6 +226,10 @@ Use these photos while inspecting printed parts.
 
 4. Wipe the rear of the `screen` and the side of the `battery` with writing using `isopropyl-alcohol`.
 
+    <Callout type="warning" title="Hot glue and solvent">
+    The glue gun nozzle and fresh glue can burn skin. `isopropyl-alcohol` is flammable: use a small amount on the cloth, let it evaporate fully, and keep it away from the hot glue gun.
+    </Callout>
+
 5. Apply a 3/4 inch square piece of `VHB-double-sided-tape` to the writing side of the `battery`.
 
     <Photo caption="VHB tape applied to the battery." style={{ maxWidth: "520px", margin: "0.75rem 0 1.5rem 1.5rem" }}>
@@ -223,6 +237,10 @@ Use these photos while inspecting printed parts.
     </Photo>
 
 6. Place the `battery` face down on the back of the `screen` with the cables exiting toward the lower right. Set with `hot-glue` as needed.
+
+    <Callout type="warning" title="LiPo battery">
+    Do not use a battery that is swollen, dented, punctured, or has damaged wires. Do not bend, pierce, or crush it, and keep its connector away from metal tools. Keep the hot glue gun nozzle from touching the battery.
+    </Callout>
 
     <PhotoGrid>
      <Photo caption="Screen and battery installed in the top housing." style={{ maxWidth: "420px", margin: "0" }}>
@@ -244,6 +262,10 @@ Use these photos while inspecting printed parts.
 3. Line up the flat of the encoder shaft with the flat face inside the `encoder-wheel`, then install the wheel.
 
 4. Solder the `encoder` onto the PCB. Make sure the encoder is fully seated so the wheel stays straight.
+
+    <Callout type="warning" title="Soldering and static">
+    This applies to every soldering step in this guide. Keep the `battery-wire` unplugged from the PCB while you solder. Work on a heat-resistant surface with ventilation or fume extraction, return the iron to its stand between joints, and wash your hands after handling solder. The PCB is static-sensitive: touch grounded metal before you handle it and hold it by its edges.
+    </Callout>
 
     <PhotoGrid>
      <Photo caption="Encoder installed on PCB." style={{ maxWidth: "360px", margin: "0" }}>
@@ -352,6 +374,10 @@ Use these photos while inspecting printed parts.
 
 3. Confirm no wires are pinched under the cover.
 
+    <Callout type="warning" title="Pinched battery wire">
+    A pinched battery wire can short the battery. If a wire is caught under the cover, remove the screws and reroute it instead of forcing the cover down.
+    </Callout>
+
 ## Install rubber feet
 
 1. Glue 4x `rubber-foot` onto the backplate.
@@ -381,6 +407,10 @@ Use these photos while inspecting printed parts.
     </PhotoGrid>
 
 2. Assembly is complete. Continue to functional testing.
+
+    <Callout type="warning" title="Before the Lockbox holds a key">
+    Test locking and unlocking with an empty box first. Anyone who uses the Lockbox should know both emergency options before storing a key: the [software emergency unlock](https://docs.researchanddesire.com/lockbox/using/emergency-unlock) and the destructive [hardware emergency unlock](https://docs.researchanddesire.com/lockbox/support/emergency-backplate). See [Safety & Emergency Access](https://docs.researchanddesire.com/lockbox/safety).
+    </Callout>
 
 ## QC checklist
 
